@@ -1,0 +1,23 @@
+{
+  "name": "cv.jonathanbell.ca",
+  "version": "0.2.0",
+  "description": "The online resume of Jonathan Bell.",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-inline": "^0.3.6",
+    "main-bower-files": "^2.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanbell/jonathanbell.github.io.git"
+  },
+  "author": "Jonathan Bell",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/jonathanbell/jonathanbell.github.io/issues"
+  },
+  "homepage": "http://jonathanbell.github.io",
+  "main": "gruntfile.js"
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Jonathan Bell, Photographer</title>
+
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="The professional photography curriculum vitae of Jonathan Bell.">
+  <meta name="rating" content="general">
+  <meta name="robots" content="index, follow, all">
+  <meta name="keywords" content="Jonathan, Bell, resume, photography">
+  <meta name="author" content="Jonathan Bell">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js" async></script>
+  <script>
+    // Don't like the FOUT (Flash of Unstyled Text)? 
+    // Apparently, it's preferred to FOIT (Flash of Invisible Text), nowadays... :\
+    // See: https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/#article-header-id-5
+    if (sessionStorage.fonts) {
+      document.documentElement.classList.add('wf-active');
+    } 
+  </script>
+
+  <link rel="stylesheet" href="dist/dist.css">
+
+</head>
+
+<body>
+
+  <article id="jonathanBell">
+
+    <header class="title">
+      <h1 id="main-heading">JONATHAN <span class="bold">BELL</span></h1>
+    </header>
+
+    <div class="main" role="main">
+
+      <section class="resume-section">
+        <h2 class="section-heading">Summary</h2>
+
+        <p>Canadian-born photographer living and working in Victoria BC, Canada.</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-heading">Internships</h2>
+
+        <h3 class="job-title">Fuel Industries</h3>
+        <h4 class="company-dates">January 2007 - September 2007, Toronto, Ontario, Canada</h4>
+        <p>Large set, digital workflow, strobe lighting, product photographer, set management, location management.</p>
+
+        <h3 class="job-title">Brett Monaghan, Portrait and Fashion Photographer</h3>
+        <h4 class="company-dates">January 2006 - June 2006, Milan, Italy</h4>
+        <p>Assisted in pre and post-production.</p>
+        <p>HMI lighting, strobe lighting, small set fashion production, location management.</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-heading">Exhibitions</h2>
+
+        <h3 class="job-title">Selected Framed Prints</h3>
+        <h4 class="company-dates">April 2007, Solstice Cafe, Victoria, BC, Canada</h4>
+        <p>Displayed and sold selected prints in local caf&egrave;.</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-heading">Editorial</h2>
+
+        <h3 class="job-title">&quot;Sylvan&quot;</h3>
+        <h4 class="company-dates"><a href="http://jonathanbell.ca/portraits">Rachel Saunders' portrait</a> taken at her home, Malahat BC</h4>
+        <p>Styling: Stephanie Hartwig</p>
+
+        <h3 class="job-title">&quot;Onyx Alive&quot;</h3>
+        <h4 class="company-dates">January 2010, <a target="_blank" href="http://issuu.com/c-heads/docs/c-heads-issue19-e">C-Heads Magazine, Issue 19</a></p>
+        <p>Model: Megan Jones; Styling: Leanne Trigg; Makeup: Jennifer Noa</p>
+
+        <h3 class="job-title">&quot;Sweet&quot;</h3>
+        <h4 class="company-dates">March 2006, &gt;bmm Magazine, Issue 10</a></p>
+        <p>Model: <a target="_blank" href="https://www.facebook.com/silva.rozenberga">Silva Rozenberga</a>; Styling: Roberta Roveggio; Makeup: Bonnie Carra</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-heading">Education</h2>
+
+        <h3 class="job-title">Communication and Creative Advertising</h3>
+        <h4 class="company-dates">January 2007, Instituto Europeo di Design, Milan, Italy</h4>
+        <p>Graduated with diploma.</p>
+        <p>Applied skills acquired in the areas of <a href="index.html">web design</a> and photography.</p>
+      </section>
+
+      <section class="resume-section">
+        <h2 class="section-heading">Awards</h2>
+
+        <h3 class="job-title">First Place, Victoria Arts Council Photo Contest</h3>
+        <h4 class="company-dates">June 2008, Lifestyle Catagory</p>
+        <p>Donated contest earnings to Victoria Art Gallery.</p>
+      </section>
+
+      <footer>
+        <h2 class="section-heading">Contact</h2>
+        <p>
+          <a href="tel:12503808050" id="teleNoun">250 380 8050</a> | <a href="mailto:jonathanbell.ca@gmail.com">jonathanbell.ca@gmail.com</a>
+          <br />
+          <a id="addressLink" href="https://maps.google.ca/maps?q=1015+redfern+street+victoria+bc">1015 Redfern Street, Victoria BC</a>
+        </p>
+        <p id="printBtnWrapper"><a id="printButton" href="#">Print</a></p>
+      </footer>
+
+    </div><!-- /.main -->
+
+  </article><!-- /#jonathanBell -->
+
+  <script>
+    /**
+     * Load our fonts.
+     * https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/
+     */
+    WebFontConfig = {
+      custom: {
+        families: ['content-sans-serif:n4,n3,n7', 'content-serif'],
+        urls: ['dist/fonts.css'],
+        timeout: 2000
+      },
+      active: function() {
+        sessionStorage.fonts = true;
+      }
+    };
+    /**
+     * Print when we click the print button.
+     */
+    document.getElementById('printButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      window.print();
+    });
+  </script>
+
+</body>
+</html>
