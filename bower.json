@@ -1,0 +1,22 @@
+{
+  "name": "cv.jonathanbell.ca",
+  "version": "0.2.0",
+  "homepage": "http://cv.jonathanbell.ca",
+  "authors": [
+    "Jonathan Bell <jonathanbell.ca@gmail.com>"
+  ],
+  "description": "The online resume of Jonathan Bell, web developer.",
+  "moduleType": [
+    "node"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.3",
+    "cornify": "^1.0.3"
+  }
+}
