@@ -14,7 +14,7 @@ To get started, basically just install Node and [Grunt](http://gruntjs.com/getti
 
 Then edit the content, ```grunt``` and upload! :)
 
-## But... There's a FOUT (Flash of Unstyled Text)
+## But... There's a FOUT (Flash of Unstyled Text)!
 
 Yeah, I know. [Apparently, it's preferred](https://css-tricks.com/loading-web-fonts-with-the-web-font-loader/#article-header-id-5) to FOIT (Flash of Invisible Text), nowadays.
 
