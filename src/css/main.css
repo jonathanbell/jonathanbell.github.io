@@ -36,11 +36,6 @@ body {
 }
   .wf-active body { font-family: "content-serif" } 
 
-::selection {
-  background: rgb(213, 255, 204);
-  text-shadow: none
-}
-
 a, a:hover, a:visited {
   text-decoration: none;
   color: #3C3C3C;
