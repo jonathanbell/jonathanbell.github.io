@@ -10,7 +10,6 @@ To get started, basically just install Node and [Grunt](http://gruntjs.com/getti
 
 * ```git clone https://github.com/jonathanbell/cv.jonathanbell.ca.git```
 * ```npm install```
-* ```bower install```
 
 Then edit the content, ```grunt``` and upload! :)
 
