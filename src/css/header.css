@@ -1,0 +1,28 @@
+header h1 {
+  font-size: 2em;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+header h1 a {
+  color: var(--brand-color);
+}
+
+header h1 span {
+  font-weight: lighter;
+}
+
+@media (min-width: 1024px) {
+  article header {
+    border-left: 1px solid var(--text-color);
+    padding-left: 0.5%;
+    min-height: 4em;
+    display: grid;
+    align-content: end;
+  }
+
+  header h1 {
+    padding-bottom: 0;
+    margin-bottom: calc(-0.25em + 1px);
+  }
+}
