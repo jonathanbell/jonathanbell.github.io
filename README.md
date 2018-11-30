@@ -13,3 +13,11 @@ Pretty basic [Gatsby](https://www.gatsbyjs.org/) stuff:
 1. `cd jonathanbell.github.io.git`
 1. `npm install`
 1. `npm run dev` to develop and `npm run build` when you are ready to build the Gatsby (static) site
+
+If you want to run a production copy of the site do: `gatsby build && gatsby serve`
+
+## Deploying
+
+This site uses [GitHub Pages](https://pages.github.com/) and the [gh-pages Gatsby plugin](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/) in order to deploy to <https://jonathanbell.github.io/>.
+
+GitHub requires that the `master` branch be used for static files in the case of a "personal" or "organization" page. As such, be sure to edit code on the default `gatsby-source` branch of this repo and then run `npm run deploy` in order to deploy automatically to the `master` branch.

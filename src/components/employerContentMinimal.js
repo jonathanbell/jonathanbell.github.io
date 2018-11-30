@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import Layout from './layout';
+import MinimalLayout from './minimalLayout';
 import { graphql } from 'gatsby';
 
-export default class EmployerContent extends Component {
+export default class EmployerContentMinimal extends Component {
   render() {
     return (
-      <Layout>
+      <MinimalLayout>
         <div
           dangerouslySetInnerHTML={{
             __html: this.props.data.markdownRemark.html
           }}
         />
-      </Layout>
+      </MinimalLayout>
     );
   }
 }
 
 export const query = graphql`
-  query EmployerContentQuery($slug: String!) {
+  query EmployerContentMinimalQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
     }
