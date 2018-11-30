@@ -1,0 +1,30 @@
+footer p {
+  margin-bottom: 0;
+}
+
+.print {
+  width: 85px;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  height: 40px;
+  font-size: 110%;
+  font-family: serif;
+  position: relative;
+  left: 80%;
+  color: var(--text-color);
+  transition: color 0.333s;
+
+  background: url(data:image/gif;base64,R0lGODlhJAAjAPf/AHWSv2dtmf39/+Pj/6SrtuPx/8TM2MPL18Lg/6yyvHl/jubz/7nAzvj4/3V7hh4gJy8xOM7n/yotMigrMPDz+PH0+GtzgsnP236Ej292hnCFsqaqre/y9Ts+Rb3E0UpPW42Rm7/I1aWpspqfquz1/2t4kJabobze/21+q/v9/8vT4WhwnL/CxS0wNldcZnGMuY6VotHo/3uDkfP4//n7/e3t/9fr/+v0/19oe6Oqtvn8/+nt8uXo7u73/+/z9+jo/32FlUNITlNZY1FZZ2t3pE9XZy0vNTk9Q8HJ1qKptens8cLK1zA0O+7y9mlvfPPz/0lNV0xRW2Zplt7u/0FGTNns/4eXjDs/RuPm6jY5RWFmckZLWYSKl7C4xkBMZfP2+fHx/xsjNc/Qy6i1w7bb/2xzgJyhpr7F0zY7SMTM2UBDS36Glq7X/0pOV+Hj51pngm10gvP5//b6/1BWYra917vD0Jqjrp+kq5nAkENJVuPq+GJpdXJ5iqCotKKptqqut9vt/6SwwYeYvrO4wJifp2hvgDQ3QISKk9Xq/4CNpExPVJGngzY5P3V7jTtLaoCGlBcaHoWGmImNlqavvquvuY6elXl+qzk+SFBUXvL4/6i0qHOMaCMuQZqou0pSZE5TYBsdIk9WYdvj8IeToo+apPv8/be+yfX4+zxAR0tQWayz2SQnLYSVwaKnrefn/8LGzcjIwDAzOTQ2PbvGuEJWevj6//v7//3+/9vj7zw/Rvz8/0hMU+3w9IuhfU9UXz9FUG94lzlASz9CSz9DTpKZo5SapOTo6mvdWX2Nn3h7hZ2jrdji/7zBycbj/1llfamrqHuArODv/0NIUpukr0dLU3SHm3Z8icTL13B2gyIkKSUnKvX1/6utsFZdbC8zP1hfa7/G05yksJ6msZ+ns2h1jevu87GysuTo7efq7zA0OTM1O5mdpnyEo5qdpEJKW3N6hzA2QS4xOGdufOrq/yUpLScpLicqL2xygNTb5m1zgMnk/+7u/0xQWfb4/DM4Q////yH5BAEAAP8ALAAAAAAkACMAAAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDMuBMCxo0eOGF8IGEmy5IuLYzQ0EJCiVqYbBQDFaKChhMVAKJ6k0DGDRIEqERA8QWGzYiciNeTM6LFgCiJ9J2oQIWcx0YofPUgsiGYjKJkfK5xZfCNlwIICU2zEaHaCzQApXiaKIVYMw6VQnz7k+RUMjT943h7seQfHHMQ/bkqxADEogYgRMLgowHbPyYd2O/A5gKiMRj9J8oCsASJDQSM+GSwUGpJsh5JHD1m8onHKwb0yTrS4EOIrChRpwwwp4sGDkhmHI4x9oXCkRTwI8YxIsLcq2wNQkLTNwqNpc8N8HJo07PFBoYJ5Cj6a8Cq3A905LIuO9erm8BuzBElyENi/P0eSPuOIE840dlixSSVDOGSNKRcsccABBkT44BJIhHCGB3WEkIYK4GTg0CF+XOBBLhDEwgQT6UAg3QT20FOPOirgwwAGDpkAgwF1yAJFFKm0QU0QaqDSQQdXHDEBPrh0AYJDG8hwDRKMbDHHbpjws0sQVAQhTBYSiKLHJCY4BEsRRbjDCS0icLPBHYSQMgoy1UTiSBie4IDDMxK1Iogtt+gQh09AIbAMK+tYxA4dujSwDRj7zOPKAJCqAoxF0ARg6aWYWmqJRpx26umnDwUEADs=)
+    90% 0 no-repeat;
+}
+
+.print:hover {
+  color: var(--brand-color);
+}
+
+@media (max-width: 645px) {
+  .print {
+    display: none;
+  }
+}
