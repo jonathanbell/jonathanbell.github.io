@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://jonathanbell.github.io/sitemap.xml
+Host: https://jonathanbell.github.io
