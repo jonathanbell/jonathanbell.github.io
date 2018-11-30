@@ -24,7 +24,7 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={`${data.site.siteMetadata.title}, Web Developer`}
           meta={[
             {
               name: 'description',
