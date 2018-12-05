@@ -1,14 +1,16 @@
 ## Skills
 
-Creation of user-authenticated web apps based in NodeJS and PHP. Development, and implementation of user-centric websites wrapped in content management systems.
+Development, and implementation of user-centric websites wrapped in content management systems. Creation of user-authenticated web apps based in NodeJS and PHP.
 
 Comfortable writing front-end templates as well as server-side logic.
 
-Implementation of static designs to live production websites from graphic designers using modern tools such as Gatsby and Wordpress.
+Implementation of static designs to live production websites from graphic designers using modern tools such as Gatsby, Wordpress and Drupal.
 
-Accomplished in the use of client-side and server-side JavaScript (such as React and Node), MySQL, MongoDB, front-end templating languages such as Blade and Pug, Webpack, Bash and Linux web server administration, Git + GitHub & SVN source control systems, search engine optimization, and JIRA project tracking software. Ready to work inside an agile development team with an affinity for iterative workflows.
+Accomplished in the use of client-side and server-side JavaScript (such as React and Node), MySQL, front-end templating languages such as Blade and Pug, Bash and Linux web server administration, Git + GitHub & SVN source control systems, Sass/CSS, search engine optimization, and JIRA project tracking software. Ready to work inside an agile development team with an affinity for iterative workflows.
 
-Familiar with testing suites such as Jest and PHPUnit, Amazon Web Services (specifically EC2, S3 & SES), Shopify and the Liquid templating language, and large Oracle databases, APIs (such as Strava, QuestTrade).
+Familiar with testing suites such as Jest and PHPUnit, Amazon Web Services (specifically EC2, S3 & SES), Shopify and the Liquid templating language, and large Oracle databases.
+
+Eager to learn Ruby and Python.
 
 Fluent in both written and spoken English and Italian.
 

@@ -33,7 +33,7 @@ module.exports = {
         name: "Jonathan Bell's online resume",
         orientation: 'portrait-primary',
         lang: 'en-CA',
-        short_name: 'Jonathan Bell',
+        short_name: 'J. Bell',
         start_url: '/',
         theme_color: '#B7BF10',
         // https://developer.mozilla.org/en-US/docs/Web/Manifest#display
@@ -49,7 +49,8 @@ module.exports = {
       }
     },
     'gatsby-transformer-remark',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // This (optional) plugin enables Progressive Web App + Offline functionality.
+    // It should be listed last in this file.
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline'
   ]

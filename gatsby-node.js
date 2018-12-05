@@ -13,12 +13,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({
       node,
-      getNode,
+      getNode
     });
     createNodeField({
       node,
       name: 'slug',
-      value: `${slug}`,
+      value: `${slug}`
     });
   }
 };
@@ -35,6 +35,9 @@ exports.createPages = ({ graphql, actions }) => {
               fields {
                 slug
               }
+              frontmatter {
+                minimal
+              }
             }
           }
         }
@@ -42,13 +45,25 @@ exports.createPages = ({ graphql, actions }) => {
     `).then(result => {
       result.data.allMarkdownRemark.edges.forEach(({ node }) => {
         if (node.fields.slug !== '/default/') {
-          createPage({
-            path: node.fields.slug,
-            component: path.resolve('./src/components/employerContent.js'),
-            context: {
-              slug: node.fields.slug,
-            },
-          });
+          if (!node.frontmatter.minimal) {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve('./src/components/employerContent.js'),
+              context: {
+                slug: node.fields.slug
+              }
+            });
+          } else {
+            createPage({
+              path: node.fields.slug,
+              component: path.resolve(
+                './src/components/employerContentMinimal.js'
+              ),
+              context: {
+                slug: node.fields.slug
+              }
+            });
+          }
         }
       });
       resolve();

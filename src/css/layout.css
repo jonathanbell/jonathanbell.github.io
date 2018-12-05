@@ -151,10 +151,6 @@ h2 + h3 {
   margin-top: 0;
 }
 
-h3 + h4 {
-  margin-top: -0.25em;
-}
-
 h4 {
   font-family: var(--sans-serif-font);
   font-style: italic;
@@ -236,7 +232,7 @@ address {
     page-break-after: avoid;
   }
 
-  .print {
+  .no-print {
     display: none;
   }
 }
