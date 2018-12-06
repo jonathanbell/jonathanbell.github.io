@@ -80,8 +80,8 @@ const Summary = () => (
       {/* JavaScript developer */}
       Secure a position with a small to medium-sized (5-500 employees), local or
       remotely-based company as a web developer. The company should have a
-      collaborative and welcoming culture as well as opportunities for long-term
-      growth into full stack engineering positions.
+      collaborative and welcoming culture as well as opportunities for potential
+      long-term growth into full stack engineering positions.
     </p>
   </div>
 );

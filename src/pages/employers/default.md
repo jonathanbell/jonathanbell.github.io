@@ -8,7 +8,7 @@ Implementation of static designs to live production websites from graphic design
 
 Accomplished in the use of client-side and server-side JavaScript (such as React and Node), MySQL, MongoDB, front-end templating languages such as Blade and Pug, Webpack, Bash and Linux web server administration, Git + GitHub & SVN source control systems, search engine optimization, and JIRA project tracking software. Ready to work inside an agile development team with an affinity for iterative workflows.
 
-Familiar with testing suites such as Jest and PHPUnit, Amazon Web Services (specifically EC2, S3 & SES), Shopify and the Liquid templating language, and large Oracle databases, APIs (such as Strava, QuestTrade).
+Familiar with testing suites such as Jest and PHPUnit, Amazon Web Services (specifically EC2, S3 & SES), REST APIs (such as Strava & QuestTrade), Shopify and the Liquid templating language, and large Oracle databases.
 
 Fluent in both written and spoken English and Italian.
 
@@ -40,7 +40,7 @@ Design, build and implement front-end solutions for new social media based corpo
 
 Realize new functionality from mockups and wireframes while developing new custom responsive theme for Drupal site, preserving all original content and adapting it to small screen sizes. This allowed users to use the site while commuting or while out of the office at events, etc. This increased the traffic and engagement of the site by over 15%.
 
-### Web Developer
+### Web Developer and Designer
 
 #### January 2011 to present, Freelance, Victoria BC
 

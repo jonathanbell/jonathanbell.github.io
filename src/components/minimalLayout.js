@@ -14,7 +14,6 @@ const MinimalLayout = ({ children }) => (
         site {
           siteMetadata {
             title
-            description
           }
         }
       }
@@ -22,7 +21,7 @@ const MinimalLayout = ({ children }) => (
     render={data => (
       <>
         <Helmet
-          title={`${data.site.siteMetadata.title}, Curriculum Vitae`}
+          title={`${data.site.siteMetadata.title}: Curriculum Vitae`}
           meta={[
             {
               name: 'description',
