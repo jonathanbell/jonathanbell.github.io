@@ -30,13 +30,13 @@ Develop new Git "push to deploy" source control workflow for my web team, cuttin
 
 #### July 2014 to February 2015, Ministry of Advanced Education, BC Public Service, Victoria BC
 
-Connected front-end user interactions to back-end credit checking API during the student loan application process. Working on a team, converted the old (paper-based) student loan application process to a new web-based loan application process. This change cut a student's loan application response time down to approximately one day from potentially weeks of waiting.
+Connected front-end user interactions to back-end credit checking API during the student loan application process. Working on a team, converted the old (paper-based) student loan application process to a new web-based loan application process. This change cut a student's loan application response time down to approximately one day verses weeks of waiting for a paper response in the mail.
 
-### Web Administrator
+### Senior Web Administrator
 
 #### January 2011 to June 2014, Public Service Agency, BC Public Service, Victoria BC
 
-Design, build and implement front-end solutions for new social media based corporate intranet with Drupal backend. The new intranet allowed workers to collaborate more effectively and easily share ideas about work ahead, thus reducing replicated work and improving communication around projects; a sometimes difficult task inside an organization of over 30,000 people.
+Design, build and implement front-end solutions for new social media based corporate intranet with Drupal backend. The new intranet allowed workers to collaborate more effectively and easily share ideas about upcoming work, thus reducing replicated work and improving communication around projects; a sometimes difficult task inside an organization of over 30,000 people.
 
 Realize new functionality from mockups and wireframes while developing new custom responsive theme for Drupal site, preserving all original content and adapting it to small screen sizes. This allowed users to use the site while commuting or while out of the office at events, etc. This increased the traffic and engagement of the site by over 15%.
 

@@ -23,8 +23,8 @@ const ReferencesPage = ({ data }) => (
       Ministry of Education, British Columbia Public Service
     </h4>
     <p>
-      {/* Phone: <a href="tel:+17786792382">(778) 679-2382</a>
-      <br /> */}
+      Phone: <a href="tel:+17786794740">(778) 679-4740</a>
+      <br />
       Email: <a href="mailto:zita.teng@gov.bc.ca">Zita.Teng@gov.bc.ca</a>
     </p>
 
