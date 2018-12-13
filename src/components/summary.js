@@ -78,7 +78,7 @@ const Summary = () => (
     <h3>Objective</h3>
     <p>
       {/* JavaScript developer */}
-      Secure a position with a small to medium-sized (5-500 employees), local or
+      Secure a position with a small to medium-sized (5-1000 employees), local or
       remotely-based company as a web developer. The company should have a
       collaborative and welcoming culture as well as opportunities for potential
       long-term growth into full stack engineering positions.
