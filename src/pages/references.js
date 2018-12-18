@@ -39,6 +39,18 @@ const ReferencesPage = ({ data }) => (
       Email: <a href="mailto:Trevor.Paul@gov.bc.ca">Trevor.Paul@gov.bc.ca</a>
     </p>
 
+    <h3>Saren Calvert</h3>
+    <h4>
+      Intermediate Programmer Analyst, Access, Audits and Agreements Branch,
+      Ministry of Health, British Columbia Public Service
+    </h4>
+    <p>
+      Phone: <a href="tel:+17786982079">(778) 698-2079</a>
+      <br />
+      Email:{' '}
+      <a href="mailto:Saren.Calvert@gov.bc.ca">Saren.Calvert@gov.bc.ca</a>
+    </p>
+
     <h3>Laura Hutchinson</h3>
     <h4>
       Director, Digital Delivery &amp; Integration, Ministry of Advanced
