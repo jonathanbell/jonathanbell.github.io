@@ -1,3 +1,25 @@
+# build output
+#dist/ # commented out because we deploy to GitHub Pages
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# environment variables
+.env
+.env.production
+
+# OS
+.DS_Store
+
 # Logs
 logs/
 *.log
@@ -5,21 +27,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Library folders
-node_modules/
-
-# Optional REPL history
-.node_repl_history
-
 # dotenv environment variables file
 .env
 
-# Gatsby files
-.cache/
-public
-
-# OS
-.DS_Store
-
 # Workfiles
 NOTES.*
+NOTES/
+old site/
