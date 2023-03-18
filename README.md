@@ -1,23 +1,66 @@
 # Curriculum Vitae of Jonathan Bell
 
+🚨 **This is a work in progress**
+
 My online résumé. :)
 
-Please feel free to use this as a template for your own Gatsby based résumé but please remember to change the content, thank you.
+Please feel free to use this as a template for your own résumé but please remember to change the content, thank you.
 
 ## Install
 
-Pretty basic [Gatsby](https://www.gatsbyjs.org/) stuff:
-
-1. Install Gatsby globally: `npm install --global gatsby-cli`
-1. `git clone https://github.com/jonathanbell/jonathanbell.github.io.git`
-1. `cd jonathanbell.github.io.git`
-1. `npm install`
-1. `npm run dev` to develop and `npm run build` when you are ready to build the Gatsby (static) site
-
-If you want to run a production copy of the site do: `gatsby build && gatsby serve`
+//
 
 ## Deploying
 
-This site uses [GitHub Pages](https://pages.github.com/) and the [gh-pages Gatsby plugin](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/) in order to deploy to <https://jonathanbell.github.io/>.
+//
 
-GitHub requires that the `master` branch be used for static files in the case of a "personal" or "organization" page. As such, be sure to edit code on the default `gatsby-source` branch of this repo and then run `npm run deploy` in order to deploy automatically to the `master` branch.
+---
+
+## Astro Starter Kit: Basics
+
+```
+npm create astro@latest -- --template basics
+```
+
+[basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+
+## 🚀 Project Structure
+
+Inside of your Astro project, you'll see the following folders and files:
+
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
+
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
