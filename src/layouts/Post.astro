@@ -1,0 +1,51 @@
+---
+import Main from "./Main.astro";
+import '@fontsource/libre-franklin';
+import "@fontsource/libre-franklin/800.css"
+import Footer from "../components/Footer.vue";
+const { frontmatter } = Astro.props;
+
+const date = new Date(frontmatter.pubDate);
+const year = date.getFullYear();
+const numericMonth = String(date.getMonth() + 1).padStart(2, '0');
+const numericDay = String(date.getDate()).padStart(2, '0');
+const readableDate: string = date.toLocaleDateString(
+	'en-US',
+	{
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	});
+---
+
+<Main title={frontmatter.title} description={frontmatter.description}>
+		<time datetime='`${year}-${numericMonth}-${numericDay}`'>{readableDate}</time>
+		<!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
+		<slot />
+		<Footer />
+</Main>
+
+<style scoped lang="scss">
+	time {
+		color: var(--colors-base-midtone);
+	}
+</style>
+
+<style is:global lang="scss">
+	// You can only scope styles to a component element if the element is *in use*
+	// in the component. Otherwise, you'll have to use global styles for content
+	// that is brought into the DOM via a slot (like in the case of Markdown).
+	// Here is an example of how to do that.
+
+	article.content {
+		// These styles are scoped to Posts.
+
+		p, ul {
+			line-height: 1.75;
+		}
+
+		h2 {
+			font-size: 3rem;
+		}
+	}
+</style>

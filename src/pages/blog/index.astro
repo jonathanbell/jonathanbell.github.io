@@ -1,0 +1,26 @@
+---
+import Main from "../../layouts/Main.astro";
+import CardSection from "../../components/CardSection.vue";
+import Card from "../../components/Card.vue";
+import Blogroll from "../../components/Blogroll.vue";
+
+let posts = await Astro.glob("./*.md");
+posts = posts.sort((a, b) => {
+	return +new Date(b.frontmatter.pubDate) - +new Date(a.frontmatter.pubDate);
+});
+---
+
+<Main title="Blog" description="Jonathan Bell's thoughts and feelings">
+	<CardSection section-title="Blog">
+		{posts.map((post) => (
+			<Card
+				heading={post.frontmatter.title}
+				body={post.frontmatter.description}
+				link={post.url}
+				pub-date={post.frontmatter.pubDate}
+				emoji={post.frontmatter.emoji}
+			/>
+		))}
+	</CardSection>
+	<Blogroll />
+</Main>

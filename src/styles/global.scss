@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+:root {
+	--colors-bg-base: #f9f8f8;
+	--colors-fg-base: #151717;
+
+	--colors-base-midtone: #586069;
+
+	--colors-brand-base: #9b0ac3;
+	--colors-brand-base-secondary: #2d8218;
+
+	--colors-accent-light: #fbff0e;
+	--colors-accent-light-secondary: #eea508;
+	--colors-accent-deep: #2f1eed;
+	--colors-accent-deep-secondary: #db2272;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--colors-bg-base: #151717;
+		--colors-fg-base: #f9f8f8;
+
+		--colors-base-midtone: #b9c7d6;
+
+		--colors-brand-base: #c466de;
+		--colors-brand-base-secondary: #5ed041;
+
+		--colors-accent-deep: #1e5ced;
+	}
+}
+
+/**
+ * Even more basic than normalize:
+ * https://necolas.github.io/normalize.css/
+ */
+
+html {
+	font-family: system-ui, sans-serif;
+	font-size: 100%;
+	box-sizing: border-box;
+
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+
+	// Make text look good. Note: This could be processor intensive on smaller
+	// machines.
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+
+	margin: 0;
+	background-color: var(--colors-bg-base);
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	color: var(--colors-fg-base);
+
+	max-width: 75rem;
+	padding: 1.5rem;
+	margin: 0 auto;
+}
+
+// Don't let these elements break out of thier parents.
+audio,
+video,
+img,
+iframe {
+	max-width: 100%;
+}
+
+// Don't display empty p tags. *Certain* (Wordpress* cough.. cough) CMS's these,
+// sometimes.
+p:empty {
+	display: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--colors-brand-base);
+	transition: color 0.1s ease-out;
+
+	&:hover {
+		color: var(--colors-brand-base-secondary);
+	}
+}
+
+code {
+	font-family: Menlo, Monaco, "Lucida Console", "Liberation Mono",
+		DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+	color: var(--colors-accent-deep);
+}
+
+.astro-code {
+	padding: 1rem;
+	border-radius: 0.333rem;
+	font-size: 0.9rem;
+
+	@media (prefers-color-scheme: dark) {
+		background-color: #f9fdff !important;
+	}
+}
+
+.content {
+	font-size: 1.188rem;
+
+	.card-container, .link-container {
+		font-size: 1rem;
+	}
+
+	.section-header {
+		font-weight: 700;
+	}
+
+	*:last-child {
+		margin-bottom: 0;
+	}
+
+	a {
+		font-weight: 500;
+	}
+
+	code, em {
+		font-size: 1.1rem;
+	}
+
+	h2 code, h3 code, h4 code, h5 code, h6 code {
+		font-size: inherit;
+	}
+
+	img {
+		box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+	}
+
+	p, ul {
+		line-height: 1.5;
+		font-weight: 300;
+		&:has(> img) {
+			margin: 0;
+			line-height: 1;
+		}
+	}
+
+	h2, h3, h4, h5, h6 {
+		font-family: 'Libre Franklin', system-ui, sans-serif;
+	}
+
+	h2 + p {
+		margin-top: 0;
+	}
+
+	h2, h3, h4, h5, h6 {
+		font-weight: 800;
+		font-size: 1.5rem;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+}
+
+// Print styles! 🖨️
+@media print {
+	* {
+		color: #000 !important;
+		box-shadow: none !important;
+		text-shadow: none !important;
+		font-size: initial !important;
+		line-height: initial !important;
+	}
+
+	html {
+		background-color: transparent !important;
+	}
+
+	body {
+		padding-bottom: 1rem !important;
+	}
+
+	h1, h1 a {
+		font-weight: bold !important;
+		color: black !important;
+		-webkit-background-clip: initial !important;
+    -webkit-text-fill-color: initial !important;
+		background: none !important;
+		font-size: 130% !important;
+	}
+
+	.content {
+		h2 {
+			font-size: 120% !important;
+			text-decoration: underline !important;
+		}
+
+		h3 {
+			font-size: 105% !important;
+		}
+
+		h2, h3, h4, h5, h6 {
+			margin-bottom: 0.25rem !important;
+		}
+
+		& > footer {
+			display: none !important;
+		}
+	}
+
+	details > summary::before,
+	#copy-wallet-addr-button,
+	footer > div > p,
+	header > nav {
+		display: none !important;
+	}
+
+	.content p,
+	.content ul,
+	a,
+	a:visited {
+		text-decoration: none;
+		font-weight: normal !important;
+	}
+
+	.card-container {
+		display: block !important;
+	}
+
+	.link-card > a {
+		padding-left: 0 !important;
+	}
+
+	.inner nav a {
+		background-color: transparent !important;
+	}
+
+	details > summary {
+		padding-left: 0 !important;
+	}
+
+	a[href^="#"]:after,
+	a[href^="javascript:"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	img {
+		page-break-inside: avoid;
+		max-width: 100% !important;
+	}
+
+	@page {
+		margin: 1cm;
+
+		h2,
+		h3,
+		h4,
+		h5 {
+			page-break-after: avoid;
+		}
+	}
+}

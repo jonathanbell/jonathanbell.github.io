@@ -1,16 +1,16 @@
-# Jonathan Bell
-
-🚨 **This is a work in progress...**
-
 ---
-
-Friendly web developer residing in Victoria BC with over ten years of experience developing and building robust, high-volume commercial and government websites/apps; proficient in JavaScript (Node, ES6, React, Vanilla JS), PHP (Laravel, Drupal), HTML, relational and non-relational databases, CSS3 and Git source control systems.
+layout: ../layouts/Main.astro
+title: Resume
+description: The personal curriculum vitea of Jonathan Bell
+---
 
 ## Objective
 
+Friendly web developer residing in Victoria BC with over ten years of experience developing and building robust, high-volume commercial and government websites/apps; proficient in JavaScript (Node, ES6, React, Vanilla JS), PHP (Laravel, Drupal), HTML, relational and non-relational databases, CSS3 and Git source control systems.
+
 Secure a position with a small to medium-sized (5- 1000 employees), local or remotely-based company as a web developer. The company should have a collaborative and welcoming culture as well as opportunities for potential long-term growth into full stack engineering positions.
 
-## Skillz
+## Skills
 
 Creation of user-authenticated web apps based in NodeJS and PHP. Development and implementation of user-centric websites wrapped in content management systems.
 
@@ -28,7 +28,7 @@ Fluent in both written and spoken English and Italian.
 
 ### User Experience Design; Developer
 
-<span>March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC</span>
+_March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC_
 
 As lead developer, created a Laravel-based web application that allowed the public to view British Columbia school and school district data in graphical forms. Previously this data was only available in tabular formats and, as such, was difficult for the public to interpret.
 
@@ -36,15 +36,15 @@ Maintained, updated and developed internet and intranet facing content managemen
 
 Developed new Git "push to deploy" source control workflow for my web team, thus cutting down deployment time significantly and reducing human error while deploying new code to production or staging environments.
 
-#### Web Developer
+### Web Developer
 
-<span>July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, Victoria BC</span>
+_July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, Victoria BC_
 
 Connected front-end user interactions to back-end credit checking API during the student loan application process. While working on a team, converted the old (paper-based) student loan application process to a new web-based loan application process. This change cut a student's loan application response time down to approximately one day verses weeks of waiting for a paper response in the mail.
 
-#### Web Developer, Freelance
+### Web Developer, Freelance
 
-<span>January 2014 to present</span>
+_January 2014 to present_
 
 Designed, built and implemented front-end solutions for new social media based corporate intranet with Drupal backend. The new intranet allowed workers to collaborate more effectively and easily share ideas about upcoming work, thus reducing replicated work and improving communication around projects; a sometimes difficult task inside an organization of over 30,000 people.
 
@@ -54,16 +54,16 @@ Design, build and maintain custom websites and web apps for small businesses and
 
 Meet expectations of clients while expanding knowledge of World Wide Web Consortium (W3C) specifications, accessibility best practices, and network performance/speed gains.
 
-### Education
+## Education
 
-#### Communication and Creative Advertising
+### Communication and Creative Advertising
 
-<span>January 2007, Instituto di Design, Milan, Italy</span>
+_January 2007, Instituto di Design, Milan, Italy_
 
-Graduated with diploma.
+Graduated with diploma; applied skills acquired in the areas of web design and photography.
 
-Applied skills acquired in the areas of web design and photography.
+## Contact
 
-### Contact
+Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
 
-<a href="mailto:jonathanbell.ca@gmail.com">jonathanbell.ca@gmail.com</a>
+<div style="height: 0.5rem"></div>

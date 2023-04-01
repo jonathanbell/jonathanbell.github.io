@@ -1,66 +1,52 @@
-# Curriculum Vitae of Jonathan Bell
+# Jonathan Bell's personal website 👨‍💻
 
-🚨 **This is a work in progress**
+Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
-My online résumé. :)
+## TODOs
 
-Please feel free to use this as a template for your own résumé but please remember to change the content, thank you.
-
-## Install
-
-//
-
-## Deploying
-
-//
+- [ ] Get ESLint working
 
 ---
 
-## Astro Starter Kit: Basics
+This site holds:
 
-```
-npm create astro@latest -- --template basics
-```
+1. My online résumé. 😃
+1. My blog
+1. A listing of my past and current projects
+1. Links to my social media, etc.
 
-[basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
+Please feel free to use this repo as a template for your own résumé but please also remember to change the content, thank you!
 
-## 🚀 Project Structure
+This blog and project website is built with [Astro](https://docs.astro.build). 🚀
 
-Inside of your Astro project, you'll see the following folders and files:
+## Installation
 
-```
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. Clone this repository: `git clone git@github.com:jonathanbell/jonathanbell.github.io.git jonathanbell.ca`
+1. `cd jonathanbell.ca`
+1. `npm i`
+1. `npm run dev` will run the site locally with the [Vite](https://vitejs.dev/) server
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Developer commands
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
+All commands are run from the root of the project:
 
 | Command                | Action                                           |
 | :--------------------- | :----------------------------------------------- |
 | `npm install`          | Installs dependencies                            |
 | `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run test`         | Run unit tests                                   |
+| `npm run test:all`     | Run unit & node tests                            |
 | `npm run build`        | Build your production site to `./dist/`          |
 | `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro ...`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Deploying
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+1. `npm run build`
+1. Upload the static files to your favorite static site host. I like [Netlify](https://www.netlify.com/) and [GitHub Pages](https://pages.github.com/).
+
+## TODOs
+
+- [ ] Get ESLint working and lint all Astro, TS and Vue files
+- [ ] Update resume content
