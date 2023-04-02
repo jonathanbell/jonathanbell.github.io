@@ -1,26 +1,33 @@
 ---
-import '../styles/global.scss';
-import Header from '../components/Header.vue';
-import Footer from '../components/Footer.vue';
+import "../styles/global.scss";
+import SiteHeader from "../components/SiteHeader.vue";
+import SiteFooter from "../components/SiteFooter.vue";
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Jonathan Bell is a fullstack web developer from Canada." />
+		<meta
+			name="description"
+			content="Jonathan Bell is a fullstack web developer from Canada."
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<meta name="author" content="Jonathan Bell" />
 
 		<!-- https://css-tricks.com/emoji-as-a-favicon/ -->
 		<!-- https://twitter.com/LeaVerou/status/1241619866475474946 -->
-		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129514;</text></svg>" />
+		<link
+			rel="icon"
+			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>"
+		/>
 
 		<title>Jonathan Bell, Software Developer</title>
 	</head>
 	<body>
-		<Header />
+		<SiteHeader />
 		<slot />
-		<Footer />
+		<SiteFooter />
 	</body>
 </html>

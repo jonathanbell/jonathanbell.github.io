@@ -4,7 +4,8 @@ Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
 ## TODOs
 
-- [ ] Get ESLint working
+- [x] Get ESLint working
+- [ ] Update resume content
 
 ---
 
@@ -45,8 +46,3 @@ All commands are run from the root of the project:
 
 1. `npm run build`
 1. Upload the static files to your favorite static site host. I like [Netlify](https://www.netlify.com/) and [GitHub Pages](https://pages.github.com/).
-
-## TODOs
-
-- [ ] Get ESLint working and lint all Astro, TS and Vue files
-- [ ] Update resume content

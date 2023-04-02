@@ -1,30 +1,30 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: 'PersonalBlock',
+	name: "PersonalBlock",
 	components: {},
-
-	data() {
-		return {}
-	},
 
 	props: {
 		fullName: {
 			readonly: true,
-			default: '',
+			default: "",
 			type: String,
 		},
 	},
 
+	data() {
+		return {};
+	},
+
 	computed: {
 		firstName(): string {
-			return this.fullName.split(' ')[0];
+			return this.fullName.split(" ")[0];
 		},
 		sAge(): string {
 			const now: number = new Date().getTime();
-			return Math.floor((now - new Date('2021-11-01').getTime()) / 3.15576e+10).toString();
-		}
+			return Math.floor((now - new Date("2021-11-01").getTime()) / 3.15576e+10).toString();
+		},
 	},
 });
 </script>
@@ -34,10 +34,13 @@ export default defineComponent({
 		<summary>
 			<span class="screenreader-only">{{ fullName }} </span>is a full-stack web
 			developer<span class="hide-on-x-small-screen"> at <span
-					class="highlight">Benevity</span></span>.
+				class="highlight"
+			>Benevity</span></span>.
 		</summary>
 		<article class="details-content">
-			<h2 class="screenreader-only">About {{ firstName }}</h2>
+			<h2 class="screenreader-only">
+				About {{ firstName }}
+			</h2>
 			<!-- Mmmmmmmm.... Delicious connntenntt... [Homer Simpson voice 🤤] -->
 			<p>
 				At <a href="https://benevity.com/">Benevity</a>, he works with a talented
@@ -51,16 +54,21 @@ export default defineComponent({
 			</p>
 			<p>
 				When not programming, Jonathan tends to <a
-					href="/pictures/_MG_3954-Edit.jpg" target="_blank">climb up small
+					href="/pictures/_MG_3954-Edit.jpg"
+					target="_blank"
+				>climb up small
 					boulders in the woods</a> around Vancouver Island, Canada
 				&#127464;&#127462;. He also
 				enjoys <a href="https://www.strava.com/athletes/jonathanbell">trail
 					running</a>, skiing, drinking tea, hiking with <a
-					href="https://www.instagram.com/baciandbaci/">his wife</a> and {{ sAge
-					}} year old son, <a
-					href="https://www.instagram.com/jonathanbell.world/">landscape
+					href="https://www.instagram.com/baciandbaci/"
+				>his wife</a> and {{ sAge
+				}} year old son, <a
+					href="https://www.instagram.com/jonathanbell.world/"
+				>landscape
 					photography</a>, <a
-					href="https://www.instagram.com/jonathanbell.photo/">couples
+					href="https://www.instagram.com/jonathanbell.photo/"
+				>couples
 					photography</a> and attempting be a minimalist.
 			</p>
 		</article>

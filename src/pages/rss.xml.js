@@ -1,12 +1,12 @@
-import rss, { pagesGlobToRssItems } from '@astrojs/rss';
-import sanitizeHtml from 'sanitize-html';
+import rss from "@astrojs/rss";
+import sanitizeHtml from "sanitize-html";
 
 export async function get(context) {
-	const postImportResult = import.meta.glob('./blog/*.md', { eager: true });
-  const posts = Object.values(postImportResult);
+	const postImportResult = import.meta.glob("./blog/*.md", { eager: true });
+	const posts = Object.values(postImportResult);
 
 	const items = posts.map((post) => {
-		let p = {
+		const p = {
 			link: post.url,
 			content: sanitizeHtml(post.compiledContent()),
 			...post.frontmatter,
@@ -15,22 +15,20 @@ export async function get(context) {
 		if (p.description === null) {
 			p.description = `Jonathan Bell: ${p.title}`;
 		}
-
-		console.log("DESCRIPTION: ", p.description);
 		return p;
 	});
 
-  return rss({
-    // `<title>` field in output xml
-    title: 'Jonathan Bell',
-    // `<description>` field in output xml
-    description: 'Jonathan Bell, software developer & photographer',
-    // Pull in your project "site" from the endpoint context
-    // https://docs.astro.build/en/reference/api-reference/#contextsite
-    site: context.site,
-    // Array of `<item>`s in output xml
-    items,
-    // (optional) inject custom xml
-    customData: `<language>en</language>`,
-  });
+	return rss({
+		// `<title>` field in output xml
+		title: "Jonathan Bell",
+		// `<description>` field in output xml
+		description: "Jonathan Bell, software developer & photographer",
+		// Pull in your project "site" from the endpoint context
+		// https://docs.astro.build/en/reference/api-reference/#contextsite
+		site: context.site,
+		// Array of `<item>`s in output xml
+		items,
+		// (optional) inject custom xml
+		customData: "<language>en</language>",
+	});
 }

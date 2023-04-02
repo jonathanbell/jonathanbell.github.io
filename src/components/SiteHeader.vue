@@ -1,10 +1,10 @@
 <script lang="ts">
-import '@fontsource/libre-franklin';
-import "@fontsource/libre-franklin/900.css"
-import { defineComponent } from 'vue';
+import "@fontsource/libre-franklin";
+import "@fontsource/libre-franklin/900.css";
+import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: 'Header',
+	name: "SiteHeader",
 });
 </script>
 

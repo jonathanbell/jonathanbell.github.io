@@ -1,8 +1,9 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: 'Card',
+	// eslint-disable-next-line vue/multi-word-component-names
+	name: "Card",
 	components: {},
 	props: {
 		heading: {
@@ -11,7 +12,7 @@ export default defineComponent({
 		},
 		body: {
 			type: String,
-			default: '',
+			default: "",
 		},
 		link: {
 			type: String,
@@ -30,27 +31,26 @@ export default defineComponent({
 	computed: {
 		dateUsLong(): string {
 			if (this.pubDate) {
-				const date = new Date(this.$props.pubDate);
-				return new Date(this.$props.pubDate).toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric',
+				return new Date(this.$props.pubDate).toLocaleDateString("en-US", {
+					year: "numeric",
+					month: "long",
+					day: "numeric",
 				});
 			}
 
-			return '';
+			return "";
 		},
 		dateDatetime(): string {
 			if (this.pubDate) {
 				const date = new Date(this.$props.pubDate);
 				const year = date.getFullYear();
-				const numericMonth = String(date.getMonth() + 1).padStart(2, '0');
-				const numericDay = String(date.getDate()).padStart(2, '0');
+				const numericMonth = String(date.getMonth() + 1).padStart(2, "0");
+				const numericDay = String(date.getDate()).padStart(2, "0");
 
 				return `${year}-${numericMonth}-${numericDay}`;
 			}
 
-			return '';
+			return "";
 		},
 	},
 });
@@ -58,14 +58,22 @@ export default defineComponent({
 
 <template>
 	<li class="link-card">
-		<a :href=link :target="!emoji ? '_self' : '_blank'">
+		<a :href="link" :target="!emoji ? '_self' : '_blank'">
 			<h3>
 				{{ heading }}
-				<span v-if="emoji !== null" class="emoji" aria-hidden="true">{{ emoji
+				<span
+					v-if="emoji !== null"
+					class="emoji"
+					aria-hidden="true"
+				>{{ emoji
 				}}</span>
-				<span v-else class="arrow" aria-hidden="true">&rarr;</span>
+				<span
+					v-else
+					class="arrow"
+					aria-hidden="true"
+				>&rarr;</span>
 			</h3>
-			<time v-if="pubDate !== null" :datetime=dateDatetime>{{ dateUsLong
+			<time v-if="pubDate !== null" :datetime="dateDatetime">{{ dateUsLong
 			}}</time>
 			<p v-if="body !== ''">
 				{{ body }}
@@ -110,7 +118,6 @@ export default defineComponent({
 		display: block;
 		height: 100%;
 		color: var(--colors-fg-base);
-
 
 		h3 {
 			margin: 0;

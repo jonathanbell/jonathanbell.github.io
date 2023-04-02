@@ -5,4 +5,14 @@
 		"MD036": false,
 		"MD033": false
 	},
+	"eslint.validate": [
+		"javascript",
+		"typescript",
+		"javascriptreact",
+		"typescriptreact",
+		"javascriptvue",
+		"typescriptvue",
+		"vue-html",
+		"vue",
+	],
 }
