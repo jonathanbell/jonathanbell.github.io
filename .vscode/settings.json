@@ -1,0 +1,8 @@
+{
+	"workbench.colorTheme": "Copilot Theme",
+	"markdownlint.config": {
+		"MD041": false,
+		"MD036": false,
+		"MD033": false
+	},
+}
