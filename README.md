@@ -1,23 +1,52 @@
-# Curriculum Vitae of Jonathan Bell
+# Jonathan Bell's personal website 👨‍💻
 
-My online résumé. :)
+Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
-Please feel free to use this as a template for your own Gatsby based résumé but please remember to change the content, thank you.
+## TODOs
 
-## Install
+- [ ] Get ESLint working
 
-Pretty basic [Gatsby](https://www.gatsbyjs.org/) stuff:
+---
 
-1. Install Gatsby globally: `npm install --global gatsby-cli`
-1. `git clone https://github.com/jonathanbell/jonathanbell.github.io.git`
-1. `cd jonathanbell.github.io.git`
-1. `npm install`
-1. `npm run dev` to develop and `npm run build` when you are ready to build the Gatsby (static) site
+This site holds:
 
-If you want to run a production copy of the site do: `gatsby build && gatsby serve`
+1. My online résumé. 😃
+1. My blog
+1. A listing of my past and current projects
+1. Links to my social media, etc.
+
+Please feel free to use this repo as a template for your own résumé but please also remember to change the content, thank you!
+
+This blog and project website is built with [Astro](https://docs.astro.build). 🚀
+
+## Installation
+
+1. Clone this repository: `git clone git@github.com:jonathanbell/jonathanbell.github.io.git jonathanbell.ca`
+1. `cd jonathanbell.ca`
+1. `npm i`
+1. `npm run dev` will run the site locally with the [Vite](https://vitejs.dev/) server
+
+## Developer commands
+
+All commands are run from the root of the project:
+
+| Command                | Action                                           |
+| :--------------------- | :----------------------------------------------- |
+| `npm install`          | Installs dependencies                            |
+| `npm run dev`          | Starts local dev server at `localhost:3000`      |
+| `npm run test`         | Run unit tests                                   |
+| `npm run test:all`     | Run unit & node tests                            |
+| `npm run build`        | Build your production site to `./dist/`          |
+| `npm run preview`      | Preview your build locally, before deploying     |
+| `npm run astro ...`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
+| `npm run astro --help` | Get help using the Astro CLI                     |
 
 ## Deploying
 
-This site uses [GitHub Pages](https://pages.github.com/) and the [gh-pages Gatsby plugin](https://www.gatsbyjs.org/docs/how-gatsby-works-with-github-pages/) in order to deploy to <https://jonathanbell.github.io/>.
+1. `npm run build`
+1. Upload the static files to your favorite static site host. I like [Netlify](https://www.netlify.com/) and [GitHub Pages](https://pages.github.com/).
 
-GitHub requires that the `master` branch be used for static files in the case of a "personal" or "organization" page. As such, be sure to edit code on the default `gatsby-source` branch of this repo and then run `npm run deploy` in order to deploy automatically to the `master` branch.
+## TODOs
+
+- [ ] Get ESLint working and lint all Astro, TS and Vue files
+- [ ] Update resume content
