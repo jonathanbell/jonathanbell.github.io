@@ -1,19 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: 'Footer',
+	name: "SiteFooter",
 	props: {},
 });
 </script>
 
 <template>
 	<footer>
-		<h2 class="section-header">Social</h2>
+		<h2 class="section-header">
+			Social
+		</h2>
 		<div>
 			<nav>
 				<a
-					href="https://www.linkedin.com/in/jonathan-bell-331578176/">LinkedIn</a>
+					href="https://www.linkedin.com/in/jonathan-bell-331578176/"
+				>LinkedIn</a>
 				<a href="https://github.com/jonathanbell">GitHub</a>
 				<a href="https://www.instagram.com/jonathanbell.world/">Instagram</a>
 				<a href="https://twitter.com/__jonathanbell">Twitter</a>

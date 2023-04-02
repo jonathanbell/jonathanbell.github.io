@@ -1,15 +1,16 @@
 {
-  "extends": [
-    "development"
-  ],
-  "hints": {
-    "compat-api/css": [
-      "default",
-      {
-        "ignore": [
-          "-moz-text-size-adjust"
-        ]
-      }
-    ]
-  }
+	"extends": [
+		"development"
+	],
+	"hints": {
+		"compat-api/css": [
+			"default",
+			{
+				"ignore": [
+					"-moz-text-size-adjust",
+					"@page"
+				]
+			}
+		]
+	}
 }

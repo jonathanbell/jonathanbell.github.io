@@ -1,43 +1,46 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Card from './Card.vue';
+import { defineComponent } from "vue";
 
 export default defineComponent({
-	name: 'CardSection',
-	components: {
-		Card
+	name: "CardSection",
+	components: {},
+
+	props: {
+		sectionTitle: {
+			type: String,
+			default: "",
+		},
 	},
 
 	data() {
 		return {
 			id: 1,
-		}
-	},
-
-	props: {
-		sectionTitle: {
-			type: String,
-			default: '',
-		},
+		};
 	},
 
 	computed: {
 		sectionId(): string {
-			if (this.sectionTitle === '') {
+			if (this.sectionTitle === "") {
+				// eslint-disable-next-line vue/no-side-effects-in-computed-properties
 				return `section-${this.id++}`;
 			}
-			return this.sectionTitle.toLowerCase().replace(/\s/g, '-');
-		}
-	}
+			return this.sectionTitle.toLowerCase().replace(/\s/g, "-");
+		},
+	},
 });
 </script>
 
 <template>
-	<section :id=sectionId>
-		<h2 v-if="sectionTitle !== ''" class="section-header">{{ sectionTitle }}</h2>
-		<h2 v-else class="screenreader-only">Links</h2>
+	<section :id="sectionId">
+		<h2 v-if="sectionTitle !== ''" class="section-header">
+			{{ sectionTitle }}
+		</h2>
+		<h2 v-else class="screenreader-only">
+			Links
+		</h2>
 		<ul
-			:class="sectionTitle !== '' ? 'card-container' : 'card-container--without-heading'">
+			:class="sectionTitle !== '' ? 'card-container' : 'card-container--without-heading'"
+		>
 			<slot />
 		</ul>
 	</section>

@@ -19,7 +19,7 @@ export default defineComponent({
 </script>
 
 <template>
-	<a :href=link>{{ text }}</a>
+	<a :href="link">{{ text }}</a>
 </template>
 
 <style scoped lang="scss">

@@ -1,11 +1,12 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Footer from './Footer.vue';
+import { defineComponent } from "vue";
+import SiteFooter from "./SiteFooter.vue";
 
 export default defineComponent({
+	// eslint-disable-next-line vue/multi-word-component-names
 	name: "Blogroll",
 	components: {
-		Footer,
+		SiteFooter,
 	},
 	data() {
 		return {
@@ -13,7 +14,7 @@ export default defineComponent({
 				{
 					heading: "Are You a Real Rock Climber?",
 					link: "http://www.climbing.com/news/real-rock-climber/",
-					body: "Imposter syndrome is not exclusive to software development"
+					body: "Imposter syndrome is not exclusive to software development",
 				},
 				{
 					heading: "Are You Climbing Enough?",
@@ -121,7 +122,7 @@ export default defineComponent({
 					link: "http://sendage.com/sendlists/view/4ed551b85392f",
 					body: "A list of the top 100 boulder problems in Squamish, BC",
 				},
-			]
+			],
 		};
 	},
 });
@@ -132,14 +133,19 @@ export default defineComponent({
 		<h2>Blogroll</h2>
 		<!-- <p>Remember the "old days"?</p> -->
 		<ul class="blogroll">
-			<li v-for="(link, index) in links" :key="index">
-				<a :title="link.body ? link.body : ''" :href="link.link"
-					target="_blank">{{
-						link.heading }}</a>
+			<li
+				v-for="(link, index) in links"
+				:key="index"
+			>
+				<a
+					:title="link.body ? link.body : ''"
+					:href="link.link"
+					target="_blank"
+				>{{ link.heading }}</a>
 			</li>
 		</ul>
 	</section>
-	<Footer />
+	<SiteFooter />
 </template>
 
 <style scoped lang="scss">

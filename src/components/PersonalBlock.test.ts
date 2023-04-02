@@ -2,7 +2,6 @@ import PersonalBlock from "./PersonalBlock.vue";
 import { mount } from "@vue/test-utils";
 
 describe("PersonalBlock", () => {
-
 	it("mounts and renders a message", () => {
 		const wrapper = mount(PersonalBlock);
 		expect(wrapper.text()).toContain("is a full-stack web developer");
@@ -10,7 +9,7 @@ describe("PersonalBlock", () => {
 
 	it("accepts and displays props appropriately", async () => {
 		const wrapper = mount(PersonalBlock);
-		await wrapper.setProps({ fullName: 'Marsellus Wallace' });
+		await wrapper.setProps({ fullName: "Marsellus Wallace" });
 
 		const screenReaderText = wrapper.find(".screenreader-only");
 		expect(screenReaderText.text()).toBe("Marsellus Wallace");
@@ -26,5 +25,4 @@ describe("PersonalBlock", () => {
 		expect(detailsContent.isVisible()).toBe(true);
 		expect(detailsContent.text()).toContain("photo");
 	});
-
 });
