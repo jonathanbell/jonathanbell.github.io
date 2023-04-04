@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/Main.astro
-title: Resume
+title: Résumé
 description: The personal curriculum vitea of Jonathan Bell
 ---
 
@@ -8,7 +8,7 @@ description: The personal curriculum vitea of Jonathan Bell
 
 Friendly web developer residing in Victoria BC with over ten years of experience developing and building robust, high-volume commercial and government websites/apps; proficient in JavaScript (Node, ES6, React, Vanilla JS), PHP (Laravel, Drupal), HTML, relational and non-relational databases, CSS3 and Git source control systems.
 
-Secure a position with a small to medium-sized (5- 1000 employees), local or remotely-based company as a web developer. The company should have a collaborative and welcoming culture as well as opportunities for potential long-term growth into full stack engineering positions.
+Secure a position with a small to medium-sized (5 - 1000 employees), local or remotely-based company as a web developer. The company should have a collaborative and welcoming culture as well as opportunities for potential long-term growth into full stack engineering positions.
 
 ## Skills
 

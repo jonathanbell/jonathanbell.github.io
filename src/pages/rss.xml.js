@@ -20,9 +20,9 @@ export async function get(context) {
 
 	return rss({
 		// `<title>` field in output xml
-		title: "Jonathan Bell",
+		title: "Jonathan Bell, Software Developer",
 		// `<description>` field in output xml
-		description: "Jonathan Bell, software developer & photographer",
+		description: "Jonathan Bell, software developer & photographer from Canada",
 		// Pull in your project "site" from the endpoint context
 		// https://docs.astro.build/en/reference/api-reference/#contextsite
 		site: context.site,
