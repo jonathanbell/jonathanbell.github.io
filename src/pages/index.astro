@@ -1,13 +1,12 @@
 ---
-import Homepage from '../layouts/Homepage.astro';
-import CardSection from '../components/CardSection.vue';
-import Card from '../components/Card.vue';
-import PersonalBlock from '../components/PersonalBlock.vue';
-import Counter from '../components/Counter.vue';
+import Homepage from "../layouts/Homepage.astro";
+import CardSection from "../components/CardSection.vue";
+import Card from "../components/Card.vue";
+import PersonalBlock from "../components/PersonalBlock.vue";
 
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
-const projectsCollection = await getCollection('projects');
+const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.map((project) => {
 	return {
 		heading: project.data.name.trim(),
@@ -19,21 +18,22 @@ const projects = projectsCollection.map((project) => {
 });
 
 // https://docs.astro.build/en/reference/api-reference/#markdown-files
-const postsData = await Astro.glob('./blog/*.md');
-const posts = postsData.map((post) => {
-	const r = {
-		heading: post.frontmatter.title,
-		body: post.frontmatter.description,
-		link: post.url,
-		pubDate: post.frontmatter.pubDate,
-		emoji: null,
-	};
+const postsData = await Astro.glob("./blog/*.md");
+const posts = postsData
+	.map((post) => {
+		const r = {
+			heading: post.frontmatter.title,
+			body: post.frontmatter.description,
+			link: post.url,
+			pubDate: post.frontmatter.pubDate,
+			emoji: null,
+		};
 
-	return r;
-})
+		return r;
+	})
 	.sort((a, b) => {
-	// https://stackoverflow.com/a/43589315/1171790
-	return +new Date(b.pubDate) - +new Date (a.pubDate);
+		// https://stackoverflow.com/a/43589315/1171790
+		return +new Date(b.pubDate) - +new Date(a.pubDate);
 	})
 	// Limt to 6 posts
 	.slice(0, 6);
@@ -43,27 +43,31 @@ const posts = postsData.map((post) => {
 	<PersonalBlock fullName="Jonathan Bell" />
 
 	<CardSection sectionTitle="Projects">
-		{projects.map((project) => (
-			<Card
-				heading={project.heading}
-				body={project.body}
-				link={project.link}
-				pub-date={project.pubDate}
-				emoji={project.emoji}
-			/>
-		))}
+		{
+			projects.map((project) => (
+				<Card
+					heading={project.heading}
+					body={project.body}
+					link={project.link}
+					pub-date={project.pubDate}
+					emoji={project.emoji}
+				/>
+			))
+		}
 	</CardSection>
 
 	<CardSection sectionTitle="Writing">
-		{posts.map((post) => (
-			<Card
-				heading={post.heading}
-				body={post.body}
-				link={post.link}
-				pub-date={post.pubDate}
-				emoji={post.emoji}
-			/>
-		))}
+		{
+			posts.map((post) => (
+				<Card
+					heading={post.heading}
+					body={post.body}
+					link={post.link}
+					pub-date={post.pubDate}
+					emoji={post.emoji}
+				/>
+			))
+		}
 	</CardSection>
 
 	<!-- Example of `client:load`. Leaving this here so that I don't forget how to do it. -->
