@@ -93,13 +93,19 @@ Proficient:
 - CSS
 - HTML
 - VBA
+- Docker
 
-Familiar:
+Familiar & comfortable:
 
 - SQL
 - Go
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)
 - MongoDB
 - Bash
+
+Keen interest:
+
+- WebAssembly (WASM)
+- Tensorflow
 
 <div style="height: 0.5rem"></div>
