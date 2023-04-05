@@ -30,7 +30,7 @@ export default defineComponent({
 					link: "https://semi-rad.com/2016/05/f-busy/",
 				},
 				{
-					heading: "What Giving Up Coffee May Be Like for You",
+					heading: "Giving Up Coffee",
 					link: "http://semi-rad.com/2017/09/i-gave-up-coffee-for-three-months-and-this-is-what-i-learned",
 					body: "I have a major caffeine sensitivity, so I found this interesting",
 				},
@@ -133,10 +133,7 @@ export default defineComponent({
 		<h2>Blogroll</h2>
 		<!-- <p>Remember the "old days"?</p> -->
 		<ul class="blogroll">
-			<li
-				v-for="(link, index) in links"
-				:key="index"
-			>
+			<li v-for="(link, index) in links" :key="index">
 				<a
 					:title="link.body ? link.body : ''"
 					:href="link.link"

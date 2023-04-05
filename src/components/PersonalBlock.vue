@@ -105,7 +105,7 @@ details {
 			border-style: solid;
 			border-color: transparent transparent transparent var(--colors-accent-deep-secondary);
 			position: absolute;
-			top: 0.2rem;
+			top: 0.25rem;
 			left: 2px;
 			transform: rotate(0);
 			transform-origin: 0.25rem 50%;
