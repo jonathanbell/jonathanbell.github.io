@@ -6,15 +6,15 @@ description: The personal curriculum vitea of Jonathan Bell
 
 ## Contact
 
-- LinkedIn: <https://www.linkedin.com/in/jonathan-bell-331578176/>
+- LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
 - Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
-- Website: [www.jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
+- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
 
 ## Summary
 
-Friendly software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume commercial and government web applications; most proficient in JavaScript (Node, TypeScript, Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
+Software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume commercial and government web applications; most proficient in JavaScript (Node, TypeScript, Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
 
-Seeking a position with a small to medium-sized company as a fullstack or front-end developer. Pursuing companies with collaborative and welcoming cultures as well as opportunities for long-term growth in engineering positions. Ready to work inside an agile development team with an affinity for iterative workflows.
+Seeking a position with a small to medium-sized company as a full-stack or front-end developer. Pursuing companies with collaborative and welcoming cultures as well as opportunities for long-term growth in engineering and management positions. Ready to work inside an agile development team with an affinity for iterative workflows.
 
 Fluent in both written and spoken English and Italian.
 
@@ -28,9 +28,9 @@ _January 2019 to present, Benevity, Victoria BC_
 
 - Utilize VueJS and Laravel to build full-stack corporate giving and engagement products for large to mid-scale global companies
 - Create global corporate seeding service & microfrontend to bulk add funds to user accounts by leveraging Spring Boot, VueJS, AWS Batch, MySQL and PHP
-- Increase product speed and performance by removing extraneous legacy code and/or refactoring functional code into object oriented code with extensive automated testing suites (unit, integration, E2E)
+- Increase product speed and performance by removing extraneous legacy code and/or refactoring functional code into object oriented code with extensive automated testing suites across the testing pyramid (unit, integration, E2E)
 
-**Leverages knowledge in:** Laravel, Vue, TypeScript, OOPHP, Java (Spring Boot),MySQL, JavaScript, CSS, Git, Jenkins, Docker, Jest, PHPUnit, JIRA & Drupal
+**Leveraging knowledge in:** Full-stack web development; Laravel, Vue, TypeScript, OOPHP, Spring Boot (Java), MySQL, JavaScript, CSS, Git, Jenkins (CICD), Docker, Jest, PHPUnit, JIRA & Drupal
 
 ### User Experience Design; Web Developer
 
@@ -38,12 +38,12 @@ _March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC
 
 [Student Success BC](https://studentsuccess.gov.bc.ca/): BC Public Service web application that supports public access and display of BC school data such as school success scores and completion rates
 
-- Implemented PHP/Laravel-based web front-end in order to display back-end Oracle data warehouse school data
+- Implemented PHP/Laravel-based web front-end in order to display back-end data supplied by an Oracle data warehouse
 - Improved public understanding of school data by presenting it in an easy to understand graphical format through the use of Tableau and Laravel
 - Increased internal user/admin happiness/satisfaction by developing internal administration tools and dashboards through the use of custom PHP, CSS, and Bootstrap
 - Utilized Git and CICD to setup "push to deploy" source control workflow for my team
 
-**Leveraged knowledge in:** PHP, Oracle, Laravel, CSS, Git, Drupal & jQuery
+**Leveraged knowledge in:** Full-stack web development; PHP, Oracle, Laravel, CSS, Git, Drupal & jQuery
 
 ### Web Developer
 
@@ -54,7 +54,7 @@ _July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, V
 - Utilized SOAP-based credit checking API to check a student's loan application in a matter of minutes for a drastic improvement in loan application response time (minutes vs days previously)
 - Integrated school lookup tool using AJAX and JavaScript in order to allow students to check school loan eligibility
 
-**Leveraged knowledge in:** PHP, PostgreSQL, Drupal, CSS, jQuery/JavaScript
+**Leveraged knowledge in:** PHP, PostgreSQL, Drupal module creation, CSS, jQuery/JavaScript
 
 ## Software Projects
 
@@ -86,20 +86,26 @@ Graduated with diploma; applied skills acquired in the areas of web design and p
 Proficient:
 
 - JavaScript: Node, TypeScript, Vue, Vanilla, Vite, Sequelize
-- PHP: Laravel, Drupal
+- PHP: Laravel, Drupal, OOPHP
 - Unit testing: PHPUnit, Jest, Vue Test Utils
-- REST APIs
+- HTTP & REST APIs
 - Git
 - CSS
 - HTML
+- VBA
+- Docker
 
-Familiar:
+Familiar & comfortable:
 
 - SQL
 - Go
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)
 - MongoDB
 - Bash
--VBA
+
+Keen interest:
+
+- WebAssembly (WASM)
+- Tensorflow
 
 <div style="height: 0.5rem"></div>
