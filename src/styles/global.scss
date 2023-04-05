@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import './breakpoints';
+
 :root {
 	--colors-bg-base: #f9f8f8;
 	--colors-fg-base: #151717;
@@ -128,7 +130,11 @@ code {
 	}
 
 	code, em {
-		font-size: 1.1rem;
+		font-size: 0.9rem;
+
+		@media (min-width: $breakpoints-small) {
+			font-size: 1.1rem;
+		}
 	}
 
 	h2 code, h3 code, h4 code, h5 code, h6 code {

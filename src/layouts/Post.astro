@@ -33,16 +33,25 @@ const readableDate: string = date.toLocaleDateString("en-US", {
 	// that is brought into the DOM via a slot (like in the case of Markdown).
 	// Here is an example of how to do that.
 
+	@import "../styles/breakpoints";
 	article.content {
 		// These styles are scoped to Posts.
 
 		p,
 		ul {
-			line-height: 1.75;
+			line-height: 1.5;
+
+			@media (min-width: $breakpoints-small) {
+				line-height: 1.75;
+			}
 		}
 
 		h2 {
-			font-size: 3rem;
+			font-size: 2.5rem;
+
+			@media (min-width: $breakpoints-small) {
+				font-size: 3rem;
+			}
 		}
 	}
 </style>

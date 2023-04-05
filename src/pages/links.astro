@@ -105,11 +105,12 @@ const links = [
 						.then(
 							function () {
 								alert(
-									"Jonathan Bell's wallet address has been copied to your clipboard.",
+									"Jonathan Bell's Ethereum wallet address has been copied to your clipboard.",
 								);
 							},
 							function () {
-								const errorMsg = "ERROR: Wallet address NOT copied to clipboard! Error encountered while copying.";
+								const errorMsg =
+									"ERROR: Wallet address NOT copied to clipboard! Error encountered while copying.";
 								console.error(errorMsg);
 								alert(errorMsg);
 							},
@@ -166,7 +167,7 @@ const links = [
 					text-align: center;
 					min-height: calc(3.5rem - 2px);
 					height: 3.5rem;
-					font-size: 1rem;
+					font-size: 0.75rem;
 					background-color: transparent;
 
 					&::selection {
@@ -180,6 +181,10 @@ const links = [
 					@media (prefers-color-scheme: dark) {
 						border: 2px dashed var(--colors-fg-base);
 						color: var(--colors-fg-base);
+					}
+
+					@media (min-width: $breakpoints-small) {
+						font-size: 1rem;
 					}
 				}
 
@@ -240,14 +245,15 @@ const links = [
 
 			footer {
 				text-align: center;
-				margin-top: 2rem;
+				margin-top: 1rem;
 
 				a {
+					opacity: 0.9;
 					font-size: 2rem;
 					text-align: center;
 					vertical-align: middle;
 					display: inline-block;
-					border-radius: 0.25rem;
+					border-radius: 2px;
 					margin: 0 0.25rem;
 					height: 3rem;
 					width: 3rem;
