@@ -30,6 +30,24 @@ if (frontmatter?.description) {
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="description" content={sanitizedDescription} />
+
+		<meta
+			property="og:site_name"
+			content="Jonathan Bell - Full-stack developer"
+		/>
+		<meta property="og:title" content={sanitizedTitle} />
+		<meta property="og:description" content={sanitizedDescription} />
+		<meta property="og:type" content="article" />
+		<meta property="og:image" content="/icons/me5.jpg" />
+		<meta
+			property="og:image:alt"
+			content="A silhouetted Jonathan Bell sits upon a twisted piece of metal that appears to be part of an old bridge"
+		/>
+		<meta property="og:image:width" content="506" />
+		<meta property="og:image:height" content="506" />
+		<meta property="twitter:site" content="@__jonathanbell" />
+		<meta property="article:publisher" content="https://www.jonathanbell.ca" />
+
 		<link
 			rel="icon"
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>"
