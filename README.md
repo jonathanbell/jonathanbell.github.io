@@ -38,6 +38,8 @@ All commands are run from the root of the project:
 | `npm run dev`          | Starts local dev server at `localhost:3000`      |
 | `npm run test`         | Run unit tests                                   |
 | `npm run test:all`     | Run unit & node tests                            |
+| `npm run lint`         | Run ESLint over Vue, TS, Astro, and JS files     |
+| `npm run lint:fix`     | Run ESLint: Vue, TS, Astro, and JS files + fix   |
 | `npm run build`        | Build your production site to `./dist/`          |
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |

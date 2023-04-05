@@ -37,7 +37,13 @@ module.exports = {
 		quotes: ["error", "double"],
 		indent: ["error", "tab"],
 		"no-console": ["error", { allow: ["warn", "info", "error"] }],
-		"comma-dangle": ["error", "always-multiline"],
+		"comma-dangle": ["error", {
+			arrays: "always-multiline",
+			objects: "always-multiline",
+			imports: "always-multiline",
+			exports: "always-multiline",
+			functions: "never",
+		}],
 		"space-before-function-paren": ["error", {
 			anonymous: "always",
 			named: "never",

@@ -113,6 +113,19 @@ code {
 .content {
 	font-size: 1.188rem;
 
+	ul, ol, h2, h3, h4, h5 {
+		// Attempt to fix long URLs and words breaking out of their containers.
+		overflow-wrap: break-word; word-wrap: break-word; // These two are technically the same, but use both, just in case.
+		-ms-word-break: break-all;
+		word-break: break-word;
+
+		// Adds a hyphen where the word breaks, if supported.
+		// -ms-hyphens: auto;
+		// -moz-hyphens: auto;
+		// -webkit-hyphens: auto;
+		// hyphens: auto;
+	}
+
 	.card-container, .link-container {
 		font-size: 1rem;
 	}
@@ -130,7 +143,7 @@ code {
 	}
 
 	code, em {
-		font-size: 0.9rem;
+		font-size: 1rem;
 
 		@media (min-width: $breakpoints-small) {
 			font-size: 1.1rem;
