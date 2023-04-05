@@ -5,7 +5,7 @@ Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 ## TODOs
 
 - [x] Get ESLint working
-- [ ] Update resume content
+- [x] Update resume content
 - [ ] Add "[uses](https://github.com/wesbos/awesome-uses/)" page
 
 ---

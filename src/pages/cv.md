@@ -4,55 +4,74 @@ title: Résumé
 description: The personal curriculum vitea of Jonathan Bell
 ---
 
-## Objective
+## Contact
 
-Friendly web developer residing in Victoria BC with over ten years of experience developing and building robust, high-volume commercial and government websites/apps; proficient in JavaScript (Node, ES6, React, Vanilla JS), PHP (Laravel, Drupal), HTML, relational and non-relational databases, CSS3 and Git source control systems.
+- LinkedIn: <https://www.linkedin.com/in/jonathan-bell-331578176/>
+- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
+- Website: [www.jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
 
-Secure a position with a small to medium-sized (5 - 1000 employees), local or remotely-based company as a web developer. The company should have a collaborative and welcoming culture as well as opportunities for potential long-term growth into full stack engineering positions.
+## Summary
 
-## Skills
+Friendly software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume commercial and government web applications; most proficient in JavaScript (Node, TypeScript, Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
 
-Creation of user-authenticated web apps based in NodeJS and PHP. Development and implementation of user-centric websites wrapped in content management systems.
-
-Comfortable writing front-end templates as well as server-side logic.
-
-Implementation of static designs to live production websites from graphic designers using modern tools such as Gatsby and Wordpress.
-
-Accomplished in the use of client-side and server- side JavaScript (such as React and Node), MySQL, MongoDB, front-end templating languages such as Blade and Pug, Webpack, Bash and Linux web server administration, Git + GitHub & SVN source control systems, as well as JIRA project tracking software. Ready to work inside an agile development team with an affinity for iterative workflows.
-
-Familiar with testing suites such as Jest and PHPUnit, Amazon Web Services (specifically EC2, S3 & SES), REST APIs (such as Strava & QuestTrade), Shopify and the Liquid templating language.
+Seeking a position with a small to medium-sized company as a fullstack or front-end developer. Pursuing companies with collaborative and welcoming cultures as well as opportunities for long-term growth in engineering positions. Ready to work inside an agile development team with an affinity for iterative workflows.
 
 Fluent in both written and spoken English and Italian.
 
-## Experience
+## Employment
 
-### User Experience Design; Developer
+### Software Developer 2
+
+_January 2019 to present, Benevity, Victoria BC_
+
+[Benevity Spark](https://benevity.com/): Corporate payroll giving platform supporting 900+ companies/clients across the globe
+
+- Utilize VueJS and Laravel to build full-stack corporate giving and engagement products for large to mid-scale global companies
+- Create global corporate seeding service & microfrontend to bulk add funds to user accounts by leveraging Spring Boot, VueJS, AWS Batch, MySQL and PHP
+- Increase product speed and performance by removing extraneous legacy code and/or refactoring functional code into object oriented code with extensive automated testing suites (unit, integration, E2E)
+
+**Leverages knowledge in:** Laravel, Vue, TypeScript, OOPHP, Java (Spring Boot),MySQL, JavaScript, CSS, Git, Jenkins, Docker, Jest, PHPUnit, JIRA & Drupal
+
+### User Experience Design; Web Developer
 
 _March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC_
 
-As lead developer, created a Laravel-based web application that allowed the public to view British Columbia school and school district data in graphical forms. Previously this data was only available in tabular formats and, as such, was difficult for the public to interpret.
+[Student Success BC](https://studentsuccess.gov.bc.ca/): BC Public Service web application that supports public access and display of BC school data such as school success scores and completion rates
 
-Maintained, updated and developed internet and intranet facing content management systems using Drupal/PHP, jQuery/Javascript, MySQL/Oracle, and CSS by developing custom modules that allowed content owners easier publication and curation of their content on BC government web properties.
+- Implemented PHP/Laravel-based web front-end in order to display back-end Oracle data warehouse school data
+- Improved public understanding of school data by presenting it in an easy to understand graphical format through the use of Tableau and Laravel
+- Increased internal user/admin happiness/satisfaction by developing internal administration tools and dashboards through the use of custom PHP, CSS, and Bootstrap
+- Utilized Git and CICD to setup "push to deploy" source control workflow for my team
 
-Developed new Git "push to deploy" source control workflow for my web team, thus cutting down deployment time significantly and reducing human error while deploying new code to production or staging environments.
+**Leveraged knowledge in:** PHP, Oracle, Laravel, CSS, Git, Drupal & jQuery
 
 ### Web Developer
 
 _July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, Victoria BC_
 
-Connected front-end user interactions to back-end credit checking API during the student loan application process. While working on a team, converted the old (paper-based) student loan application process to a new web-based loan application process. This change cut a student's loan application response time down to approximately one day verses weeks of waiting for a paper response in the mail.
+[StudentAid BC](https://studentaidbc.ca/): British Columbia student loan application website; where students apply for loans in British Columbia
 
-### Web Developer, Freelance
+- Utilized SOAP-based credit checking API to check a student's loan application in a matter of minutes for a drastic improvement in loan application response time (minutes vs days previously)
+- Integrated school lookup tool using AJAX and JavaScript in order to allow students to check school loan eligibility
 
-_January 2014 to present_
+**Leveraged knowledge in:** PHP, PostgreSQL, Drupal, CSS, jQuery/JavaScript
 
-Designed, built and implemented front-end solutions for new social media based corporate intranet with Drupal backend. The new intranet allowed workers to collaborate more effectively and easily share ideas about upcoming work, thus reducing replicated work and improving communication around projects; a sometimes difficult task inside an organization of over 30,000 people.
+## Software Projects
 
-Realized new functionality from mockups and wireframes while developing new custom responsive theme for Drupal site, preserving all original content and adapting it to small screen sizes. This allowed users to use the site while commuting or while out of the office at events, etc. This increased the traffic and engagement of the site by over 15%.
+### Personal Website ([jonathanbell.ca](https://jonathanbell.ca))
 
-Design, build and maintain custom websites and web apps for small businesses and corporate bodies.
+- Developed an [Astro](https://astro.build/) personal site/blog site using [Vue](https://vuejs.org/) and TypeScript that allows users to learn a little bit more about me
+- Added [Jest](https://jestjs.io/) unit tests and [ESLint](https://eslint.org/) for better test driven development and less bug-prone code
 
-Meet expectations of clients while expanding knowledge of World Wide Web Consortium (W3C) specifications, accessibility best practices, and network performance/speed gains.
+**Utilized:** Vue, Jest, Astro, TypeScript, CSS Grid
+
+### Blizzard Judge ([github.com/jonathanbell/blizzard-judge](https://github.com/jonathanbell/blizzard-judge))
+
+- Created a web app to answer the age old question, "Which is the very best Dairy Queen® blizzard?"
+- Added voting, reviewing and commenting functionality for users by utilizing MongoDB, and the Mongoose Node package to record and tabulate Blizzard data
+- Allowed the uploading of individual Blizzard images by leveraging the Cloudinary API for storage and display of images
+
+**Utilized:** Node, CSS, JavaScript, MongoDB, Mongoose, 3rd party APIs (Cloudinary, YouTube)
 
 ## Education
 
@@ -62,8 +81,25 @@ _January 2007, Instituto di Design, Milan, Italy_
 
 Graduated with diploma; applied skills acquired in the areas of web design and photography.
 
-## Contact
+## Software Skills
 
-Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
+Proficient:
+
+- JavaScript: Node, TypeScript, Vue, Vanilla, Vite, Sequelize
+- PHP: Laravel, Drupal
+- Unit testing: PHPUnit, Jest, Vue Test Utils
+- REST APIs
+- Git
+- CSS
+- HTML
+
+Familiar:
+
+- SQL
+- Go
+- Amazon Web Services (specifically Lambda, EC2, S3 & SES)
+- MongoDB
+- Bash
+-VBA
 
 <div style="height: 0.5rem"></div>
