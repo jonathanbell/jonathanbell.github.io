@@ -20,6 +20,7 @@ const projects = projectsCollection.map((project) => {
 // https://docs.astro.build/en/reference/api-reference/#markdown-files
 const postsData = await Astro.glob("./blog/*.md");
 const posts = postsData
+	.filter((post) => !post.frontmatter.title.includes("DRAFT"))
 	.map((post) => {
 		const r = {
 			heading: post.frontmatter.title,
