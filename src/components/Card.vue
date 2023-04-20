@@ -150,10 +150,13 @@ export default defineComponent({
 		}
 
 		time {
-			font-size: 0.9rem;
+			font-size: 0.75rem;
+			font-weight: 500;
 		}
 
 		p {
+			font-size: 0.9rem;
+			font-weight: normal;
 			margin-top: 0.5rem;
 			margin-bottom: 0;
 			line-height: inherit;
