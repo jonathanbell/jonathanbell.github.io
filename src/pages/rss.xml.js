@@ -2,9 +2,10 @@ import rss from "@astrojs/rss";
 import sanitizeHtml from "sanitize-html";
 
 export async function get(context) {
-	const postImportResult = import.meta.glob("./blog/*.md", { eager: true })
+	const postImportResult = import.meta.glob("./blog/*.md", { eager: true });
+
+	const posts = Object.values(postImportResult)
 		.filter((post) => !post.frontmatter.title.includes("DRAFT"));
-	const posts = Object.values(postImportResult);
 
 	const items = posts.map((post) => {
 		const p = {
