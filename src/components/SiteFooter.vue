@@ -48,10 +48,10 @@ footer {
 		margin: 2rem 0 1rem 0;
 		font-size: 0.9rem;
 		font-family: monospace;
+		text-align: center;
 
 		@media (min-width: $breakpoints-medium) {
 			margin-top: 4rem;
-			text-align: center;
 		}
 
 		a {

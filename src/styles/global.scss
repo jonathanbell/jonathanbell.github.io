@@ -54,6 +54,14 @@ html {
 
 	margin: 0;
 	background-color: var(--colors-bg-base);
+
+	&::before {
+		content: '';
+		display: block;
+		background: linear-gradient(90deg, var(--colors-accent-deep) 0%, var(--colors-brand-base) 20%, var(--colors-accent-deep-secondary) 60%, var(--colors-accent-light-secondary) 85%, var(--colors-accent-light) 95%);
+		height: 0.5rem;
+		width: 100%;
+	}
 }
 
 *,
