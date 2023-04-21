@@ -155,7 +155,7 @@ export default defineComponent({
 		}
 
 		p {
-			font-size: 0.9rem;
+			font-size: 1rem;
 			font-weight: normal;
 			margin-top: 0.5rem;
 			margin-bottom: 0;
