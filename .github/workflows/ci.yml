@@ -1,0 +1,27 @@
+name: CI Tests
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - "**"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # This step uses the `actions/checkout` action to download a copy of your repository on the runner.
+      - uses: actions/checkout@v3
+      # This step uses the `actions/setup-node` action to set up Node.js for each version indicated by the `matrix.node-version` key above.
+      - name: Use Node v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      # This step runs `npm ci` to install any dependencies listed in your `package.json` file.
+      - run: npm ci
+      # This step runs the `build` script if there is one specified under the `scripts` key in your `package.json` file.
+      - run: npm run build
+      # Run the tests.
+      - run: npm test
