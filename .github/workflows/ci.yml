@@ -5,7 +5,8 @@ on:
       - main
   push:
     branches:
-      - "**"
+      - main
+      # - "**"
 
 jobs:
   build:
@@ -20,7 +21,7 @@ jobs:
         with:
           node-version: "18.x"
       # This step runs `npm ci` to install any dependencies listed in your `package.json` file.
-      - run: npm ci
+      # - run: npm ci
       # This step runs the `build` script if there is one specified under the `scripts` key in your `package.json` file.
       - run: npm run build
       # Run the tests.
