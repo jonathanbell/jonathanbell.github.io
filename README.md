@@ -7,6 +7,7 @@ Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 - [x] Get ESLint working
 - [x] Update resume content
 - [ ] Add "[uses](https://github.com/wesbos/awesome-uses/)" page
+- [ ] Update Node deps.
 
 ---
 
