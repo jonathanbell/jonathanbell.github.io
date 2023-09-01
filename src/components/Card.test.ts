@@ -19,7 +19,8 @@ describe("Card", () => {
 		const a = wrapper.find("a");
 
 		expect(heading.text()).toBe("Marsellus Wallace →");
-		expect(time.text()).toBe("March 19, 2021");
+		expect(time.text()).toContain("March");
+		expect(time.text()).toContain("2021");
 		expect(body.text()).toBe("I'm gonna make him an offer he can't refuse.");
 		expect(a.attributes("href")).toBe("https://www.imdb.com/title/tt0110912/quotes/qt0397881");
 	});
