@@ -1,4 +1,4 @@
-name: Deploy my Astro site to GitHub Pages
+name: Deploy Astro site to GitHub Pages
 
 on:
   push:
@@ -24,11 +24,27 @@ env:
   BUILD_PATH: "."
 
 jobs:
+  test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.10.0" # LTS version
+      - name: Install dependencies
+        run: npm ci
+      - name: Run unit tests
+        run: npm test
+
   build:
+    needs: test
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v3
       - name: Detect package manager
         id: detect-package-manager
@@ -50,7 +66,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: "20.10.0" # LTS version
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Setup Pages
@@ -59,7 +75,7 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
-      - name: Build with Astro
+      - name: Build Astro
         run: |
           ${{ steps.detect-package-manager.outputs.runner }} astro build \
             --site "${{ steps.pages.outputs.origin }}" \
@@ -71,12 +87,12 @@ jobs:
           path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
+    needs: build
+    name: Deploy
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    needs: build
     runs-on: ubuntu-latest
-    name: Deploy
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
