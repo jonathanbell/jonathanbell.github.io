@@ -1,7 +1,7 @@
 ---
 title: Using rsync as a Backup Method
 description:
-pubDate: 2018-06-30
+publishDate: 2018-06-30
 layout: ../../layouts/Post.astro
 ---
 

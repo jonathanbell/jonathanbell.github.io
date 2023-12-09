@@ -1,14 +1,8 @@
 ---
-layout: ../layouts/Main.astro
+layout: ../layouts/BaseLayout.astro
 title: Résumé
 description: The personal curriculum vitea of Jonathan Bell
 ---
-
-## Contact
-
-- LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
-- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
-- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
 
 ## Summary
 
@@ -108,4 +102,8 @@ Keen interest:
 - WebAssembly (WASM)
 - Tensorflow
 
-<div style="height: 0.5rem"></div>
+## Contact
+
+- LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
+- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
+- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)

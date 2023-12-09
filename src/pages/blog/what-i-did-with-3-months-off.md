@@ -1,7 +1,7 @@
 ---
 title: What I Did with 3 Months
 description: How I spent my coding sabbatical
-pubDate: 2018-12-29
+publishDate: 2018-12-29
 layout: ../../layouts/Post.astro
 ---
 

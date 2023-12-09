@@ -1,30 +1,33 @@
 ---
-import Main from "../../layouts/Main.astro";
-import CardSection from "../../components/CardSection.vue";
-import Card from "../../components/Card.vue";
-import Blogroll from "../../components/Blogroll.vue";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CardSection from "../../components/CardSection.astro";
+import Card from "../../components/Card.astro";
+import Blogroll from "../../components/Blogroll.astro";
 
 let posts = await Astro.glob("./*.md");
 posts = posts
-	.filter((post) => !post.frontmatter.title.includes("DRAFT"))
-	.sort((a, b) => {
-		return +new Date(b.frontmatter.pubDate) - +new Date(a.frontmatter.pubDate);
-	});
+  .filter((post) => !post.frontmatter.title.includes("DRAFT"))
+  .sort((a, b) => {
+    return (
+      +new Date(b.frontmatter.publishDate) -
+      +new Date(a.frontmatter.publishDate)
+    );
+  });
 ---
 
-<Main title="Blog" description="Jonathan Bell's thoughts and feelings">
-	<CardSection section-title="Blog">
-		{
-			posts.map((post) => (
-				<Card
-					heading={post.frontmatter.title}
-					body={post.frontmatter.description}
-					link={post.url}
-					pub-date={post.frontmatter.pubDate}
-					emoji={post.frontmatter.emoji}
-				/>
-			))
-		}
-	</CardSection>
-	<Blogroll />
-</Main>
+<BaseLayout title="Blog" description="Jonathan Bell's thoughts and feelings">
+  <CardSection sectionTitle="Blog">
+    {
+      posts.map((post) => (
+        <Card
+          heading={post.frontmatter.title}
+          body={post.frontmatter.description}
+          pub-date={post.frontmatter.publishDate}
+          link={post.url || ""}
+          emoji={post.frontmatter.emoji}
+        />
+      ))
+    }
+  </CardSection>
+  <Blogroll />
+</BaseLayout>

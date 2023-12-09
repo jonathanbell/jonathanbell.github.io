@@ -1,7 +1,7 @@
 ---
 title: Getting Data from a 3rd Party API with VBA
 description: Making GET and POST requests with VBA
-pubDate: 2019-01-30
+publishDate: 2019-01-30
 layout: ../../layouts/Post.astro
 ---
 

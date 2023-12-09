@@ -1,7 +1,7 @@
 ---
 title: Connecting PHP to LDAP
 description: If I'm being honest, connecting PHP to LDAP was a little frustrating
-pubDate: 2017-02-20
+publishDate: 2017-02-20
 layout: ../../layouts/Post.astro
 ---
 
