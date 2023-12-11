@@ -5,9 +5,10 @@ interface Props {
   publishDate?: string;
   link: string;
   emoji?: string;
+  testId?: string;
 }
 
-const { heading, body, publishDate, link, emoji } = Astro.props;
+const { heading, body, publishDate, link, emoji, testId } = Astro.props;
 
 const dateUsLong = (): string => {
   if (publishDate) {
@@ -35,7 +36,7 @@ const dateDatetime = (): string => {
 };
 ---
 
-<li class="link-card">
+<li class="link-card" data-testid={testId ? testId : "link-card"}>
   <a href={link} target={emoji ? "_blank" : "_self"}>
     <h3>
       <span>{heading}</span>
@@ -81,7 +82,7 @@ const dateDatetime = (): string => {
     }
 
     @media (min-width: $breakpoints-large) {
-      aspect-ratio: 1;
+      aspect-ratio: 2;
       padding: 0.25rem;
     }
 

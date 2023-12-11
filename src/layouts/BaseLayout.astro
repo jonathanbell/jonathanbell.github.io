@@ -5,22 +5,30 @@ import SiteFooter from "../components/SiteFooter.astro";
 interface Props {
   title: string;
   description: string;
+  frontmatter?: {
+    title: string;
+    description: string;
+  };
 }
 
-const { title, description } = Astro.props;
+const { title, description, frontmatter } = Astro.props;
 
-let webSafeTitle = "Jonathan Bell";
-webSafeTitle = title;
+let pageTitle = "Jonathan Bell";
+let pageDescription = "Jonathan Bell, Software Developer";
 
-let webSafeDescription = "Jonathan Bell, software developer";
-webSafeDescription = description;
+if (frontmatter?.title && frontmatter?.description) {
+  pageTitle = "Jonathan Bell - " + frontmatter.title;
+  pageDescription = frontmatter.description;
+} else if (title && description) {
+  pageTitle = title;
+}
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={webSafeDescription} />
+    <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width" />
     <link
       rel="icon"
@@ -31,8 +39,8 @@ webSafeDescription = description;
       property="og:site_name"
       content="Jonathan Bell - Full-stack developer"
     />
-    <meta property="og:title" content={webSafeTitle} />
-    <meta property="og:description" content={webSafeDescription} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="/icons/me5.jpg" />
     <meta
@@ -50,21 +58,14 @@ webSafeDescription = description;
       href="/rss.xml"
     />
 
-    <title>{webSafeTitle}</title>
+    <title>{pageTitle}</title>
   </head>
   <body>
     <SiteHeader />
-    <article class="content">
+    <article class="content" id="main">
       <slot />
     </article>
-    {
-      Astro.request.url === "https://www.jonathanbell.ca/cv" ||
-      Astro.request.url === "http://localhost:4321/cv" ? (
-        <div style="height: 2rem;" />
-      ) : (
-        <SiteFooter />
-      )
-    }
+    <SiteFooter />
     <script>
       // https://www.samanthaming.com/tidbits/40-colorful-console-message/
       // eslint-disable-next-line no-console
@@ -72,6 +73,17 @@ webSafeDescription = description;
         "%cOoo boy you lookin' like you like what you see\nWon't you come over check up on it, I might let you work up on it\nLadies let 'em check up on it, watch he while he check up on it\nDip it, pop it, twerk it, stop it, check on me tonight",
         "color: white; text-shadow: #FC0 1px 0 10px; font-weight: bold; background-position: 0%; background: linear-gradient(345deg, #e14725 -1.13%, #eea508 15.22%, #fbff0e 32.09%, #2d8218 53.97%, #2f1eed 67.94%, #db2272 85.34%, #9b0ac3 99.57%);"
       );
+
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.location.href.includes("/cv")) {
+          const main = document.getElementById("main");
+          const footer = document.getElementById("footer");
+          if (main && footer) {
+            footer.style.display = "none";
+            main.style.marginBottom = "2rem";
+          }
+        }
+      });
     </script>
   </body>
 </html>

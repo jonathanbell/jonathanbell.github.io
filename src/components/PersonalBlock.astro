@@ -8,14 +8,17 @@ const sAge = Math.floor(
 ).toString();
 ---
 
-<details>
-  <summary>
+<details data-testid="personal-block__details">
+  <summary data-testid="personal-block__details-summary">
     <span class="screenreader-only">{fullName}</span>is a full-stack web
     developer<span class="hide-on-x-small-screen">
       at <span class="highlight">Benevity</span></span
     >.
   </summary>
-  <article class="details-content">
+  <article
+    class="details-content"
+    data-testid="personal-block__details-article"
+  >
     <h2 class="screenreader-only">
       About {firstName}
     </h2>
@@ -31,7 +34,7 @@ const sAge = Math.floor(
         href="https://studentaidbc.ca/">StudentAidBC</a
       >.
     </p>
-    <p>
+    <p data-testid="personal-block__copy">
       When not programming, Jonathan tends to <a
         href="/pictures/_MG_3954-Edit.jpg"
         target="_blank">climb up small boulders in the woods</a

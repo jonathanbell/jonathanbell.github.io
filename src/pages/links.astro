@@ -24,10 +24,10 @@ const links = [
 ---
 
 <BaseLayout
-  title="Links"
+  title="Jonathan Bell - Personal and Social Media Links"
   description="Jonathan Bell's personal social media and contact links"
 >
-  <div id="links">
+  <div id="links" data-testid="links-section">
     <div class="inner">
       <img
         src="/icons/me5.jpg"
@@ -55,9 +55,9 @@ const links = [
           >0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3</textarea
         >
         <!-- 👆
-					`<textarea>`s content should be all on one line to avoid extra
-					whitespace inside the textarea (when selected).
-				-->
+          `<textarea>`s content should be all on one line to avoid extra
+          whitespace inside the textarea (when selected).
+        -->
         <button
           id="copy-wallet-addr-button"
           title="Click to copy Jonathan's ETH wallet address to the clipboard"
@@ -89,7 +89,7 @@ const links = [
     <script>
       document
         .getElementById("copy-wallet-addr-button")
-        ?.addEventListener("click", function (e) {
+        ?.addEventListener("click", function () {
           navigator.clipboard
             .writeText("0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3")
             .then(

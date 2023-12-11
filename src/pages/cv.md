@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BaseLayout.astro
 title: Résumé
-description: The personal curriculum vitea of Jonathan Bell
+description: The personal online curriculum vitea of Jonathan Bell
 ---
 
 ## Summary

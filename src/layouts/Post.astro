@@ -13,7 +13,10 @@ const readableDate: string = date.toLocaleDateString("en-US", {
 });
 ---
 
-<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+<BaseLayout
+  title={`Jonathan Bell - ${frontmatter.title}`}
+  description={frontmatter.description}
+>
   <time datetime="`${year}-${numericMonth}-${numericDay}`">{readableDate}</time>
   <slot />
 </BaseLayout>

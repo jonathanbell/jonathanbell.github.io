@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["plugin:astro/recommended"],
+  extends: ["standard", "plugin:astro/recommended"],
   overrides: [
     {
       files: ["*.astro"],
@@ -17,4 +17,18 @@ module.exports = {
       },
     },
   ],
+  rules: {
+    quotes: ["error", "double"],
+    semi: ["error", "always"],
+    "comma-dangle": [
+      "error",
+      {
+        arrays: "always-multiline",
+        objects: "always-multiline",
+        imports: "always-multiline",
+        exports: "always-multiline",
+        functions: "never",
+      },
+    ],
+  },
 };

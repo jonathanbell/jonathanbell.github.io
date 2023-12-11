@@ -1,4 +1,3 @@
-
 import { z, defineCollection } from "astro:content";
 
 const projects = defineCollection({
