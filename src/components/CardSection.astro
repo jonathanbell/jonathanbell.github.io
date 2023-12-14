@@ -17,11 +17,13 @@ const sectionId = (): string => {
 
 <section id={sectionId()} data-testid={`card-section--${sectionId()}`}>
   {
-    sectionTitle !== "" ? (
+    sectionTitle !== ""
+      ? (
       <h2 class="section-header">{sectionTitle}</h2>
-    ) : (
+        )
+      : (
       <h2 class="screenreader-only">Links</h2>
-    )
+        )
   }
   <ul
     class={sectionTitle !== ""

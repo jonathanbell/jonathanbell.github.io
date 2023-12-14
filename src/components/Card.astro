@@ -36,20 +36,22 @@ const dateDatetime = (): string => {
 };
 ---
 
-<li class="link-card" data-testid={testId ? testId : "link-card"}>
+<li class="link-card" data-testid={testId || "link-card"}>
   <a href={link} target={emoji ? "_blank" : "_self"}>
     <h3>
       <span>{heading}</span>
       {
-        emoji ? (
+        emoji
+          ? (
           <span class="emoji" aria-hidden="true">
             {emoji}
           </span>
-        ) : (
+            )
+          : (
           <span class="arrow" aria-hidden="true">
             &rarr;
           </span>
-        )
+            )
       }
     </h3>
     {publishDate && <time datetime={dateDatetime()}>{dateUsLong()}</time>}

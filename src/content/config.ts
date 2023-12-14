@@ -3,7 +3,7 @@ import { z, defineCollection } from "astro:content";
 const projects = defineCollection({
   schema: z.object({
     name: z.string(),
-    link: z.string(), // .optional()
+    link: z.string(),
     emoji: z.string(),
   }),
 });
