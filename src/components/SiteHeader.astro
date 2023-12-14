@@ -1,0 +1,91 @@
+---
+import "@fontsource/libre-franklin";
+import "@fontsource/libre-franklin/900.css";
+---
+
+<header>
+  <h1>
+    <a href="/" data-testid="site-header__main-heading--link">Jonathan Bell</a>
+  </h1>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/#projects">Projects</a>
+    <a href="/blog">Blog</a>
+    <a href="/cv">Résumé</a>
+  </nav>
+</header>
+
+<style lang="scss">
+  @import "../styles/breakpoints.scss";
+
+  header {
+    display: grid;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+
+  h1 {
+    font-family: "Libre Franklin", system-ui, sans-serif;
+    font-weight: 900;
+    font-size: 2.25rem;
+    margin: 0;
+
+    @media (min-width: 768px) {
+      font-size: 3.375rem;
+    }
+
+    a {
+      background-position: 0%;
+      background: linear-gradient(
+        345deg,
+        #e14725 -1.13%,
+        var(--colors-accent-light-secondary) 15.22%,
+        var(--colors-accent-light) 32.09%,
+        var(--colors-brand-base-secondary) 53.97%,
+        var(--colors-accent-deep) 67.94%,
+        var(--colors-accent-deep-secondary) 85.34%,
+        var(--colors-brand-base) 99.57%
+      );
+      background-size: 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &:hover {
+        animation: gradient 6s ease;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+
+  nav {
+    order: -1;
+    display: grid;
+    justify-items: end;
+    grid-template-columns: auto auto auto auto auto 1fr;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @media (min-width: $breakpoints-small) {
+      grid-template-columns: 1fr auto auto auto auto auto;
+      gap: 0;
+    }
+
+    a {
+      font-weight: 500;
+
+      @media (min-width: $breakpoints-small) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+</style>

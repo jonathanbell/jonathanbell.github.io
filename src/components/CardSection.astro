@@ -1,0 +1,117 @@
+---
+interface Props {
+  sectionTitle: string;
+}
+
+const { sectionTitle } = Astro.props;
+
+let id = 0;
+
+const sectionId = (): string => {
+  if (sectionTitle === "") {
+    return `section-${id++}`;
+  }
+  return sectionTitle.toLowerCase().replace(/\s/g, "-");
+};
+---
+
+<section id={sectionId()} data-testid={`card-section--${sectionId()}`}>
+  {
+    sectionTitle !== ""
+      ? (
+      <h2 class="section-header">{sectionTitle}</h2>
+        )
+      : (
+      <h2 class="screenreader-only">Links</h2>
+        )
+  }
+  <ul
+    class={sectionTitle !== ""
+      ? "card-container"
+      : "card-container--without-heading"}
+  >
+    <slot />
+  </ul>
+</section>
+
+<style lang="scss">
+  @import "../styles/breakpoints.scss";
+  @import "../styles/utils.scss";
+
+  section {
+    border-top: 1px solid var(--colors-accent-deep-secondary);
+    margin: 4rem 0 2rem 0;
+
+    @media (min-width: $breakpoints-medium) {
+      margin: 6rem 0 2rem 0;
+    }
+
+    &:first-of-type {
+      border-top: none;
+
+      @media (min-width: $breakpoints-medium) {
+        border-top: 1px solid var(--colors-accent-deep-secondary);
+      }
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 1.1rem;
+      color: var(--colors-brand-base-secondary);
+      font-family: system-ui, sans-serif;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+
+    @media (min-width: $breakpoints-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $breakpoints-large) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  .card-container {
+    &--without-heading {
+      margin-top: 4rem;
+    }
+  }
+</style>
+
+<style is:global lang="scss">
+  @import "../styles/breakpoints.scss";
+
+  // Target ID in URL and change background color when selected.
+  section:target ul li.link-card {
+    background-color: var(--colors-brand-base);
+    box-shadow: 1px 1px 4px 1px #393939;
+    transition: background-color 0.1s ease-in-out;
+
+    &:hover {
+      background-color: var(--colors-accent-deep-secondary);
+    }
+
+    a {
+      color: white !important;
+
+      &:hover {
+        color: white !important;
+      }
+    }
+  }
+
+  #projects .link-card {
+    @media (min-width: $breakpoints-large) {
+      aspect-ratio: 1;
+    }
+  }
+</style>

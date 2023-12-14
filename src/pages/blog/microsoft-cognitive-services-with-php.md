@@ -1,7 +1,7 @@
 ---
 title: Microsoft Cognitive Services with PHP
 description: My first use of 3rd party AI
-pubDate: 2018-04-11
+publishDate: 2018-04-11
 layout: ../../layouts/Post.astro
 ---
 

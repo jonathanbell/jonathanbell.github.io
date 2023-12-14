@@ -1,8 +1,15 @@
-# build output
+# build
 dist/
 
 # test output
 coverage/
+/test-results/
+
+# tests
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/tests-examples/
 
 # generated types
 .astro/
@@ -29,11 +36,3 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-# dotenv environment variables file
-.env
-
-# Workfiles
-NOTES.*
-NOTES/
-old site/

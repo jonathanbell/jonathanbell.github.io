@@ -1,7 +1,7 @@
 ---
 title: DRAFT 5 Things Benevity Taught Me
 description: 5 career lessons I learned on the job
-pubDate: 2023-06-20
+publishDate: 2023-06-20
 layout: ../../layouts/Post.astro
 ---
 
