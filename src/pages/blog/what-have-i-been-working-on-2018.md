@@ -1,7 +1,7 @@
 ---
 title: What Have I Been Working On?
 description:
-pubDate: 2018-10-17
+publishDate: 2018-10-17
 layout: ../../layouts/Post.astro
 ---
 

@@ -1,271 +1,265 @@
 ---
-import Main from "../layouts/Main.astro";
-import BigAssButton from "../components/BigAssButton.vue";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BigOlButton from "../components/BigOlButton.astro";
 
 const links = [
-	{
-		link: "http://instagram.com/jonathanbell.world",
-		title: "Instagram: landscapes 🌄",
-	},
-	{
-		link: "http://instagram.com/jonathanbell.photo",
-		title: "Instagram: couples 💘",
-	},
-	{ link: "https://twitter.com/__jonathanbell", title: "Twitter" },
-	{ link: "https://www.strava.com/athletes/jonathanbell", title: "Strava 🧗‍♀️" },
-	{ link: "https://codepen.io/jonathanbell/", title: "Codepen" },
-	{ link: "https://foundation.app/@jonathanbell", title: "NFTs: Foundation" },
-	{ link: "https://opensea.io/jonathanbell/created", title: "NFTs: OpenSea" },
-	{
-		link: "https://discordapp.com/users/ScrntonStrnglr#4067",
-		title: "Discord",
-	},
-	{ link: "https://github.com/jonathanbell", title: "GitHub 👨‍💻" },
-	{ link: "https://log.jonathanbell.ca/", title: "A bunch of old photos" },
+  {
+    link: "http://instagram.com/jonathanbell.world",
+    title: "Instagram: landscapes 🌄",
+  },
+  {
+    link: "http://instagram.com/jonathanbell.photo",
+    title: "Instagram: couples 💘",
+  },
+  { link: "https://www.strava.com/athletes/jonathanbell", title: "Strava 🧗‍♀️" },
+  { link: "https://codepen.io/jonathanbell/", title: "Codepen" },
+  { link: "https://foundation.app/@jonathanbell", title: "NFTs: Foundation" },
+  {
+    link: "https://discordapp.com/users/ScrntonStrnglr#4067",
+    title: "Discord",
+  },
+  { link: "https://github.com/jonathanbell", title: "GitHub 👨‍💻" },
+  { link: "https://log.jonathanbell.ca/", title: "A bunch of old photos" },
 ];
 ---
 
-<Main
-	title="Links"
-	description="Jonathan Bell's personal social media and contact links"
+<BaseLayout
+  title="Jonathan Bell - Personal and Social Media Links"
+  description="Jonathan Bell's personal social media and contact links"
 >
-	<div id="links">
-		<div class="inner">
-			<img
-				src="/icons/me5.jpg"
-				class="avatar"
-				alt="Photo of Jonathan Bell sitting on a twisted piece of metal"
-			/>
-			<p style="text-align: center;">
-				Bad @ Twitter + NFTs. Pretty good at photography and sometimes climbing.
-			</p>
-			<h2>Links</h2>
-			<nav>
-				{
-					links.map((link) => (
-						<BigAssButton text={link.title} link={link.link} />
-					))
-				}
-			</nav>
+  <div id="links" data-testid="links-section">
+    <div class="inner">
+      <img
+        src="/icons/me5.jpg"
+        class="avatar"
+        alt="Photo of Jonathan Bell sitting on a twisted piece of metal"
+      />
+      <p style="text-align: center;">
+        Bad @ Twitter + NFTs. Pretty good at photography and sometimes climbing.
+      </p>
+      <h2>Links</h2>
+      <nav>
+        {
+          links.map((link) => (
+            <BigOlButton text={link.title} link={link.link} />
+          ))
+        }
+      </nav>
 
-			<h2>Wallet Address</h2>
-			<div class="textarea-copy">
-				<textarea
-					readonly="true"
-					title="Jonathan Bell's ETH wallet address"
-					aria-label="Jonathan Bell's ETH wallet address"
-				>0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3</textarea
-				>
-				<!-- 👆
-					`<textarea>`s content should be all on one line to avoid extra
-					whitespace inside the textarea (when selected).
-				-->
-				<button
-					id="copy-wallet-addr-button"
-					title="Click to copy Jonathan's ETH wallet address to the clipboard"
-					aria-label="Click to copy Jonathan Bell's wallet address to your clipboard."
-				>
-					Copy
-				</button>
-			</div>
+      <h2>Wallet Address</h2>
+      <div class="textarea-copy">
+        <textarea
+          readonly="true"
+          title="Jonathan Bell's ETH wallet address"
+          aria-label="Jonathan Bell's ETH wallet address"
+          >0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3</textarea
+        >
+        <!-- 👆
+          `<textarea>`s content should be all on one line to avoid extra
+          whitespace inside the textarea (when selected).
+        -->
+        <button
+          id="copy-wallet-addr-button"
+          title="Click to copy Jonathan's ETH wallet address to the clipboard"
+          aria-label="Click to copy Jonathan Bell's wallet address to your clipboard."
+        >
+          Copy
+        </button>
+      </div>
 
-			<footer>
-				<a
-					title="Email"
-					aria-label="Are you on email?"
-					href="mailto:jonathanbell.ca+site@gmail.com">📬</a
-				>
-				<a
-					title="Twitter"
-					href="https://twitter.com/__jonathanbell"
-					aria-label="Jonathan Bell's Twitter">🐦</a
-				>
-				<a
-					title="Instagram"
-					href="http://instagram.com/jonathanbell.world"
-					aria-label="Jonathan Bell's Instagram">📷</a
-				>
-				<a
-					title="NFTs"
-					href="https://foundation.app/@jonathanbell"
-					aria-label="Jonathan Bell on Foundation App">🎨</a
-				>
-			</footer>
-		</div>
+      <footer>
+        <a
+          title="Email"
+          aria-label="Are you on email?"
+          href="mailto:jonathanbell.ca+site@gmail.com">📬</a
+        >
+        <a
+          title="Instagram"
+          href="http://instagram.com/jonathanbell.world"
+          aria-label="Jonathan Bell's Instagram">📷</a
+        >
+        <a
+          title="NFTs"
+          href="https://foundation.app/@jonathanbell"
+          aria-label="Jonathan Bell on Foundation App">🎨</a
+        >
+      </footer>
+    </div>
 
-		<script>
-			document
-				.getElementById("copy-wallet-addr-button")
-				?.addEventListener("click", function (e) {
-					navigator.clipboard
-						.writeText("0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3")
-						.then(
-							function () {
-								alert(
-									"Jonathan Bell's Ethereum wallet address has been copied to your clipboard."
-								);
-							},
-							function () {
-								const errorMsg =
-									"ERROR: Wallet address NOT copied to clipboard! Error encountered while copying.";
-								console.error(errorMsg);
-								alert(errorMsg);
-							}
-						);
-				});
-		</script>
-	</div>
+    <script>
+      document
+        .getElementById("copy-wallet-addr-button")
+        ?.addEventListener("click", function () {
+          navigator.clipboard
+            .writeText("0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3")
+            .then(
+              function () {
+                alert(
+                  "Jonathan Bell's Ethereum wallet address has been copied to your clipboard."
+                );
+              },
+              function () {
+                const errorMsg =
+                  "ERROR: Wallet address NOT copied to clipboard! Error encountered while copying.";
+                console.error(errorMsg);
+                alert(errorMsg);
+              }
+            );
+        });
+    </script>
+  </div>
 
-	<style scoped lang="scss">
-		@import "../styles/breakpoints";
+  <style scoped lang="scss">
+    @import "../styles/breakpoints.scss";
 
-		#links {
-			border-top: 1px solid var(--colors-accent-deep-secondary);
-			margin-top: 1rem;
+    #links {
+      border-top: 1px solid var(--colors-accent-deep-secondary);
+      margin-top: 1rem;
 
-			.avatar {
-				max-width: 33.333%;
-				border-radius: 50% 50%;
-				display: block;
-				margin: 2rem auto;
-			}
+      .avatar {
+        max-width: 33.333%;
+        border-radius: 50% 50%;
+        display: block;
+        margin: 2rem auto;
+      }
 
-			.inner {
-				display: block;
-				margin: 0 auto;
-				max-width: 40rem;
-			}
+      .inner {
+        display: block;
+        margin: 0 auto;
+        max-width: 40rem;
+      }
 
-			h2 {
-				text-transform: uppercase;
-				font-size: 1.1rem;
-				color: var(--colors-brand-base-secondary);
-				font-family: system-ui, sans-serif;
-				font-weight: 700;
-				margin-top: 1rem;
-				margin-bottom: 1rem;
-			}
+      h2 {
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        color: var(--colors-brand-base-secondary);
+        font-family: system-ui, sans-serif;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+      }
 
-			.textarea-copy {
-				position: relative;
+      .textarea-copy {
+        position: relative;
 
-				textarea {
-					width: 100%;
-					resize: none;
-					border: 2px dashed var(--colors-fg-base);
-					margin: 0;
-					position: relative;
-					font-family: monospace;
-					overflow-x: auto;
-					overflow-y: hidden;
-					white-space: nowrap;
-					display: grid;
-					line-height: 3rem;
-					text-align: center;
-					min-height: calc(3.5rem - 2px);
-					height: 3.5rem;
-					font-size: 0.75rem;
-					background-color: transparent;
+        textarea {
+          width: 100%;
+          resize: none;
+          border: 2px dashed var(--colors-fg-base);
+          margin: 0;
+          position: relative;
+          font-family: monospace;
+          overflow-x: auto;
+          overflow-y: hidden;
+          white-space: nowrap;
+          display: grid;
+          line-height: 3rem;
+          text-align: center;
+          min-height: calc(3.5rem - 2px);
+          height: 3.5rem;
+          font-size: 0.75rem;
+          background-color: transparent;
 
-					&::selection {
-						background-color: var(--colors-accent-deep);
+          &::selection {
+            background-color: var(--colors-accent-deep);
 
-						@media (prefers-color-scheme: light) {
-							color: var(--colors-bg-base);
-						}
-					}
+            @media (prefers-color-scheme: light) {
+              color: var(--colors-bg-base);
+            }
+          }
 
-					@media (prefers-color-scheme: dark) {
-						border: 2px dashed var(--colors-fg-base);
-						color: var(--colors-fg-base);
-					}
+          @media (prefers-color-scheme: dark) {
+            border: 2px dashed var(--colors-fg-base);
+            color: var(--colors-fg-base);
+          }
 
-					@media (min-width: $breakpoints-small) {
-						font-size: 1rem;
-					}
-				}
+          @media (min-width: $breakpoints-small) {
+            font-size: 1rem;
+          }
+        }
 
-				button {
-					top: 2px;
-					right: 2px;
-					font-weight: 600;
-					background: var(--colors-fg-base);
-					color: var(--colors-bg-base);
-					border: 2px solid var(--colors-fg-base);
-					transition: border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
-						background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
-					border-radius: 2px;
-					font-family: system-ui, sans-serif;
-					width: 100%;
-					max-width: 100%;
-					min-width: 4rem;
-					padding: 0.25rem 0.5rem;
-					text-decoration: none;
-					-webkit-user-select: none;
-					touch-action: manipulation;
-					white-space: nowrap;
-					cursor: pointer;
-					z-index: 99;
-					margin: 0.25rem 0 1rem 0;
+        button {
+          top: 2px;
+          right: 2px;
+          font-weight: 600;
+          background: var(--colors-fg-base);
+          color: var(--colors-bg-base);
+          border: 2px solid var(--colors-fg-base);
+          transition:
+            border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
+            background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+          border-radius: 2px;
+          font-family: system-ui, sans-serif;
+          width: 100%;
+          max-width: 100%;
+          min-width: 4rem;
+          padding: 0.25rem 0.5rem;
+          text-decoration: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          white-space: nowrap;
+          cursor: pointer;
+          z-index: 99;
+          margin: 0.25rem 0 1rem 0;
 
-					&:hover {
-						background: var(--colors-accent-light);
-						color: var(--colors-fg-base);
+          &:hover {
+            background: var(--colors-accent-light);
+            color: var(--colors-fg-base);
 
-						@media (prefers-color-scheme: dark) {
-							background: var(--colors-accent-deep-secondary);
-						}
-					}
+            @media (prefers-color-scheme: dark) {
+              background: var(--colors-accent-deep-secondary);
+            }
+          }
 
-					@media (min-width: $breakpoints-medium) {
-						width: auto;
-						position: absolute;
-						margin: 0;
-					}
-				}
+          @media (min-width: $breakpoints-medium) {
+            width: auto;
+            position: absolute;
+            margin: 0;
+          }
+        }
 
-				&:before {
-					content: "";
-					background: url(/icons/ethereum.svg) -0.5rem center no-repeat;
-					position: absolute;
-					top: 2px;
-					left: 0;
-					height: 3.5rem;
-					width: 100%;
-					background-size: 9%;
+        &:before {
+          content: "";
+          background: url(/icons/ethereum.svg) -0.5rem center no-repeat;
+          position: absolute;
+          top: 2px;
+          left: 0;
+          height: 3.5rem;
+          width: 100%;
+          background-size: 9%;
 
-					@media (prefers-color-scheme: dark) {
-						display: none;
-					}
-				}
-			}
+          @media (prefers-color-scheme: dark) {
+            display: none;
+          }
+        }
+      }
 
-			footer {
-				text-align: center;
-				margin-top: 1rem;
+      footer {
+        text-align: center;
+        margin-top: 2rem;
 
-				a {
-					opacity: 0.9;
-					font-size: 2rem;
-					text-align: center;
-					vertical-align: middle;
-					display: inline-block;
-					border-radius: 2px;
-					margin: 0 0.25rem;
-					height: 3rem;
-					width: 3rem;
-					transition: background-color 0.25s
-						cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+        a {
+          opacity: 0.9;
+          font-size: 2rem;
+          text-align: center;
+          vertical-align: middle;
+          display: inline-block;
+          border-radius: 2px;
+          margin: 0 0.25rem;
+          height: 3rem;
+          width: 3rem;
+          transition: background-color 0.25s
+            cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
 
-					&:hover {
-						background-color: var(--colors-accent-light);
+          &:hover {
+            background-color: var(--colors-accent-light);
 
-						@media (prefers-color-scheme: light) {
-							background-color: var(--colors-brand-base);
-						}
-					}
-				}
-			}
-		}
-	</style>
-</Main>
+            @media (prefers-color-scheme: light) {
+              background-color: var(--colors-brand-base);
+            }
+          }
+        }
+      }
+    }
+  </style>
+</BaseLayout>

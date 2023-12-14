@@ -1,7 +1,7 @@
 ---
 title: My Coding Sabbatical
 description: Leaving a secure job to work on new skills
-pubDate: 2018-04-18
+publishDate: 2018-04-18
 layout: ../../layouts/Post.astro
 ---
 

@@ -1,0 +1,168 @@
+---
+interface Props {
+  heading: string;
+  body: string;
+  publishDate?: string;
+  link: string;
+  emoji?: string;
+  testId?: string;
+}
+
+const { heading, body, publishDate, link, emoji, testId } = Astro.props;
+
+const dateUsLong = (): string => {
+  if (publishDate) {
+    return new Date(publishDate).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
+
+  return "";
+};
+
+const dateDatetime = (): string => {
+  if (publishDate) {
+    const date = new Date(publishDate);
+    const year = date.getFullYear();
+    const numericMonth = String(date.getMonth() + 1).padStart(2, "0");
+    const numericDay = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${numericMonth}-${numericDay}`;
+  }
+
+  return "";
+};
+---
+
+<li class="link-card" data-testid={testId || "link-card"}>
+  <a href={link} target={emoji ? "_blank" : "_self"}>
+    <h3>
+      <span>{heading}</span>
+      {
+        emoji
+          ? (
+          <span class="emoji" aria-hidden="true">
+            {emoji}
+          </span>
+            )
+          : (
+          <span class="arrow" aria-hidden="true">
+            &rarr;
+          </span>
+            )
+      }
+    </h3>
+    {publishDate && <time datetime={dateDatetime()}>{dateUsLong()}</time>}
+    {body !== "" && <p>{body}</p>}
+  </a>
+</li>
+
+<style lang="scss">
+  @import "../styles/breakpoints.scss";
+
+  @keyframes arrowhover {
+    from {
+      transform: translate3d(0, 0, 0);
+      background-position: 0% 50%;
+    }
+
+    to {
+      transform: translate3d(2px, 0, 0);
+      background-position: 100% 50%;
+    }
+  }
+
+  .link-card {
+    list-style: none;
+    background-color: white;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+    @media (prefers-color-scheme: dark) {
+      background-color: black;
+    }
+
+    @media (min-width: $breakpoints-large) {
+      aspect-ratio: 2;
+      padding: 0.25rem;
+    }
+
+    & > a {
+      width: 100%;
+      text-decoration: none;
+      line-height: 1.5;
+      padding: 1rem 1.25rem;
+      display: block;
+      height: 100%;
+      color: var(--colors-fg-base);
+
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-family: system-ui, sans-serif;
+        display: grid;
+        grid-template-columns: 5fr 1fr;
+
+        span {
+          // display: inline-block;
+          font-size: 1.188rem;
+
+          &.emoji,
+          &.arrow {
+            justify-self: end;
+
+            @media (min-width: $breakpoints-medium) {
+              top: -0.5rem;
+              position: relative;
+              font-size: 2rem;
+            }
+          }
+
+          &.arrow {
+            background-position: 0%;
+            background: linear-gradient(
+              144deg,
+              #e14725 -1.13%,
+              var(--colors-accent-light-secondary) 15.22%,
+              var(--colors-accent-light) 32.09%,
+              var(--colors-brand-base-secondary) 53.97%,
+              var(--colors-accent-deep) 67.94%,
+              var(--colors-accent-deep-secondary) 85.34%,
+              var(--colors-brand-base) 99.57%
+            );
+            background-size: 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+        }
+      }
+
+      time {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      p {
+        font-size: 1rem;
+        font-weight: normal;
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+        line-height: inherit;
+      }
+
+      &:hover {
+        color: var(--colors-brand-base);
+
+        h3 {
+          span.arrow {
+            animation: arrowhover 1s;
+            animation-direction: alternate;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+          }
+        }
+      }
+    }
+  }
+</style>
