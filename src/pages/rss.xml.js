@@ -1,9 +1,7 @@
 import rss from "@astrojs/rss";
 import sanitizeHtml from "sanitize-html";
-import MarkdownIt from "markdown-it";
-const parser = new MarkdownIt();
 
-export async function get (context) {
+export async function GET (context) {
   const postImportResult = import.meta.glob("./blog/*.md", { eager: true });
 
   const posts = Object.values(postImportResult).filter(
@@ -11,17 +9,15 @@ export async function get (context) {
   );
 
   const items = posts.map((post) => {
-    const p = {
+    return {
       link: post.url,
-      // content: sanitizeHtml(post.compiledContent()),
-      content: sanitizeHtml(parser.render(post.body)),
-      ...post.frontmatter,
+      title: post.frontmatter.title,
+      pubDate: post.frontmatter.publishDate,
+      content: sanitizeHtml(post.compiledContent()),
+      description:
+        post.frontmatter.description ||
+        `Jonathan Bell - ${post.frontmatter.title}`,
     };
-
-    if (p.description === null) {
-      p.description = `Jonathan Bell - ${p.title}`;
-    }
-    return p;
   });
 
   return rss({

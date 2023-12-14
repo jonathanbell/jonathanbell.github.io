@@ -1,10 +1,10 @@
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 export default defineConfig({
   site: "https://www.jonathanbell.ca",
+
+  // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
   markdown: {
-    // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
     shikiConfig: {
       // Choose from Shiki's built-in themes
       // https://github.com/shikijs/shiki/blob/main/docs/themes.md
