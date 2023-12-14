@@ -1,0 +1,185 @@
+---
+const links = [
+  {
+    text: "Are You a Real Rock Climber?",
+    link: "http://www.climbing.com/news/real-rock-climber/",
+    description: "Imposter syndrome is not exclusive to software development",
+  },
+  {
+    text: "Are You Climbing Enough?",
+    link: "http://www.climbing.com/news/semi-rad-are-you-climbing-enough/",
+  },
+  {
+    text: "Buying Happiness",
+    link: "http://semi-rad.com/2014/09/it-turns-out-you-can-buy-happiness/",
+    description: "Save $1000 over a year, go on a trip",
+  },
+  {
+    text: "F*ck Busy!",
+    link: "https://semi-rad.com/2016/05/f-busy/",
+  },
+  {
+    text: "Giving Up Coffee",
+    link: "http://semi-rad.com/2017/09/i-gave-up-coffee-for-three-months-and-this-is-what-i-learned",
+    description:
+      "I have a major caffeine sensitivity, so I found this interesting",
+  },
+  {
+    text: "Fifty Classic Squamish Climbs",
+    link: "http://www.50classicsquamishclimbs.com/",
+    description: "Poster of fifty classic Squamish rock climbs",
+  },
+  {
+    text: "Gaming Disorder; Not a Thing",
+    link: "https://youtu.be/mMlQRFhUPlE",
+  },
+  {
+    text: "Getting Out of Bed in the Morning",
+    link: "https://www.youtube.com/watch?v=EWsCuPB2nD0&t=16m18s",
+    description: "It can be hard, but it can be gratifying also",
+  },
+  {
+    text: "Gumbies on Crack",
+    link: "http://gumbiesoncrack.blogspot.com/",
+    description: "Squamish/Vancouver climbers",
+  },
+  {
+    text: "Just Don't Flake",
+    link: "http://semi-rad.com/2017/07/flake-actually-just-dont-flake/",
+  },
+  {
+    text: "Mind Games and Fear",
+    link: "http://www.climbing.com/skill/the-mind-game-how-to-overcome-fear/",
+    description: "On being affraid while climbing",
+  },
+  {
+    text: "The Minimalists",
+    link: "http://www.theminimalists.com/21days/",
+    description: "Minimalism is fascinating to me",
+  },
+  {
+    text: "Sendage",
+    link: "https://sendage.com/user/jonathan-bell",
+    description: "My sendage profile",
+  },
+  {
+    text: "On Turning 35",
+    link: "https://vimeo.com/62716181",
+  },
+  {
+    text: "Pretty Damn Pointless, eh?",
+    link: "http://semi-rad.com/2018/01/none-of-this-makes-any-sense-and-thats-just-fine",
+  },
+  {
+    text: "The Art of Getting Old",
+    link: "http://semi-rad.com/2015/02/the-art-of-getting-old/",
+    description: "I just want to be 70 someday.",
+  },
+  {
+    text: "The Cost of Context Switching",
+    link: "https://shoptalkshow.com/episodes/295-take-knee/#t=21:21",
+  },
+  {
+    text: "The Fire",
+    link: "http://davemacleod.blogspot.ca/2014/11/the-fire.html",
+    description: "Dave Macleod on inspiration.",
+  },
+  {
+    text: "The Fun Scale",
+    link: "http://kellycordes.wordpress.com/2009/11/02/the-fun-scale/",
+  },
+  {
+    text: "The Idea of Wasting Time",
+    link: "http://semi-rad.com/2015/01/the-dawn-wall-and-the-idea-of-wasting-time/",
+    description:
+      "Kevin Jorgeson and Tommy Caldwell have free climbed the Dawn Wall; a lot of people think that they were wasting their time",
+  },
+  {
+    text: "The Last True Hermit",
+    link: "http://www.gq.com/story/the-last-true-hermit",
+  },
+  {
+    text: "Tin Oxygen Tungsten Snow",
+    link: "http://www.tinoxygentungsten.com/",
+    description:
+      "The personal website of Sandy Briggs, chemist, mountaineer and arctic traveler",
+  },
+  {
+    text: "Top 100 Boulder Problems in Squamish, BC",
+    link: "http://sendage.com/sendlists/view/4ed551b85392f",
+    description: "A list of the top 100 boulder problems in Squamish, BC",
+  },
+];
+---
+
+<section class="link-container" data-testid="blogroll-section">
+  <h2>Blogroll</h2>
+  <!-- <p>Do you remember the "old days"?</p> -->
+  <ul class="blogroll">
+    {
+      links.map((link) => {
+        return (
+          <li>
+            <a
+              title={link.description ? link.description : undefined}
+              href={link.link}
+              target="_blank"
+            >
+              {link.text}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<style scoped lang="scss">
+  @import "../styles/breakpoints.scss";
+
+  .link-container {
+    border-top: 1px solid var(--colors-accent-deep-secondary);
+    margin-top: 4rem;
+    margin-bottom: -4rem;
+
+    & > h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      color: var(--colors-brand-base-secondary);
+      font-family: system-ui, sans-serif;
+      font-weight: 700;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: inherit;
+
+    @media (min-width: $breakpoints-medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+    }
+
+    @media (min-width: $breakpoints-large) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  li {
+    &:before {
+      content: "🔗";
+      display: inline-block;
+      font-size: 0.9rem;
+      margin-right: 0.5rem;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+</style>

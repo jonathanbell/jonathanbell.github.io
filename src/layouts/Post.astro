@@ -1,57 +1,50 @@
 ---
 /* eslint-disable no-template-curly-in-string */
-import Main from "./Main.astro";
+import BaseLayout from "./BaseLayout.astro";
 import "@fontsource/libre-franklin";
 import "@fontsource/libre-franklin/800.css";
-import SiteFooter from "../components/SiteFooter.vue";
 const { frontmatter } = Astro.props;
 
-const date = new Date(frontmatter.pubDate);
+const date = new Date(frontmatter.publishDate);
 const readableDate: string = date.toLocaleDateString("en-US", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
 });
 ---
 
-<Main title={frontmatter.title} description={frontmatter.description}>
-	<time datetime="`${year}-${numericMonth}-${numericDay}`">{readableDate}</time>
-	<!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
-	<slot />
-	<SiteFooter />
-</Main>
+<BaseLayout
+  title={`Jonathan Bell - ${frontmatter.title}`}
+  description={frontmatter.description}
+>
+  <time datetime="`${year}-${numericMonth}-${numericDay}`">{readableDate}</time>
+  <slot />
+</BaseLayout>
 
 <style scoped lang="scss">
-	time {
-		color: var(--colors-base-midtone);
-	}
+  time {
+    color: var(--colors-base-midtone);
+  }
 </style>
 
 <style is:global lang="scss">
-	// You can only scope styles to a component element if the element is *in use*
-	// in the component. Otherwise, you'll have to use global styles for content
-	// that is brought into the DOM via a slot (like in the case of Markdown).
-	// Here is an example of how to do that.
+  // You can only scope styles to a component element if the element is *in use*
+  // in the component. Otherwise, you'll have to use global styles for content
+  // that is brought into the DOM via a slot (like in the case of Markdown).
 
-	@import "../styles/breakpoints";
-	article.content {
-		// These styles are scoped to Posts.
+  @import "../styles/breakpoints";
 
-		p,
-		ul {
-			line-height: 1.5;
+  article.content {
+    h2 {
+      font-size: 2.5rem;
 
-			@media (min-width: $breakpoints-small) {
-				line-height: 1.75;
-			}
-		}
+      @media (min-width: $breakpoints-small) {
+        font-size: 3rem;
+      }
+    }
 
-		h2 {
-			font-size: 2.5rem;
-
-			@media (min-width: $breakpoints-small) {
-				font-size: 3rem;
-			}
-		}
-	}
+    & > h2 {
+      margin-top: 4rem;
+    }
+  }
 </style>

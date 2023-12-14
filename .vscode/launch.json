@@ -11,7 +11,7 @@
       "name": "Open project in MS Edge",
       "request": "launch",
       "type": "vscode-edge-devtools.debug",
-      "url": "http://localhost:3000"
+      "url": "http://localhost:4321/"
     }
   ]
 }
