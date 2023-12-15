@@ -38,7 +38,7 @@ const dateDatetime = (): string => {
 
 <li class="link-card" data-testid={testId || "link-card"}>
   <a href={link} target={emoji ? "_blank" : "_self"}>
-    <h3>
+    <h3 style={{ minHeight: emoji ? "0" : "2rem" }}>
       <span>{heading}</span>
       {
         emoji
@@ -54,8 +54,18 @@ const dateDatetime = (): string => {
             )
       }
     </h3>
-    {publishDate && <time datetime={dateDatetime()}>{dateUsLong()}</time>}
-    {body !== "" && <p>{body}</p>}
+    <div class="card__meta">
+      {
+        publishDate
+          ? (
+          <time datetime={dateDatetime()}>{dateUsLong()}</time>
+            )
+          : (
+          <div />
+            )
+      }
+      {body !== "" ? <p>{body}</p> : <div />}
+    </div>
   </a>
 </li>
 
@@ -78,6 +88,7 @@ const dateDatetime = (): string => {
     list-style: none;
     background-color: white;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    min-height: 10rem;
 
     @media (prefers-color-scheme: dark) {
       background-color: black;
@@ -105,7 +116,6 @@ const dateDatetime = (): string => {
         grid-template-columns: 5fr 1fr;
 
         span {
-          // display: inline-block;
           font-size: 1.188rem;
 
           &.emoji,
@@ -163,6 +173,10 @@ const dateDatetime = (): string => {
           }
         }
       }
+    }
+
+    .card__meta {
+      display: grid;
     }
   }
 </style>

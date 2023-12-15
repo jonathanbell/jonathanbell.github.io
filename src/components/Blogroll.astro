@@ -105,7 +105,7 @@ const links = [
       "The personal website of Sandy Briggs, chemist, mountaineer and arctic traveler",
   },
   {
-    text: "Top 100 Boulder Problems in Squamish, BC",
+    text: "Top Squamish Boulder Problems",
     link: "http://sendage.com/sendlists/view/4ed551b85392f",
     description: "A list of the top 100 boulder problems in Squamish, BC",
   },
@@ -149,7 +149,6 @@ const links = [
       font-family: system-ui, sans-serif;
       font-weight: 700;
       margin-top: 1rem;
-      margin-bottom: 2rem;
     }
   }
 
@@ -157,12 +156,14 @@ const links = [
     list-style: none;
     padding: 0;
     margin: 0;
+    padding-bottom: 4rem;
     line-height: inherit;
 
     @media (min-width: $breakpoints-medium) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
+      padding-bottom: 0;
     }
 
     @media (min-width: $breakpoints-large) {

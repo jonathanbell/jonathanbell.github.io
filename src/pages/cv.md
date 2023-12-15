@@ -6,25 +6,37 @@ description: The personal online curriculum vitea of Jonathan Bell
 
 ## Summary
 
-Software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume commercial and government web applications; most proficient in JavaScript (Node, TypeScript, Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
+Software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume web applications; most proficient in JavaScript (Node, TypeScript, React/Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
 
-Seeking a position with a small to enterprise-sized company as a full-stack or front-end developer. Pursuing companies with collaborative and welcoming cultures as well as opportunities for long-term growth in engineering and management positions. Ready to work inside an agile development team with an affinity for iterative workflows.
+Seeking a position with a medium-sized to enterprise-sized company as a full-stack or front-end developer. Pursuing companies with collaborative and welcoming cultures as well as opportunities for long-term growth in engineering and management positions. Ready to work inside an agile development team with an affinity for iterative workflows.
 
 Fluent in both written and spoken English and Italian.
 
 ## Employment
 
+### IC3 Software Engineer
+
+_July 2023 to present, Klue Labs, Victoria BC (remote)_
+
+[Klue Win Loss](https://klue.com/win-loss): Web application designed to record and scrutinize win-loss insights data; enhances sales and revenue teams competitive abilities
+
+- Employ React with TypeScript and RTK Query to build out new win-loss analysis tool helping users understand the key factors that influence their customers' decisions
+- Contribute to and advocate for the company's design system, creating new atomic components and new variant components often; supporting the brand's identity and component/code re-usability, scaleability, testability, and quality
+- Improve developer experience and efficiency by maintaining and accelerating continuous integration and deployment tools
+
+**Leveraging knowledge in:** Front-end web development; React, RTK, TypeScript, Grommet, CSS, Vitest, React Testing Library, Storybook, Git, GitHub Actions (CICD), Playwright, Heroku, Back-end web development; Docker & Python with FastAPI
+
 ### Software Developer 2
 
-_January 2019 to present, Benevity, Victoria BC_
+_January 2019 to June 2023, Benevity, Victoria BC_
 
-[Benevity Spark](https://benevity.com/): Corporate payroll giving platform supporting 900+ companies/clients across the globe
+[Benevity Spark](https://benevity.com/): Corporate payroll giving & donation platform supporting 900+ companies/clients across the globe
 
-- Utilize VueJS and Laravel to build full-stack corporate giving and engagement products for large to mid-scale global companies
-- Create global corporate seeding service & microfrontend to bulk add funds to user accounts by leveraging Spring Boot, VueJS, AWS Batch, MySQL and PHP
-- Increase product speed and performance by removing extraneous legacy code and/or refactoring functional code into object oriented code with extensive automated testing suites across the testing pyramid (unit, integration, E2E)
+- Utilized VueJS and Laravel to build full-stack corporate giving and engagement products for large to mid-scale global companies
+- Worked jointly with team to create global corporate seeding service & microfrontend to bulk load funds into user accounts by leveraging Java Spring Boot, VueJS, AWS Batch, MySQL and PHP
+- Increased product speed and performance by removing extraneous legacy code and/or refactoring functional code into object oriented code with extensive automated testing suites across the testing pyramid (unit, integration, E2E)
 
-**Leveraging knowledge in:** Full-stack web development; Laravel, Vue, TypeScript, OOPHP, Spring Boot (Java), MySQL, JavaScript, CSS, Git, Jenkins (CICD), Docker, Jest, PHPUnit, JIRA & Drupal
+**Leveraged knowledge in:** Full-stack web development; Laravel, Vue, TypeScript, OOPHP, Spring Boot (Java), MySQL, JavaScript, CSS, Git, Jenkins (CICD), Docker, Jest, PHPUnit, JIRA & Drupal
 
 ### User Experience Design; Web Developer
 
@@ -39,25 +51,14 @@ _March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC
 
 **Leveraged knowledge in:** Full-stack web development; PHP, Oracle, Laravel, CSS, Git, Drupal & jQuery
 
-### Web Developer
-
-_July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, Victoria BC_
-
-[StudentAid BC](https://studentaidbc.ca/): British Columbia student loan application website; where students apply for loans in British Columbia
-
-- Utilized SOAP-based credit checking API to check a student's loan application in a matter of minutes for a drastic improvement in loan application response time (minutes vs days previously)
-- Integrated school lookup tool using AJAX and JavaScript in order to allow students to check school loan eligibility
-
-**Leveraged knowledge in:** PHP, PostgreSQL, Drupal module creation, CSS, jQuery/JavaScript
-
 ## Software Projects
 
 ### Personal Website ([jonathanbell.ca](https://jonathanbell.ca))
 
-- Developed an [Astro](https://astro.build/) personal site/blog site using [Vue](https://vuejs.org/) and TypeScript that allows users to learn a little bit more about me
-- Added [Jest](https://jestjs.io/) unit tests and [ESLint](https://eslint.org/) for better test driven development and less bug-prone code
+- Developed a [personal website/blog](https://github.com/jonathanbell/jonathanbell.github.io) site using [Astro](https://astro.build/) that allows users to learn a little bit more about me
+- Added integration tests and GitHub Actions for CICD
 
-**Utilized:** Vue, Jest, Astro, TypeScript, CSS Grid
+**Utilized:** Astro, Playwright, TypeScript, CSS Grid
 
 ### Blizzard Judge ([github.com/jonathanbell/blizzard-judge](https://github.com/jonathanbell/blizzard-judge))
 
@@ -65,7 +66,7 @@ _July 2014 to Febuary 2015, Ministry of Advanced Education, BC Public Service, V
 - Added voting, reviewing and commenting functionality for users by utilizing MongoDB, and the Mongoose Node package to record and tabulate Blizzard data
 - Allowed the uploading of individual Blizzard images by leveraging the Cloudinary API for storage and display of images
 
-**Utilized:** Node, CSS, JavaScript, MongoDB, Mongoose, 3rd party APIs (Cloudinary, YouTube)
+**Utilized:** Node, CSS, JavaScript, MongoDB, Mongoose, 3rd party APIs (Cloudinary, S3)
 
 ## Education
 
@@ -79,9 +80,10 @@ Graduated with diploma; applied skills acquired in the areas of web design and p
 
 Proficient:
 
-- JavaScript: Node, TypeScript, Vue, Vanilla, Vite, Sequelize
-- PHP: Laravel, Drupal, OOPHP
-- Unit testing: PHPUnit, Jest, Vue Test Utils
+- JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite, Sequelize
+- PHP: Laravel, WordPress/Drupal, OOPHP
+- Unit testing: PHPUnit, Jest, React Testing Library, Vitest
+- E2E testing: Playwright/Cypress
 - HTTP & REST APIs
 - Git
 - CSS
@@ -94,13 +96,13 @@ Familiar & comfortable:
 - SQL
 - Go
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)
-- MongoDB
 - Bash
 
 Keen interest:
 
 - WebAssembly (WASM)
 - Tensorflow
+- C
 
 ## Contact
 
