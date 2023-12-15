@@ -4,8 +4,8 @@ import CardSection from "../../components/CardSection.astro";
 import Card from "../../components/Card.astro";
 import Blogroll from "../../components/Blogroll.astro";
 
-let posts = await Astro.glob("./*.md");
-posts = posts
+const postsData = await Astro.glob("./*.md");
+const posts = postsData
   .filter((post) => !post.frontmatter.title.includes("DRAFT"))
   .sort((a, b) => {
     return (
@@ -25,9 +25,8 @@ posts = posts
         <Card
           heading={post.frontmatter.title}
           body={post.frontmatter.description}
-          pub-date={post.frontmatter.publishDate}
+          publishDate={post.frontmatter.publishDate}
           link={post.url || ""}
-          emoji={post.frontmatter.emoji}
         />
       ))
     }
