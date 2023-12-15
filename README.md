@@ -2,13 +2,6 @@
 
 Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
-## TODOs
-
-- [x] Get ESLint working
-- [x] Update resume content
-- [ ] Add "[uses](https://github.com/wesbos/awesome-uses/)" page
-- [ ] Update Node deps.
-
 ---
 
 This site holds:
@@ -37,10 +30,10 @@ All commands are run from the root of the project:
 | :--------------------- | :----------------------------------------------- |
 | `npm install`          | Installs dependencies                            |
 | `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run test`         | Run unit tests                                   |
+| `npm run test`         | Run tests                                        |
 | `npm run test:all`     | Run unit & node tests                            |
-| `npm run lint`         | Run ESLint over Vue, TS, Astro, and JS files     |
-| `npm run lint:fix`     | Run ESLint: Vue, TS, Astro, and JS files + fix   |
+| `npm run lint`         | Run ESLint over: TS, Astro, and JS files         |
+| `npm run lint:fix`     | Run ESLint over: TS, Astro, and JS files + fix   |
 | `npm run build`        | Build your production site to `./dist/`          |
 | `npm run preview`      | Preview your build locally, before deploying     |
 | `npm run astro ...`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
@@ -48,5 +41,10 @@ All commands are run from the root of the project:
 
 ## Deploying
 
-1. `npm run build`
-1. Upload the static files to your favorite static site host. I like [Netlify](https://www.netlify.com/) and [GitHub Pages](https://pages.github.com/).
+Push and merge to `main`. GitHub actions handle the rest 😌.
+
+## TODOs
+
+- [x] Update resume content
+- [ ] Add "[uses](https://github.com/wesbos/awesome-uses/)" page
+- [ ] Add Markdown linting in pre-commit hook
