@@ -48,3 +48,4 @@ Push and merge to `main`. GitHub actions handle the rest 😌.
 - [x] Update resume content
 - [ ] Add "[uses](https://github.com/wesbos/awesome-uses/)" page
 - [ ] Add Markdown linting in pre-commit hook
+- [ ] Complete draft blog posts
