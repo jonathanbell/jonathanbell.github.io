@@ -21,6 +21,7 @@ if (frontmatter?.title && frontmatter?.description) {
   pageDescription = frontmatter.description;
 } else if (title && description) {
   pageTitle = title;
+  pageDescription = description;
 }
 ---
 
@@ -113,7 +114,8 @@ if (frontmatter?.title && frontmatter?.description) {
   @media (prefers-color-scheme: dark) {
     :root {
       --colors-bg-base: #151717;
-      --colors-fg-base: #f9f8f8;
+      // --colors-fg-base: #f9f8f8;
+      --colors-fg-base: #f3f0f0;
 
       --colors-base-midtone: #b9c7d6;
 
@@ -236,10 +238,10 @@ if (frontmatter?.title && frontmatter?.description) {
       word-break: break-word;
 
       // Adds a hyphen where the word breaks, if supported.
-      // -ms-hyphens: auto;
-      // -moz-hyphens: auto;
-      // -webkit-hyphens: auto;
-      // hyphens: auto;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
     }
 
     .card-container,
