@@ -4,6 +4,12 @@ title: Résumé
 description: The personal online curriculum vitea of Jonathan Bell
 ---
 
+## Contact
+
+- LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
+- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
+- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
+
 ## Summary
 
 Software developer residing in Victoria BC, Canada with over seven years of experience developing and building robust, high-volume web applications; most proficient in JavaScript (Node, TypeScript, React/Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
@@ -18,7 +24,7 @@ Fluent in both written and spoken English and Italian.
 
 _July 2023 to present, Klue Labs, Victoria BC (remote)_
 
-[Klue Win Loss](https://klue.com/win-loss): Web application designed to record and scrutinize win-loss insights data; enhances sales and revenue teams competitive abilities
+[Klue Win Loss](https://klue.com/win-loss): Web application designed to record and scrutinize win-loss insights data; enhances sales and revenue teams' competitive abilities
 
 - Employ React with TypeScript and RTK Query to build out new win-loss analysis tool helping users understand the key factors that influence their customers' decisions
 - Contribute to and advocate for the company's design system, creating new atomic components and new variant components often; supporting the brand's identity and component/code re-usability, scaleability, testability, and quality
@@ -66,7 +72,7 @@ _March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC
 - Added voting, reviewing and commenting functionality for users by utilizing MongoDB, and the Mongoose Node package to record and tabulate Blizzard data
 - Allowed the uploading of individual Blizzard images by leveraging the Cloudinary API for storage and display of images
 
-**Utilized:** Node, CSS, JavaScript, MongoDB, Mongoose, 3rd party APIs (Cloudinary, S3)
+**Utilized:** Node, CSS, JavaScript (vanilla), MongoDB, Mongoose, 3rd party APIs (Cloudinary, S3)
 
 ## Education
 
@@ -103,9 +109,3 @@ Keen interest:
 - WebAssembly (WASM)
 - Tensorflow
 - C
-
-## Contact
-
-- LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
-- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
-- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)

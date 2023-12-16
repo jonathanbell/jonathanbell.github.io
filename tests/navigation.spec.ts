@@ -9,7 +9,7 @@ test("navigation links and page titles", async ({ page }) => {
   expect(["rgb(255, 255, 255)", "rgb(0, 0, 0)"]).toContain(cardBackgroundColor);
   await page.click("nav a[href=\"/#projects\"]");
   // Wait for the CSS transition to complete
-  await page.waitForTimeout(200); // Wait longer than 0.1 second
+  await page.waitForTimeout(300); // Wait longer than 0.1 second
   cardBackgroundColor = await projectCard.evaluate((el) => {
     return window.getComputedStyle(el).getPropertyValue("background-color");
   });
