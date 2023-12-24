@@ -233,15 +233,14 @@ if (frontmatter?.title && frontmatter?.description) {
     h5 {
       // Attempt to fix long URLs and words breaking out of their containers.
       overflow-wrap: break-word;
-      word-wrap: break-word; // These two are technically the same, but use both, just in case.
-      -ms-word-break: break-all;
+      word-wrap: break-word;
       word-break: break-word;
 
       // Adds a hyphen where the word breaks, if supported.
-      -ms-hyphens: auto;
-      -moz-hyphens: auto;
-      -webkit-hyphens: auto;
-      hyphens: auto;
+      // -ms-hyphens: auto;
+      // -moz-hyphens: auto;
+      // -webkit-hyphens: auto;
+      // hyphens: auto;
     }
 
     .card-container,
