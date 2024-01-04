@@ -30,7 +30,7 @@ const sAge = Math.floor(
       >. This tool captures and analyzes win-loss data, helping revenue teams
       win and close more deals more effectively. Prior to Klue, he was a
       full-stack web developer at <a href="https://benevity.com/">Benevity</a>
-       where he helped create and enhance web applications such as <a
+      where he helped create and enhance web applications such as <a
         href="https://benevity.com/resources/spark-employee-engagement"
         >Benevity Spark</a
       >; the company's flagship product, responsible for corporate giving
@@ -146,7 +146,11 @@ const sAge = Math.floor(
 
     .details-content {
       margin-top: 1rem;
-      line-height: 1.5rem;
+      font-size: 1rem;
+
+      @media (min-width: $breakpoints-medium) {
+        font-size: 1.188rem;
+      }
     }
 
     p {
