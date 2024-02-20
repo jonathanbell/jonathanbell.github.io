@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/rss": "^4.0.1",
+    "@astrojs/rss": "^4.0.5",
     "@fontsource/libre-franklin": "^5.0.16",
     "astro": "^4.4.0",
     "sanitize-html": "^2.11.0",
