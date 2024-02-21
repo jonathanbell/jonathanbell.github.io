@@ -19,7 +19,7 @@
     "@fontsource/libre-franklin": "^5.0.16",
     "astro": "^4.4.0",
     "sanitize-html": "^2.11.0",
-    "sass": "^1.69.6",
+    "sass": "^1.71.0",
     "typescript": "^5.3.3"
   },
   "volta": {
