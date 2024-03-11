@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/check": "^0.5.5",
     "@astrojs/rss": "^4.0.5",
-    "@fontsource/libre-franklin": "^5.0.16",
+    "@fontsource/libre-franklin": "^5.0.17",
     "astro": "^4.4.15",
     "sanitize-html": "^2.12.1",
     "sass": "^1.71.1",
