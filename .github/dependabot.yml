@@ -10,3 +10,5 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    # Only allow updates for minor and major versions
+    versioning-strategy: increase
