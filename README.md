@@ -4,7 +4,7 @@ Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
 ---
 
-This site holds:
+This website holds:
 
 1. My online résumé. 😃
 1. My blog
@@ -31,12 +31,11 @@ All commands are run from the root of the project:
 | `npm install`          | Installs dependencies                            |
 | `npm run dev`          | Starts local dev server at `localhost:3000`      |
 | `npm run test`         | Run tests                                        |
-| `npm run test:all`     | Run unit & node tests                            |
 | `npm run lint`         | Run ESLint over: TS, Astro, and JS files         |
 | `npm run lint:fix`     | Run ESLint over: TS, Astro, and JS files + fix   |
 | `npm run build`        | Build your production site to `./dist/`          |
 | `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro ...`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
+| `npm run astro <command>`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
 ## Deploying
