@@ -93,12 +93,13 @@ Proficient:
 - PHP: Laravel, WordPress/Drupal, OOPHP
 - Unit testing: PHPUnit, Jest, React Testing Library, Vitest
 - E2E testing: Playwright/Cypress
+- Messaging services: Courier, Mailgun, AWS SES, Twillio
 - HTTP & REST APIs
+- Docker
 - Git
 - CSS
 - HTML
 - VBA
-- Docker
 
 Familiar & comfortable:
 
