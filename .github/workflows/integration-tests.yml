@@ -1,36 +1,14 @@
 name: Integration tests
 on:
-  push:
-    branches-ignore:
-      - main
   pull_request:
     types:
       - opened
       - reopened
+      - synchronize
     branches:
       - main
 
 jobs:
-  # unit-tests:
-  #   name: Run unit tests
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     # This step uses the `actions/checkout` action to download a copy of your
-  #     # repository on the runner.
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3
-  #     # This step uses the `actions/setup-node` action to set up Node.js.
-  #     - name: Setup Node
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: "20.10.0" # LTS version
-  #     # This step runs `npm ci` (clean install) to install any dependencies
-  #     # listed in your `package.json` file.
-  #     - name: Install dependencies
-  #       run: npm ci
-  #     # Run the tests.
-  #     - name: Run unit tests
-  #       run: npm test
   integration-tests:
     timeout-minutes: 5
     runs-on: ubuntu-latest
