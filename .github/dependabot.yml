@@ -11,4 +11,7 @@ updates:
     schedule:
       interval: "daily"
     # Only allow updates for minor and major versions
-    versioning-strategy: increase
+    versioning-strategy: increase-if-necessary
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-patch"]
