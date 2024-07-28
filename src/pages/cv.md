@@ -81,7 +81,7 @@ _Professional projects not listed; see [www.jonathanbell.ca](https://www.jonatha
 
 ### Communication and Creative Advertising
 
-_January 2007, Instituto di Design, Milan, Italy_
+_January 2007, Istituto Europeo di Design, Milan, Italy_
 
 Graduated with diploma; applied skills acquired in the areas of web design and photography.
 
@@ -90,10 +90,9 @@ Graduated with diploma; applied skills acquired in the areas of web design and p
 Proficient:
 
 - JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite, Sequelize
-- PHP: Laravel, WordPress/Drupal, OOPHP
+- PHP: Laravel, WordPress/Drupal, modern OOPHP
 - Unit testing: PHPUnit, Jest, React Testing Library, Vitest
 - E2E testing: Playwright/Cypress
-- Messaging services: Courier, Mailgun, AWS SES, Twillio
 - HTTP & REST APIs
 - Docker
 - Git
@@ -106,11 +105,12 @@ Familiar & comfortable:
 - SQL
 - Python
 - Go
+- Java
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)
+- Messaging services: Courier, Mailgun, Twillio, etc.
 - Bash
 
 Keen interest:
 
 - WebAssembly (WASM)
-- Tensorflow
-- C
+- Tensorflow + PyTorch
