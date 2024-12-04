@@ -17,7 +17,7 @@
     "@astrojs/check": "^0.9.2",
     "@astrojs/rss": "^4.0.7",
     "@fontsource/libre-franklin": "^5.0.17",
-    "astro": "^4.14.2",
+    "astro": "^5.0.2",
     "sanitize-html": "^2.13.0",
     "sass": "^1.77.4",
     "typescript": "^5.4.5"
