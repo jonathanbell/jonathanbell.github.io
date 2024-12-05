@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages
+name: Deploy Site to GitHub Pages
 
 on:
   push:
@@ -25,9 +25,14 @@ env:
   BUILD_PATH: "."
 
 jobs:
+  call-integration-tests:
+    name: Run integration tests
+    # Integration tests must pass for this to run.
+    uses: ./.github/workflows/integration-tests.yml
+
   build:
-    needs: integration-tests
-    name: Build
+    needs: call-integration-tests
+    name: Build site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -55,9 +60,9 @@ jobs:
           node-version: "20.10.0" # LTS version
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         id: pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v4
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
@@ -68,13 +73,13 @@ jobs:
             --base "${{ steps.pages.outputs.base_path }}"
         working-directory: ${{ env.BUILD_PATH }}
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     needs: build
-    name: Deploy
+    name: Build and deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -82,4 +87,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
