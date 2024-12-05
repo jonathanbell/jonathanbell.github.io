@@ -13,6 +13,7 @@ jobs:
     uses: ./.github/workflows/integration-tests.yml
 
   dependabot-auto-approve:
+    needs: call-integration-tests
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     name: Enable auto-approve for Dependabot
     runs-on: ubuntu-latest
