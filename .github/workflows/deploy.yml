@@ -1,4 +1,4 @@
-name: Deploy site to GitHub Pages
+name: Deploy Site to GitHub Pages
 
 on:
   push:
@@ -26,7 +26,7 @@ env:
 
 jobs:
   build:
-    name: Build
+    name: Build Site
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -73,7 +73,7 @@ jobs:
 
   deploy:
     needs: build
-    name: Deploy
+    name: Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
