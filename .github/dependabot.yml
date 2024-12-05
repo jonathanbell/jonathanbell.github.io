@@ -10,8 +10,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    # Only allow updates for minor and major versions
+    auto-merge: true
+    auto-merge-options:
+      merge-method: squash
     versioning-strategy: increase-if-necessary
     ignore:
       - dependency-name: "*"
+        # Only allow updates for minor and major versions; ignore semver patch
         update-types: ["version-update:semver-patch"]
