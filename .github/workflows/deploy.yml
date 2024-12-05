@@ -26,7 +26,6 @@ env:
 
 jobs:
   build:
-    needs: integration-tests
     name: Build
     runs-on: ubuntu-latest
     steps:
