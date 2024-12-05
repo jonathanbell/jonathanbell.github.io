@@ -25,6 +25,11 @@ env:
   BUILD_PATH: "."
 
 jobs:
+  call-integration-tests:
+    name: Run integration tests
+    # Integration tests must pass for this to run.
+    uses: ./.github/workflows/integration-tests.yml
+
   build:
     name: Build Site
     runs-on: ubuntu-latest
