@@ -1,4 +1,4 @@
-name: Dependabot auto-merge
+name: Allow Dependabot to Auto-merge
 on: pull_request
 
 permissions:
@@ -6,18 +6,29 @@ permissions:
   pull-requests: write
 
 jobs:
-  dependabot-auto-merge:
-    # Integration tests must pass for this to run.
-    needs: integration-tests
-    runs-on: ubuntu-latest
+  call-integration-tests:
     if: github.event.pull_request.user.login == 'dependabot[bot]'
+    name: Run integration tests
+    # Integration tests must pass for this to run.
+    uses: ./.github/workflows/integration-tests.yml
+
+  dependabot-auto-approve:
+    needs: call-integration-tests
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    name: Enable auto-approve for Dependabot
+    runs-on: ubuntu-latest
     steps:
       - name: Auto-approve Dependabot PRs
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{github.event.pull_request.html_url}}
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      # TODO: does this need to be moved above the step above?
+
+  dependabot-auto-merge:
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
+    name: Enable auto-merge for Dependabot
+    runs-on: ubuntu-latest
+    steps:
       - name: Enable auto-merge for Dependabot PRs
         run: gh pr merge --auto --merge "$PR_URL"
         env:
