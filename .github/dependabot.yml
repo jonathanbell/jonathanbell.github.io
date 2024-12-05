@@ -10,9 +10,6 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    auto-merge: true
-    auto-merge-options:
-      merge-method: squash
     versioning-strategy: increase-if-necessary
     ignore:
       - dependency-name: "*"
