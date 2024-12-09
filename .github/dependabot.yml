@@ -11,7 +11,7 @@ updates:
     schedule:
       interval: "daily"
     versioning-strategy: increase-if-necessary
-    ignore:
-      - dependency-name: "*"
+    #ignore:
+      #- dependency-name: "*"
         # Only allow updates for minor and major versions; ignore semver patch versions.
-        update-types: ["version-update:semver-patch"]
+        #update-types: ["version-update:semver-patch"]
