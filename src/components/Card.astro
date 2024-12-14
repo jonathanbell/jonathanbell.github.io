@@ -41,28 +41,24 @@ const dateDatetime = (): string => {
     <h3>
       <span>{heading}</span>
       {
-        emoji
-          ? (
+        emoji ? (
           <span class="emoji" aria-hidden="true">
             {emoji}
           </span>
-            )
-          : (
+        ) : (
           <span class="arrow" aria-hidden="true">
             &rarr;
           </span>
-            )
+        )
       }
     </h3>
     <div class="card__meta">
       {
-        publishDate
-          ? (
+        publishDate ? (
           <time datetime={dateDatetime()}>{dateUsLong()}</time>
-            )
-          : (
+        ) : (
           <div />
-            )
+        )
       }
       {body !== "" ? <p>{body}</p> : <div />}
     </div>

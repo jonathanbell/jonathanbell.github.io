@@ -5,6 +5,7 @@ import CardSection from "../components/CardSection.astro";
 import Card from "../components/Card.astro";
 
 import { getCollection } from "astro:content";
+import type { MarkdownInstance } from "astro";
 
 const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.map((project) => {
@@ -17,7 +18,12 @@ const projects = projectsCollection.map((project) => {
 });
 
 // https://docs.astro.build/en/reference/api-reference/#markdown-files
-const postsData = await Astro.glob("./blog/*.md");
+const postsData: MarkdownInstance<{
+  title: string;
+  description: string | null;
+  publishDate: string;
+}>[] = Object.values(import.meta.glob("./blog/*.md", { eager: true }));
+
 const posts = postsData
   .filter((post) => !post.frontmatter.title.includes("DRAFT"))
   .map((post) => {
@@ -32,13 +38,13 @@ const posts = postsData
     // https://stackoverflow.com/a/43589315/1171790
     return +new Date(b.publishDate) - +new Date(a.publishDate);
   })
-  // Limt to 6 posts
+  // Limit to 6 posts
   .slice(0, 6);
 ---
 
 <BaseLayout
-  title="Jonathan Bell, Software Developer"
-  description="Jonathan Bell is a fullstack web developer from Canada."
+  title="Jonathan Bell, Software Engineer"
+  description="Jonathan Bell is a fullstack web developer and software engineer from Canada."
 >
   <PersonalBlock fullName="Jonathan Bell" />
 
@@ -61,7 +67,7 @@ const posts = postsData
       posts.map((post) => (
         <Card
           heading={post.heading}
-          body={post.body}
+          body={post.body ?? ""}
           publishDate={post.publishDate}
           link={post.link}
           testId="card--post-item"
