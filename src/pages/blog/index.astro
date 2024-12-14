@@ -3,8 +3,13 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import CardSection from "../../components/CardSection.astro";
 import Card from "../../components/Card.astro";
 import Blogroll from "../../components/Blogroll.astro";
+import type { MarkdownInstance } from "astro";
 
-const postsData = await Astro.glob("./*.md");
+const postsData: MarkdownInstance<{
+  title: string;
+  description: string | null;
+  publishDate: string;
+}>[] = Object.values(import.meta.glob("./*.md", { eager: true }));
 const posts = postsData
   .filter((post) => !post.frontmatter.title.includes("DRAFT"))
   .sort((a, b) => {
@@ -24,7 +29,7 @@ const posts = postsData
       posts.map((post) => (
         <Card
           heading={post.frontmatter.title}
-          body={post.frontmatter.description}
+          body={post.frontmatter.description ?? ""}
           publishDate={post.frontmatter.publishDate}
           link={post.url || ""}
         />
