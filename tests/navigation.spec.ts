@@ -7,7 +7,7 @@ test("navigation links and page titles", async ({ page }) => {
     return window.getComputedStyle(el).getPropertyValue("background-color");
   });
   expect(["rgb(255, 255, 255)", "rgb(0, 0, 0)"]).toContain(cardBackgroundColor);
-  await page.click("nav a[href=\"/#projects\"]");
+  await page.click('nav a[href="/#projects"]');
   // Wait for the CSS transition to complete
   await page.waitForTimeout(300); // Wait longer than 0.1 second
   cardBackgroundColor = await projectCard.evaluate((el) => {
@@ -20,10 +20,10 @@ test("navigation links and page titles", async ({ page }) => {
   ];
   expect(possibleBackgroundColors).toContain(cardBackgroundColor);
 
-  await page.click("nav a[href=\"/blog\"]");
+  await page.click('nav a[href="/blog"]');
   await expect(page).toHaveTitle(/Blog/);
 
-  await page.click("nav a[href=\"/cv\"]");
+  await page.click('nav a[href="/cv"]');
   await expect(page).toHaveTitle("Jonathan Bell - Résumé");
   const summaryHeading = await page.waitForSelector("#summary");
   const summaryHeadingText = await summaryHeading.innerText();
@@ -32,11 +32,13 @@ test("navigation links and page titles", async ({ page }) => {
   const mainHeadingLink = page.getByTestId("site-header__main-heading--link");
   expect(await mainHeadingLink.innerText()).toBe("Jonathan Bell");
   await mainHeadingLink.click();
-  await expect(page).toHaveTitle(/Jonathan Bell, Software Developer/);
+  await expect(page).toHaveTitle(/Jonathan Bell, Software Engineer/);
 
-  await page.click("nav a[href=\"/links\"]");
-  await expect(page).toHaveTitle(/Jonathan Bell - Personal and Social Media Links/);
+  await page.click('nav a[href="/links"]');
+  await expect(page).toHaveTitle(
+    /Jonathan Bell - Personal and Social Media Links/,
+  );
 
-  await page.click("nav a[href=\"/\"]");
-  await expect(page).toHaveTitle(/Jonathan Bell, Software Developer/);
+  await page.click('nav a[href="/"]');
+  await expect(page).toHaveTitle(/Jonathan Bell, Software Engineer/);
 });
