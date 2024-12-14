@@ -31,7 +31,7 @@ const readableDate: string = date.toLocaleDateString("en-US", {
   // in the component. Otherwise, you'll have to use global styles for content
   // that is brought into the DOM via a slot (like in the case of Markdown).
 
-  @import "../styles/breakpoints";
+  @use "../styles/breakpoints" as *;
 
   article.content {
     h2 {

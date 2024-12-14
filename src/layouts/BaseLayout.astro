@@ -94,7 +94,7 @@ if (frontmatter?.title && frontmatter?.description) {
 <style is:global lang="scss">
   @charset "UTF-8";
 
-  @import "../styles/breakpoints.scss";
+  @use "../styles/breakpoints" as *;
 
   :root {
     --colors-bg-base: #f9f8f8;
