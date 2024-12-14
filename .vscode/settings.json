@@ -1,24 +1,27 @@
 {
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript",
+    "typescriptreact"
+  ],
   "markdownlint.config": {
     "MD041": false,
     "MD036": false,
     "MD033": false
   },
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "javascriptreact",
-    "typescriptreact",
-  ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "workbench.colorTheme": "SynthWave '84",
   "cSpell.words": [
     "assesment",
+    "astrojs",
     "blogroll",
     "Cloudinary",
     "di",
     "elif",
     "Febuary",
+    "fontsource",
+    "frontmatter",
     "github",
     "Heroku",
     "JIRA",
@@ -33,10 +36,13 @@
     "retrive",
     "seperated",
     "Sequelize",
+    "Shiki",
     "Strava",
     "studentsuccess",
     "Tensorflow",
     "Trello",
+    "tsconfigs",
+    "tseslint",
     "Twillio",
     "Vite",
     "vitea",
