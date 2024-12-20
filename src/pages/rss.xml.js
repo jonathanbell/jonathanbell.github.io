@@ -1,11 +1,11 @@
 import rss from "@astrojs/rss";
 import sanitizeHtml from "sanitize-html";
 
-export async function GET (context) {
+export async function GET(context) {
   const postImportResult = import.meta.glob("./blog/*.md", { eager: true });
 
   const posts = Object.values(postImportResult).filter(
-    (post) => !post.frontmatter.title.includes("DRAFT")
+    (post) => !post.frontmatter.title.includes("DRAFT"),
   );
 
   const items = posts.map((post) => {

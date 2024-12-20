@@ -10,6 +10,7 @@
     "astro": "astro",
     "prepare": "husky install",
     "test": "astro build --silent && playwright test",
+    "prettier": "prettier . --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
