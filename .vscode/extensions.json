@@ -3,5 +3,5 @@
     "astro-build.astro-vscode",
     "streetsidesoftware.code-spell-checker"
   ],
-  "unwantedRecommendations": [],
+  "unwantedRecommendations": []
 }

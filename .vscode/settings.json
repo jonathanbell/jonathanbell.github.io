@@ -6,9 +6,7 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.documentSelectors": [
-    "**/*.astro"
-  ],
+  "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -68,5 +66,5 @@
     "Vue",
     "Webpack",
     "Workflowy"
-  ],
+  ]
 }
