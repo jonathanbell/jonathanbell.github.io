@@ -10,12 +10,6 @@ export default {
       },
     },
     {
-      files: "*.md",
-      options: {
-        //
-      },
-    },
-    {
       files: "*.astro",
       options: {
         parser: "astro",

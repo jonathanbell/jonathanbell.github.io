@@ -10,9 +10,10 @@
     "astro": "astro",
     "prepare": "husky install",
     "test": "astro build --silent && playwright test",
-    "prettier": "prettier . --write",
+    "prettier": "prettier . --check",
+    "prettier:fix": "prettier --log-level silent . --write",
     "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "lint:fix": "eslint --fix --quiet"
   },
   "dependencies": {
     "@fontsource/libre-franklin": "^5.0.17"
@@ -33,6 +34,7 @@
     "@types/node": "^22.2.0",
     "astro": "^5.0.2",
     "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^1.3.1",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "globals": "^15.13.0",
