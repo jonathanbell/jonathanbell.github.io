@@ -26,17 +26,17 @@ This blog and project website is built with [Astro](https://docs.astro.build). ð
 
 All commands are run from the root of the project:
 
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `npm install`          | Installs dependencies                            |
-| `npm run dev`          | Starts local dev server at `localhost:3000`      |
-| `npm run test`         | Run tests                                        |
-| `npm run lint`         | Run ESLint over: TS & Astro files        |
-| `npm run lint:fix`     | Run ESLint over: TS, Astro files (+ fix)   |
-| `npm run build`        | Build your production site to `./dist/`          |
-| `npm run preview`      | Preview your build locally, before deploying     |
-| `npm run astro <command>`    | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
-| `npm run astro --help` | Get help using the Astro CLI                     |
+| Command                   | Action                                                                                                         |
+| :------------------------ | :------------------------------------------------------------------------------------------------------------- |
+| `npm install`             | Installs dependencies                                                                                          |
+| `npm run dev`             | Starts local dev server at `localhost:3000`                                                                    |
+| `npm run test`            | Run tests                                                                                                      |
+| `npm run lint`            | Run ESLint over: TS & Astro files                                                                              |
+| `npm run lint:fix`        | Run ESLint over: TS, Astro files (+ fix)                                                                       |
+| `npm run build`           | Build your production site to `./dist/`                                                                        |
+| `npm run preview`         | Preview your build locally, before deploying                                                                   |
+| `npm run astro <command>` | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check` |
+| `npm run astro --help`    | Get help using the Astro CLI                                                                                   |
 
 ## Deploying
 

@@ -1,26 +1,26 @@
 // https://css-tricks.com/inclusively-hidden/
 @mixin screenreader-only() {
-	&:not(:focus):not(:active) {
-		clip: rect(0 0 0 0);
-		clip-path: inset(50%);
-		height: 1px;
-		overflow: hidden;
-		position: absolute;
-		white-space: nowrap;
-		width: 1px;
-	}
+  &:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
 }
 
 .screenreader-only {
-	@include screenreader-only();
+  @include screenreader-only();
 }
 
 @mixin section-header() {
-	text-transform: uppercase;
-	font-size: 1.1rem;
-	color: var(--colors-brand-base-secondary);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: var(--colors-brand-base-secondary);
 }
 
 .section-header {
-	@include section-header();
+  @include section-header();
 }

@@ -65,66 +65,80 @@ Which returns JSON from Cognitive Services with pretty accurate information abou
 
 ```json
 {
-  "categories": [
-    { "name": "others_", "score": 0.00390625 },
-    { "name": "people_", "score": 0.69140625, "detail": { "celebrities": [] } }
-  ],
-  "tags": [
-    { "name": "person", "confidence": 0.99869954586029053 },
-    {
-      "name": "standing",
-      "confidence": 0.92608910799026489
-    },
-    { "name": "posing", "confidence": 0.86872708797454834 }
-  ],
-  "description": {
-    "tags": [
-      "person",
-      "standing",
-      "posing",
-      "photo",
-      "woman",
-      "man",
-      "white",
-      "black",
-      "couple",
-      "young",
-      "dress",
-      "wedding",
-      "holding",
-      "wearing",
-      "cake",
-      "people",
-      "group",
-      "room"
+    "categories": [
+        { "name": "others_", "score": 0.00390625 },
+        {
+            "name": "people_",
+            "score": 0.69140625,
+            "detail": { "celebrities": [] }
+        }
     ],
-    "captions": [
-      {
-        "text": "a man and a woman posing for a photo",
-        "confidence": 0.88769173848231653
-      }
-    ]
-  },
-  "faces": [
-    {
-      "age": 21,
-      "gender": "Male",
-      "faceRectangle": { "top": 94, "left": 240, "width": 82, "height": 82 }
+    "tags": [
+        { "name": "person", "confidence": 0.99869954586029053 },
+        {
+            "name": "standing",
+            "confidence": 0.92608910799026489
+        },
+        { "name": "posing", "confidence": 0.86872708797454834 }
+    ],
+    "description": {
+        "tags": [
+            "person",
+            "standing",
+            "posing",
+            "photo",
+            "woman",
+            "man",
+            "white",
+            "black",
+            "couple",
+            "young",
+            "dress",
+            "wedding",
+            "holding",
+            "wearing",
+            "cake",
+            "people",
+            "group",
+            "room"
+        ],
+        "captions": [
+            {
+                "text": "a man and a woman posing for a photo",
+                "confidence": 0.88769173848231653
+            }
+        ]
     },
-    {
-      "age": 27,
-      "gender": "Female",
-      "faceRectangle": { "top": 114, "left": 317, "width": 80, "height": 80 }
-    }
-  ],
-  "adult": {
-    "isAdultContent": false,
-    "adultScore": 0.19785866141319275,
-    "isRacyContent": false,
-    "racyScore": 0.20760928094387054
-  },
-  "requestId": "edadd256-4a47-4717-9e08-fbb3d174658c",
-  "metadata": { "height": 667, "width": 500, "format": "Jpeg" }
+    "faces": [
+        {
+            "age": 21,
+            "gender": "Male",
+            "faceRectangle": {
+                "top": 94,
+                "left": 240,
+                "width": 82,
+                "height": 82
+            }
+        },
+        {
+            "age": 27,
+            "gender": "Female",
+            "faceRectangle": {
+                "top": 114,
+                "left": 317,
+                "width": 80,
+                "height": 80
+            }
+        }
+    ],
+    "adult": {
+        "isAdultContent": false,
+        "adultScore": 0.19785866141319275,
+        "isRacyContent": false,
+        "racyScore": 0.20760928094387054
+    },
+    "requestId": "edadd256-4a47-4717-9e08-fbb3d174658c",
+    "metadata": { "height": 667, "width": 500, "format": "Jpeg" }
 }
 ```
 
@@ -147,5 +161,5 @@ In the future the Skynet could use this technology against us but for the time b
 
 ### Links
 
-* [MS Face API PHP quickstart example](https://docs.microsoft.com/en-us/azure/cognitive-services/face/quickstarts/php) (official docs)
-* [Obtaining Azue subscription keys](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe) (official docs)
+- [MS Face API PHP quickstart example](https://docs.microsoft.com/en-us/azure/cognitive-services/face/quickstarts/php) (official docs)
+- [Obtaining Azure subscription keys](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/vision-api-how-to-topics/howtosubscribe) (official docs)
