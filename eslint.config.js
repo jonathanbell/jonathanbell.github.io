@@ -3,6 +3,7 @@ import jsConfig from "@eslint/js";
 import tsConfig from "typescript-eslint";
 import eslintPluginAstro from "eslint-plugin-astro";
 import jsxA11y from "eslint-plugin-jsx-a11y";
+import eslintConfigPrettier from "eslint-config-prettier";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -20,6 +21,7 @@ export default [
   ...tsConfig.configs.recommended,
   ...eslintPluginAstro.configs.recommended,
   ...eslintPluginAstro.configs["jsx-a11y-recommended"],
+  eslintConfigPrettier,
   {
     // Unfortunately, `ignores:[".astro/**"]` doesn't seem to want to work.
     files: [".astro/**"],
