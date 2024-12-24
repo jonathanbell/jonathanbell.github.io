@@ -1,7 +1,7 @@
 {
   "name": "jonathanbell.ca",
   "type": "module",
-  "version": "2.0.2",
+  "version": "2.4.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,6 +14,7 @@
     "prettier:fix": "prettier --log-level silent . --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
+    "bump-version": "npx --no-install tsx ./scripts/update-version.ts",
     "commit": "git-cz",
     "commit:stage": "git add --interactive && git-cz",
     "commit:stage:all": "git add . && git-cz",
@@ -36,6 +37,8 @@
     "@eslint/js": "^9.17.0",
     "@playwright/test": "^1.42.1",
     "@types/node": "^22.2.0",
+    "@types/prompts": "^2.4.9",
+    "@types/semver": "^7.5.8",
     "astro": "^5.0.2",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.17.0",
@@ -46,8 +49,10 @@
     "husky": "^8.0.3",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
+    "prompts": "^2.4.2",
     "sanitize-html": "^2.13.0",
     "sass": "^1.77.4",
+    "semver": "^7.6.3",
     "typescript": "^5.4.5",
     "typescript-eslint": "^8.18.0"
   },
