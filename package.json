@@ -14,7 +14,10 @@
     "prettier:fix": "prettier --log-level silent . --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "commit:stage": "git add --interactive && git-cz",
+    "commit:stage:all": "git add . && git-cz",
+    "commit:lint": "commitlint --from=$(git rev-list --max-parents=0 HEAD) --to=HEAD"
   },
   "dependencies": {
     "@fontsource/libre-franklin": "^5.0.17"
