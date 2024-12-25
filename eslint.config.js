@@ -8,27 +8,20 @@ import eslintConfigPrettier from "eslint-config-prettier";
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,astro,jsx,tsx}"],
-    ignores: ["node_modules/**", "dist/**", "test-results/**"],
+    // https://eslint.org/docs/latest/use/configure/configuration-files#globally-ignoring-files-with-ignores
+    // https://eslint.org/docs/latest/use/configure/configuration-files#specifying-files-and-ignores
+    ignores: ["dist/**", "test-results/**", ".astro/**"],
   },
   {
+    files: ["**/*.{js,mjs,cjs,ts,astro}"],
     languageOptions: {
       ...jsxA11y.flatConfigs.recommended.languageOptions,
       globals: globals.node,
     },
   },
   jsConfig.configs.recommended,
-  ...tsConfig.configs.recommended,
-  ...eslintPluginAstro.configs.recommended,
+  ...tsConfig.configs.strict,
+  ...eslintPluginAstro.configs["flat/recommended"],
   ...eslintPluginAstro.configs["jsx-a11y-recommended"],
   eslintConfigPrettier,
-  {
-    // Unfortunately, `ignores:[".astro/**"]` doesn't seem to want to work.
-    files: [".astro/**"],
-    rules: {
-      "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/triple-slash-reference": "off",
-      "@typescript-eslint/no-empty-object-type": "off",
-    },
-  },
 ];
