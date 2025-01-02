@@ -3,5 +3,3 @@
 
 npm run lint:fix
 npm run prettier:fix
-echo "Don't forget to bump the project version (npm run bump-version) if needed!"
-echo

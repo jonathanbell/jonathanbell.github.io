@@ -14,6 +14,6 @@ sed -i '' '1s/^.//' ./CHANGELOG.md
 # Lint the CHANGELOG.md file
 npm run prettier:fix:file -- CHANGELOG.md
 git add CHANGELOG.md
-git commit -m 'chore(release): v$(node -p \"require('./package.json').version\")'
-git tag -a v$(node -p \"require('./package.json').version\") -m 'chore(release): v$(node -p \"require('./package.json').version\")'
+git commit -m "chore(release): v$(node -e "console.log(require('./package.json').version)")"
+git tag -a "v$(node -e "console.log(require('./package.json').version)")" -m "chore(release): v$(node -e "console.log(require('./package.json').version)")"
 git push --follow-tags
