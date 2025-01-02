@@ -6,14 +6,14 @@ Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
 
 This website holds:
 
-1. My online résumé. 😃
+1. My online résumé 😃
 1. My blog
 1. A listing of my past and current projects
 1. Links to my social media, etc.
 
 Please feel free to use this repo as a template for your own résumé but please also remember to change the content, thank you!
 
-This blog and project website is built with [Astro](https://docs.astro.build). 🚀
+[jonathanbell.ca](https://www.jonathanbell.ca) is built with [Astro](https://docs.astro.build). 🚀
 
 ## Installation
 
@@ -43,6 +43,7 @@ All commands are run from the root of the project:
 | `npm run commit`                 | Using the already staged files, create [a conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) |
 | `npm run commit:stage`           | Interactively stage files and then commit them using a conventional commit style message                               |
 | `npm run commit:stage:all`       | Stage all the files that can be staged and commit them using a conventional style commit message (created via prompts) |
+| `npm run changelog`              | Generate a new changelog for the project                                                                               |
 
 ## Deploying
 

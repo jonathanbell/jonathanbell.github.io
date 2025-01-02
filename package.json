@@ -12,13 +12,16 @@
     "test": "astro build --silent && playwright test",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier --log-level silent . --write",
+    "prettier:fix:file": "prettier --log-level silent $1 --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
     "version:bump": "npx --no-install tsx ./scripts/update-version.ts",
     "commit": "git-cz",
     "commit:stage": "git add --interactive && git-cz",
     "commit:stage:all": "git add . && git-cz",
-    "commit:lint": "commitlint --from=$(git rev-list --max-parents=0 HEAD) --to=HEAD"
+    "commit:lint": "commitlint --from=$(git rev-list --max-parents=0 HEAD) --to=HEAD",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "bash ./scripts/release.sh"
   },
   "dependencies": {
     "@fontsource/libre-franklin": "^5.0.17"
@@ -40,6 +43,7 @@
     "@types/prompts": "^2.4.9",
     "@types/semver": "^7.5.8",
     "astro": "^5.0.2",
+    "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "^9.17.0",
     "eslint-config-prettier": "^9.1.0",
