@@ -1,7 +1,10 @@
-## 2.7.3 (2025-01-03)
+## 2.7.4 (2025-01-03)
 
-- fix(changelog): ensure that small tags are removed ([e92ab7b](https://github.com/jonathanbell/jonathanbell.github.io/commit/e92ab7b))
+- refactor(changelog): edit for clairity ([c3d733b](https://github.com/jonathanbell/jonathanbell.github.io/commit/c3d733b))
 - chore: add script to automate release and version bump ([b7449e3](https://github.com/jonathanbell/jonathanbell.github.io/commit/b7449e3))
+- chore: tidy up and rebase for cleaner commit history ([f53e266](https://github.com/jonathanbell/jonathanbell.github.io/commit/f53e266))
+- chore(release): v2.7.3 ([49c1488](https://github.com/jonathanbell/jonathanbell.github.io/commit/49c1488))
+- fix(changelog): ensure that small tags are removed ([41be1b3](https://github.com/jonathanbell/jonathanbell.github.io/commit/41be1b3))
 
 ## 2.6.2 (2025-01-02)
 
