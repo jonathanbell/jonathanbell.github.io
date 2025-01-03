@@ -2,7 +2,6 @@
 
 - fix(changelog): ensure that small tags are removed ([e92ab7b](https://github.com/jonathanbell/jonathanbell.github.io/commit/e92ab7b))
 - chore: add script to automate release and version bump ([b7449e3](https://github.com/jonathanbell/jonathanbell.github.io/commit/b7449e3))
-- chore(release): v2.7.2 ([5d47240](https://github.com/jonathanbell/jonathanbell.github.io/commit/5d47240))
 
 ## 2.6.2 (2025-01-02)
 
