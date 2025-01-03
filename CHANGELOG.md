@@ -1,9 +1,10 @@
-# <small>2.7.2 (2025-01-02)</small>
+## 2.7.3 (2025-01-03)
 
+- fix(changelog): ensure that small tags are removed ([e92ab7b](https://github.com/jonathanbell/jonathanbell.github.io/commit/e92ab7b))
 - chore: add script to automate release and version bump ([b7449e3](https://github.com/jonathanbell/jonathanbell.github.io/commit/b7449e3))
-- chore(release): v2.7.0 ([74ef90b](https://github.com/jonathanbell/jonathanbell.github.io/commit/74ef90b))
+- chore(release): v2.7.2 ([5d47240](https://github.com/jonathanbell/jonathanbell.github.io/commit/5d47240))
 
-## <small>2.6.2 (2025-01-02)</small>
+## 2.6.2 (2025-01-02)
 
 - chore: add a gitHub action to run tests ([7e7e38d](https://github.com/jonathanbell/jonathanbell.github.io/commit/7e7e38d))
 - chore: add klue work experience (#11) ([7a6725c](https://github.com/jonathanbell/jonathanbell.github.io/commit/7a6725c)), closes [#11](https://github.com/jonathanbell/jonathanbell.github.io/issues/11)
