@@ -12,6 +12,8 @@ npm run changelog
 # Remove and <small> and </small> tags from the CHANGELOG.md file
 sed -i '' 's/<small>//g' CHANGELOG.md
 sed -i '' 's/<\/small>//g' CHANGELOG.md
+# Remove any line starting with "chore(release)"
+sed -i '' '/^chore(release)/d' CHANGELOG.md
 # Lint the CHANGELOG.md file
 npm run prettier:fix:file -- CHANGELOG.md
 git add CHANGELOG.md
