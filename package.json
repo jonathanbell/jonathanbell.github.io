@@ -1,7 +1,7 @@
 {
   "name": "jonathanbell.ca",
   "type": "module",
-  "version": "2.7.4",
+  "version": "2.7.5",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
