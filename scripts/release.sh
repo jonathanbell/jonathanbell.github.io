@@ -20,3 +20,5 @@ git add CHANGELOG.md
 git commit -m "chore(release): v$(node -e "console.log(require('./package.json').version)")"
 git tag -a "v$(node -e "console.log(require('./package.json').version)")" -m "chore(release): v$(node -e "console.log(require('./package.json').version)")"
 git push --follow-tags
+
+echo 'Done. Code has been pushed!'
