@@ -9,8 +9,9 @@ fi
 npm run version:bump
 rm -f CHANGELOG.md
 npm run changelog
-# Remove the first character from the CHANGELOG.md file
-sed -i '' '1s/^.//' ./CHANGELOG.md
+# Remove and <small> and </small> tags from the CHANGELOG.md file
+sed -i '' 's/<small>//g' CHANGELOG.md
+sed -i '' 's/<\/small>//g' CHANGELOG.md
 # Lint the CHANGELOG.md file
 npm run prettier:fix:file -- CHANGELOG.md
 git add CHANGELOG.md
