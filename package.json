@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "prepare": "husky install",
-    "test": "astro build --silent && playwright test",
+    "test": "astro build --silent && NODE_OPTIONS='--disable-warning=ExperimentalWarning' playwright test",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier --log-level silent . --write",
     "prettier:fix:file": "prettier --log-level silent $1 --write",
