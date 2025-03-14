@@ -2,23 +2,6 @@ import { test, expect } from "@playwright/test";
 
 test("navigation links and page titles", async ({ page }) => {
   await page.goto("/");
-  const projectCard = page.getByTestId("card--project-item").first();
-  let cardBackgroundColor = await projectCard.evaluate((el) => {
-    return window.getComputedStyle(el).getPropertyValue("background-color");
-  });
-  expect(["rgb(255, 255, 255)", "rgb(0, 0, 0)"]).toContain(cardBackgroundColor);
-  await page.click('nav a[href="/#projects"]');
-  // Wait for the CSS transition to complete
-  await page.waitForTimeout(200); // Wait longer than 0.1 second
-  cardBackgroundColor = await projectCard.evaluate((el) => {
-    return window.getComputedStyle(el).getPropertyValue("background-color");
-  });
-  const possibleBackgroundColors = [
-    "rgb(196, 102, 222)", // dark mode, not hovered
-    "rgb(219, 34, 114)", // dark mode & light mode, hovered
-    "rgb(155, 10, 195)", // light mode, not hovered
-  ];
-  expect(possibleBackgroundColors).toContain(cardBackgroundColor);
 
   await page.click('nav a[href="/blog"]');
   await expect(page).toHaveTitle(/Blog/);

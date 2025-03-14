@@ -105,24 +105,29 @@ if (frontmatter?.title && frontmatter?.description) {
     --colors-brand-base: #9b0ac3;
     --colors-brand-base-secondary: #2d8218;
 
-    --colors-accent-light: #fbff0e;
-    --colors-accent-light-secondary: #eea508;
+    // --colors-accent-light: #fbff0e;
+    --colors-accent-light: #0bc786;
+    // --colors-accent-light-secondary: #eea508;
+    --colors-accent-light-secondary: #2265de;
+    // --colors-accent-deep: #2f1eed;
     --colors-accent-deep: #2f1eed;
-    --colors-accent-deep-secondary: #db2272;
+    // --colors-accent-deep-secondary: #db2272;
+    --colors-accent-deep-secondary: #7d51df;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --colors-bg-base: #151717;
-      // --colors-fg-base: #f9f8f8;
       --colors-fg-base: #f3f0f0;
 
       --colors-base-midtone: #b9c7d6;
 
-      --colors-brand-base: #c466de;
+      // --colors-brand-base: #c466de;
+      --colors-brand-base: #ff507a;
+      // --colors-brand-base-secondary: #5ed041;
       --colors-brand-base-secondary: #5ed041;
-
-      --colors-accent-deep: #1e5ced;
+      // --colors-accent-deep: #1e5ced;
+      --colors-accent-deep: #f07631;
     }
   }
 
@@ -149,7 +154,7 @@ if (frontmatter?.title && frontmatter?.description) {
       content: "";
       display: block;
       background: linear-gradient(
-        90deg,
+        113deg,
         var(--colors-accent-deep) 0%,
         var(--colors-brand-base) 20%,
         var(--colors-accent-deep-secondary) 60%,
