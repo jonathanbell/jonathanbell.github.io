@@ -35,4 +35,4 @@ I started making small apps - [just silly ones](https://www.blizzardjudge.com/) 
 
 You may notice that at the time of this writing (Dec 2018) that a lot of the tasks on [my project board](https://github.com/jonathanbell/notes/projects/1) are still not done. This is because I bit off way more than 3 months worth of work/study. I get excited about new things and (clearly) I scheduled too much work for one person to do in 3 months time. I do, however, have the personal goal of completing all of the items on my project board. I will have to be patient though as the lion's share of my attention will now be devoted to my new job.
 
-If you are a junior or intermediate coder considering a sabbatical, [feel free to reach out](https://www.instagram.com/jonathanbell.world/) with any questions.
+If you are a junior or intermediate coder considering a sabbatical, [feel free to reach out](https://www.instagram.com/jonathanbell.photo/) with any questions.
