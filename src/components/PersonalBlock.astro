@@ -1,19 +1,13 @@
 ---
 const { fullName } = Astro.props;
 const firstName = fullName.split(" ")[0];
-
-const now = new Date().getTime();
-const sAge = Math.floor(
-  (now - new Date("2021-11-01").getTime()) / 3.15576e10,
-).toString();
 ---
 
 <details data-testid="personal-block__details">
   <summary data-testid="personal-block__details-summary">
-    <span class="screenreader-only">{fullName}</span>is a software engineer<span
-      class="hide-on-x-small-screen"
-    >
-      at <span class="highlight">Klue</span> Labs</span
+    <span class="screenreader-only">{fullName}</span>is a software development
+    engineer<span class="hide-on-x-small-screen">
+      at <span class="highlight">Workday</span></span
     >.
   </summary>
   <article
@@ -24,27 +18,26 @@ const sAge = Math.floor(
       About {firstName}
     </h2>
     <p>
-      At <a href="https://klue.com/">Klue</a>, he works along side skilled
-      software engineers on Klue's newest product, <a
-        href="https://klue.com/win-loss">Klue Win Loss</a
-      >. This tool captures and analyzes win-loss data, helping revenue teams
-      win and close more deals more effectively. Prior to Klue, he was a
-      full-stack web developer at <a href="https://benevity.com/">Benevity</a>
-      where he helped create and enhance web applications such as <a
-        href="https://benevity.com/resources/spark-employee-engagement"
-        >Benevity Spark</a
-      >; the company's flagship product, responsible for corporate giving
-      programs all over the globe.
+      At <a href="https://www.workday.com/">Workday</a>, he collaborates with a
+      talented team to build and optimize solutions that enhance the developer
+      experience. His team is dedicated to simplifying complex development tasks
+      and accelerating development cycles, enabling faster innovation and the
+      delivery of higher-quality software. Before joining Workday, Jonathan was
+      a software engineer at <a href="https://klue.com/">Klue</a>, where he
+      helped create and enhance <a href="https://klue.com/win-loss"
+        >Klue Win-Loss</a
+      >&#x2014;a tool designed to capture and analyze win-loss data, empowering
+      revenue teams to close deals more effectively.
     </p>
     <p data-testid="personal-block__copy">
       When not programming, Jonathan tends to <a
         href="/pictures/_MG_3954-Edit.jpg"
-        target="_blank">climb up small boulders in the woods</a
-      > around Vancouver Island, Canada &#127464;&#127462;. He also enjoys <a
-        href="https://www.strava.com/athletes/jonathanbell">trail running</a
-      >, skiing, drinking tea, hiking with <a
-        href="https://www.instagram.com/baciandbaci/">his wife</a
-      > and {sAge} year old son, <a
+        target="_blank">climb boulders</a
+      > in the forests of Vancouver Island, Canada &#127464;&#127462;. He also enjoys
+      <a target="_blank" href="https://www.strava.com/athletes/jonathanbell"
+        >trail running</a
+      >, skiing, drinking tea, hiking, <a
+        target="_blank"
         href="https://www.instagram.com/jonathanbell.photo/"
         >landscape photography</a
       > and attempting be a minimalist.

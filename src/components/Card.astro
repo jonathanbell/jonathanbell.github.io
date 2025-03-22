@@ -111,6 +111,10 @@ const dateDatetime = (): string => {
         display: grid;
         grid-template-columns: 5fr 1fr;
 
+        @media (min-width: $breakpoints-large) {
+          min-height: 3.75rem;
+        }
+
         span {
           font-size: 1.188rem;
 

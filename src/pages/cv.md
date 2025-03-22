@@ -20,14 +20,26 @@ Fluent in both written and spoken English and Italian.
 
 ## Employment
 
+### Software Development Engineer
+
+_September 2024 to present, Workday Inc., Victoria BC_
+
+Qbit, Docs.build: Tools to significantly enhance the Workday developer experience
+
+- Develop and maintain Node + TypeScript-based tools that streamline the Workday developer workflow, resulting in a friction-less development experience that touches thousands of engineers and millions of customers
+- Improve the DX and efficiency by enhancing and maintaining the company's self-serve documentation tool, Docs.build
+- Create React hooks and functions that reach across the Workday front-end development experience, clicking into the existing UI Server model and beyond
+
+**Leveraging knowledge in:** Front-end web development; React, DX (Developer Experience) via Node and TypeScript, Vitest, Git, GitHub Actions (CICD), Playwright, AWS (including Lambda and S3), Docusaurus
+
 ### IC3 Software Engineer
 
-_July 2023 to present, Klue Labs, Victoria BC (remote)_
+_July 2023 to September 2024, Klue Labs, Victoria BC (remote)_
 
 [Klue Win Loss](https://klue.com/win-loss): Web application designed to record and scrutinize win-loss insights data; enables sales and revenue teams' competitive abilities
 
 - Employ React with TypeScript and RTK Query to build out new win-loss analysis tool helping users understand the key factors that influence their customers' decisions
-- Contribute to and advocate for the company's design system, creating new atomic components and new variant components often; supporting the brand's identity and component/code re-usability, scaleability, testability, and quality
+- Contribute to and advocate for the company's design system, creating new atomic components and new variant components often; supporting the brand's identity and component/code re-usability, scalability, testability, and quality
 - Improve developer experience and efficiency by maintaining and accelerating continuous integration and deployment tools
 - Make front-end and back-end (Python) code changes and improvements following Agile best practices
 
@@ -89,10 +101,11 @@ Graduated with diploma; applied skills acquired in the areas of web design and p
 
 Proficient:
 
-- JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite, Sequelize
+- JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite
+- Unit testing: PHPUnit, React Testing Library, Vitest
 - PHP: Laravel, WordPress/Drupal, modern OOPHP
-- Unit testing: PHPUnit, Jest, React Testing Library, Vitest
 - E2E testing: Playwright/Cypress
+- Amazon Web Services (specifically Lambda, EC2, S3 & SES)
 - HTTP & REST APIs
 - Docker
 - Git
@@ -103,14 +116,12 @@ Proficient:
 Familiar & comfortable:
 
 - SQL
-- Python
 - Go
+- Python
 - Java
-- Amazon Web Services (specifically Lambda, EC2, S3 & SES)
-- Messaging services: Courier, Mailgun, Twillio, etc.
 - Bash
+- Messaging services: Courier, Mailgun, Twillio, etc.
 
 Keen interest:
 
-- WebAssembly (WASM)
-- Tensorflow + PyTorch
+- C#
