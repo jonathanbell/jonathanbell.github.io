@@ -57,7 +57,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: "23.6.0"
+          node-version: "23.x"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/package-lock.json
       - name: Setup GitHub Pages
