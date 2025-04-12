@@ -30,7 +30,7 @@ Qbit, Docs.build: Tools to significantly enhance the Workday developer experienc
 - Improve the DX and efficiency by enhancing and maintaining the company's self-serve documentation tool, Docs.build
 - Create React hooks and functions that reach across the Workday front-end development experience, clicking into the existing UI Server model and beyond
 
-**Leveraging knowledge in:** Front-end web development; React, DX (Developer Experience) via Node and TypeScript, Vitest, Git, GitHub Actions (CICD), Playwright, AWS (including Lambda and S3), Docusaurus
+**Leveraging knowledge in:** Front-end web development; React, DX (Developer Experience) utilizing Node and TypeScript, Vitest, Git, GitHub Actions (CICD), Playwright, AWS (including Lambda and S3), Docusaurus & Jenkins
 
 ### IC3 Software Engineer
 
@@ -38,7 +38,7 @@ _July 2023 to September 2024, Klue Labs, Victoria BC (remote)_
 
 [Klue Win Loss](https://klue.com/win-loss): Web application designed to record and scrutinize win-loss insights data; enables sales and revenue teams' competitive abilities
 
-- Employ React with TypeScript and RTK Query to build out new win-loss analysis tool helping users understand the key factors that influence their customers' decisions
+- Employ React with TypeScript and RTK Query to build out a win-loss analysis tool helping users understand the key factors that influence their customers' decisions
 - Contribute to and advocate for the company's design system, creating new atomic components and new variant components often; supporting the brand's identity and component/code re-usability, scalability, testability, and quality
 - Improve developer experience and efficiency by maintaining and accelerating continuous integration and deployment tools
 - Make front-end and back-end (Python) code changes and improvements following Agile best practices
@@ -102,7 +102,7 @@ Graduated with diploma; applied skills acquired in the areas of web design and p
 Proficient:
 
 - JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite
-- Unit testing: PHPUnit, React Testing Library, Vitest
+- Unit testing: PHPUnit, React Testing Library, Vitest, Jest
 - PHP: Laravel, WordPress/Drupal, modern OOPHP
 - E2E testing: Playwright/Cypress
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)

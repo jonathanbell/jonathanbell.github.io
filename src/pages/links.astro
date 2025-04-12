@@ -2,24 +2,35 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import BigOlButton from "../components/BigOlButton.astro";
 
-const links = [
+type Link = {
+  link: string;
+  title: string;
+};
+
+const links: Link[] = [
   {
     link: "http://instagram.com/jonathanbell.photo",
-    title: "Instagram: landscapes 🌄",
+    title: "Instagram 🏔️",
   },
   { link: "https://www.strava.com/athletes/jonathanbell", title: "Strava" },
   {
     link: "https://www.mountainproject.com/user/201667352/jonathan-bell",
     title: "Mountain Project 🧗‍♀️",
   },
-  { link: "https://codepen.io/jonathanbell/", title: "Codepen" },
   { link: "https://foundation.app/@jonathanbell", title: "NFTs: Foundation" },
   {
     link: "https://discordapp.com/users/ScrntonStrnglr#4067",
     title: "Discord",
   },
   { link: "https://github.com/jonathanbell", title: "GitHub 👨‍💻" },
-  { link: "https://log.jonathanbell.ca/", title: "A bunch of old photos" },
+  {
+    link: "https://instagram.com/log.jonathanbell",
+    title: "A bunch of old photos",
+  },
+  {
+    link: "https://log.jonathanbell.ca/",
+    title: "A bunch of really old photos",
+  },
 ];
 ---
 
@@ -46,7 +57,7 @@ const links = [
         }
       </nav>
 
-      <h2>Wallet Address</h2>
+      <h2>ETH Wallet Address</h2>
       <div class="textarea-copy">
         <textarea
           readonly="true"
