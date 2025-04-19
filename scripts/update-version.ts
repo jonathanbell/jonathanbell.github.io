@@ -114,7 +114,7 @@ const main = async () => {
       await gitTag(newVersion);
       await gitAdd();
       console.info(
-        `🫵 You must manually push tags to Github! Use: git push origin v${newVersion}`,
+        `🫵  You must manually push tags to Github! Use: git push origin v${newVersion}`,
       );
     } catch (error) {
       console.error(`Failed to tag or stage ${PACKAGE_JSON_PATH}: ${error}`);

@@ -32,7 +32,7 @@ All commands are run from the root of the project:
 | `npm run dev`<br>`npm run start` | Compile the project and start the local dev server at `localhost:3000`                                                 |
 | `npm run test`                   | Run tests                                                                                                              |
 | `npm run lint`                   | Run ESLint over: TS & Astro files                                                                                      |
-| `npm run lint:fix`               | Run ESLint over: TS, Astro files (and fix all fixable issues)                                                          |
+| `npm run lint:fix`               | Run ESLint over: TS & Astro files (and fix all fixable issues)                                                         |
 | `npm run build`                  | Build your production site to `./dist/`                                                                                |
 | `npm run preview`                | Preview your build locally (useful when checking a deploy)                                                             |
 | `npm run astro <command>`        | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check`         |
