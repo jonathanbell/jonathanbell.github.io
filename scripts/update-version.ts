@@ -48,6 +48,21 @@ const gitAdd = async (): Promise<void> => {
   });
 };
 
+const gitTag = async (version: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(`git tag -a v${version} -m "v${version}"`, (error) => {
+      if (error) {
+        console.error(`Error tagging version ${version}: ${error}`);
+        reject(new Error(`Failed to tag version ${version}`));
+        return;
+      }
+
+      console.log(`Tagged version: v${version}`);
+      resolve();
+    });
+  });
+};
+
 const main = async () => {
   const packageJson = getPackageJson();
   const currentVersion = packageJson.version;
@@ -96,14 +111,18 @@ const main = async () => {
     writePackageJson(packageJson);
 
     try {
+      await gitTag(newVersion);
       await gitAdd();
+      console.info(
+        `🫵 You must manually push tags to Github! Use: git push origin v${newVersion}`,
+      );
     } catch (error) {
-      console.error(`Failed to stage ${PACKAGE_JSON_PATH}: ${error}`);
+      console.error(`Failed to tag or stage ${PACKAGE_JSON_PATH}: ${error}`);
       process.exit(1);
     }
   } else {
     console.info(
-      `Version type not selected or provided. Version will not be bumped.`,
+      `Version type not selected or provided. Version will not be bumped. Have a nice day.`,
     );
     process.exit(0);
   }
