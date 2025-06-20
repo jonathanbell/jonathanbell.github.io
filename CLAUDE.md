@@ -79,4 +79,4 @@ Projects use schema validation requiring:
 
 When creating commits always use the conventional commit style. The commit title should use lowercase characters only. The body should use proper English grammar.
 
-Do not mention Claude or any AI tools in the commit message.
+Do not mention Claude, Claude Code or any AI tools when creating commit messages. Do not add "Co-authored by" statements with Claude Code mentioned.
