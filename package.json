@@ -15,13 +15,12 @@
     "prettier:fix:file": "prettier --log-level silent $1 --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
-    "release": "npx --yes tsx ./scripts/update-version.ts",
     "commit": "git-cz",
     "commit:stage": "git add --interactive && git-cz",
     "commit:stage:all": "git add . && git-cz",
     "commit:lint": "commitlint --from=$(git rev-list --max-parents=0 HEAD) --to=HEAD",
     "changelog:create": "git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && echo 'CHANGELOG.md staged in Git'",
-    "release": "bash ./scripts/release.sh"
+    "release": "npx --yes tsx ./scripts/release.ts"
   },
   "dependencies": {
     "@fontsource/libre-franklin": "^5.0.17"
