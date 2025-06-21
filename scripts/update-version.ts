@@ -7,8 +7,26 @@ const PACKAGE_JSON_PATH = "./package.json";
 
 interface PackageJson {
   version: string;
-  [key: string]: Record<string, unknown> | string;
+  name?: string;
+  scripts?: Record<string, string>;
+  dependencies?: Record<string, string>;
+  devDependencies?: Record<string, string>;
+  [key: string]: unknown;
 }
+
+const execAsync = (command: string, description: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(command, (error) => {
+      if (error) {
+        console.error(`Error ${description}: ${error}`);
+        reject(new Error(`Failed to ${description}`));
+        return;
+      }
+      console.log(`${description} completed`);
+      resolve();
+    });
+  });
+};
 
 const getPackageJson = (): PackageJson => {
   try {
@@ -34,96 +52,42 @@ const writePackageJson = (packageJson: PackageJson): void => {
 };
 
 const gitAdd = async (): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(`git add ${PACKAGE_JSON_PATH}`, (error) => {
-      if (error) {
-        console.error(`Error adding ${PACKAGE_JSON_PATH} to Git: ${error}`);
-        reject(new Error(`Failed to add ${PACKAGE_JSON_PATH} to git ${error}`));
-        return;
-      }
-
-      console.log(`Staged ${PACKAGE_JSON_PATH} to Git`);
-      resolve();
-    });
-  });
+  return execAsync(
+    `git add ${PACKAGE_JSON_PATH}`,
+    `staging ${PACKAGE_JSON_PATH} to Git`,
+  );
 };
 
 const gitCommit = async (version: string): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(`git commit -m "chore(release): v${version}"`, (error) => {
-      if (error) {
-        console.error(`Error committing version ${version}: ${error}`);
-        reject(new Error(`Failed to commit version ${version}`));
-        return;
-      }
-
-      console.log(`Committed version: v${version}`);
-      resolve();
-    });
-  });
+  return execAsync(
+    `git commit -m "chore(release): v${version}"`,
+    `committing version v${version}`,
+  );
 };
 
 const gitTag = async (version: string): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(`git tag -a v${version} -m "v${version}"`, (error) => {
-      if (error) {
-        console.error(`Error tagging version ${version}: ${error}`);
-        reject(new Error(`Failed to tag version ${version}`));
-        return;
-      }
-
-      console.log(`Tagged version: v${version}`);
-      resolve();
-    });
-  });
+  return execAsync(
+    `git tag -a v${version} -m "v${version}"`,
+    `tagging version v${version}`,
+  );
 };
 
 const generateChangelog = async (): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(
-      `git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0`,
-      (error) => {
-        if (error) {
-          console.error(`Error generating changelog: ${error}`);
-          reject(new Error(`Failed to generate changelog`));
-          return;
-        }
-
-        console.log(`Generated changelog`);
-        resolve();
-      },
-    );
-  });
+  return execAsync(
+    `git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0`,
+    `generating changelog`,
+  );
 };
 
 const gitAddChangelog = async (): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(`git add CHANGELOG.md`, (error) => {
-      if (error) {
-        console.error(`Error adding CHANGELOG.md to Git: ${error}`);
-        reject(new Error(`Failed to add CHANGELOG.md to git`));
-        return;
-      }
-
-      console.log(`Staged CHANGELOG.md to Git`);
-      resolve();
-    });
-  });
+  return execAsync(`git add CHANGELOG.md`, `staging CHANGELOG.md to Git`);
 };
 
 const gitPush = async (version: string): Promise<void> => {
-  return new Promise((resolve, reject) => {
-    exec(`git push origin main && git push origin v${version}`, (error) => {
-      if (error) {
-        console.error(`Error pushing version ${version}: ${error}`);
-        reject(new Error(`Failed to push version ${version}`));
-        return;
-      }
-
-      console.log(`Pushed commit and tag v${version} to GitHub`);
-      resolve();
-    });
-  });
+  return execAsync(
+    `git push origin main && git push origin v${version}`,
+    `pushing commit and tag v${version} to GitHub`,
+  );
 };
 
 const main = async () => {
