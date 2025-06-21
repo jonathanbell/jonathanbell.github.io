@@ -1,5 +1,14 @@
+## 2.11.0 (2025-06-21)
+
+* fix(scripts): resolve infinite loop in release script and consolidate release tooling ([1348a4c](https://github.com/jonathanbell/jonathanbell.github.io/commit/1348a4c))
+* refactor: rename version:bump script to release ([80c07b7](https://github.com/jonathanbell/jonathanbell.github.io/commit/80c07b7))
+* refactor(scripts): optimize release script with reusable helper and improved types ([4292b20](https://github.com/jonathanbell/jonathanbell.github.io/commit/4292b20))
+
+
+
 ## 2.10.0 (2025-06-21)
 
+* chore(release): v2.10.0 ([8a204f9](https://github.com/jonathanbell/jonathanbell.github.io/commit/8a204f9))
 * feat: enhance version bump script with automated changelog and git operations ([2f418a6](https://github.com/jonathanbell/jonathanbell.github.io/commit/2f418a6))
 
 
