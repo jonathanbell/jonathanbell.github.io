@@ -12,7 +12,6 @@
     "test": "astro build --silent && NODE_OPTIONS='--disable-warning=ExperimentalWarning' playwright test",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier --log-level silent . --write",
-    "prettier:fix:file": "prettier --log-level silent $1 --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
     "commit": "git-cz",
