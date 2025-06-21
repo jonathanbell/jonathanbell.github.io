@@ -25,7 +25,7 @@ test("cv page displays contact information", async ({ page }) => {
   );
 
   const websiteLink = page.getByRole("link", {
-    name: /jonathanbell\.ca\/links/i,
+    name: /jonathanbell\.github\.io\/links/i,
   });
   await expect(websiteLink).toBeVisible();
   await expect(websiteLink).toHaveAttribute(
@@ -37,9 +37,8 @@ test("cv page displays contact information", async ({ page }) => {
 test("CV page displays employment history", async ({ page }) => {
   await page.goto("/cv");
 
-  // Check for current position at Workday.
-  await expect(page.getByText("Software Engineer")).toBeVisible();
-  await expect(page.getByText("Workday Inc.")).toBeVisible();
+  await expect(page.getByText("Workday Inc.").first()).toBeVisible();
+  await expect(page.getByText("Klue").first()).toBeVisible();
 });
 
 test("cv page displays summary section", async ({ page }) => {

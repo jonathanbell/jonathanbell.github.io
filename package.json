@@ -22,7 +22,8 @@
     "release": "npx --yes tsx ./scripts/release.ts"
   },
   "dependencies": {
-    "@fontsource/libre-franklin": "^5.0.17"
+    "@fontsource/libre-franklin": "^5.0.17",
+    "markdown-it": "^14.1.0"
   },
   "engines": {
     "node": "23.x",

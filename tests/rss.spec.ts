@@ -1,8 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 test("rss feed validates against RSS 2.0 specification", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   // Should have required RSS 2.0 elements.
   expect(content).toMatch(/<rss version="2\.0"/);
@@ -26,8 +26,8 @@ test("rss feed validates against RSS 2.0 specification", async ({ page }) => {
 });
 
 test("rss feed has proper channel information", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   expect(content).toMatch(/<title>.*Jonathan Bell.*<\/title>/);
   expect(content).toMatch(/<link>.*jonathanbell\.github\.io.*<\/link>/);
@@ -36,8 +36,8 @@ test("rss feed has proper channel information", async ({ page }) => {
 });
 
 test("rss feed contains blog posts", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   expect(content).toContain("<item>");
   expect(content).toContain("</item>");
@@ -51,8 +51,8 @@ test("rss feed contains blog posts", async ({ page }) => {
 });
 
 test("RSS feed dates are properly formatted", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   const pubDateMatches = content.match(/<pubDate>(.*?)<\/pubDate>/g);
   expect(pubDateMatches?.length).toBeGreaterThan(0);
@@ -72,30 +72,30 @@ test("RSS feed dates are properly formatted", async ({ page }) => {
 });
 
 test("RSS feed content is properly escaped", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
-  // Should not contain unescaped HTML in wrong places
-  expect(content).not.toMatch(/<title>.*<[^/].*<\/title>/); // No HTML tags in titles
+  expect(content).not.toMatch(/<title>[^<]*<(?!\/title>)[^>]*>/); // No HTML tags inside titles
 
   // Should properly escape content in descriptions
   if (content.includes("<description>")) {
-    // If there's HTML content, it should be properly escaped or in CDATA
-    const hasUnescapedHTML =
-      /<description>(?:(?!<!\[CDATA\[)[\s\S])*?<(?!\/description>)/.test(
-        content,
-      );
-    if (hasUnescapedHTML) {
-      // Should use CDATA sections for HTML content
-      expect(content).toContain("<![CDATA[");
-      expect(content).toContain("]]>");
+    // Check for unescaped HTML tags inside descriptions (not the closing tag).
+    const descriptionMatches = content.match(
+      /<description>(.*?)<\/description>/g,
+    );
+    if (descriptionMatches) {
+      for (const desc of descriptionMatches) {
+        const descContent = desc.replace(/<\/?description>/g, "");
+        // Should not contain unescaped HTML tags
+        expect(descContent).not.toMatch(/<(?!\/?description)[^>]*>/);
+      }
     }
   }
 });
 
 test("rss feed links are absolute URLs", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   const linkMatches = content.match(/<link>(.*?)<\/link>/g);
 
@@ -122,8 +122,8 @@ test("rss feed links are absolute URLs", async ({ page }) => {
 });
 
 test("rss feed includes recent posts only", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   const pubDateMatches = content.match(/<pubDate>(.*?)<\/pubDate>/g);
 
@@ -141,8 +141,8 @@ test("rss feed includes recent posts only", async ({ page }) => {
 });
 
 test("rss feed excludes DRAFT posts", async ({ page }) => {
-  await page.goto("/rss.xml");
-  const content = await page.content();
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
 
   expect(content.toUpperCase()).not.toContain("DRAFT");
 
@@ -152,6 +152,40 @@ test("rss feed excludes DRAFT posts", async ({ page }) => {
       const title = titleMatch.replace(/<\/?title>/g, "");
       expect(title.toUpperCase()).not.toContain("DRAFT");
     }
+  }
+});
+
+test("RSS feed items have required elements", async ({ page }) => {
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
+
+  const itemMatches = content.match(/<item>(.*?)<\/item>/gs);
+
+  if (itemMatches && itemMatches.length > 0) {
+    for (const item of itemMatches.slice(0, 3)) {
+      // Each item should have required elements.
+      expect(item).toMatch(/<title>.*<\/title>/);
+      expect(item).toMatch(/<link>.*<\/link>/);
+      expect(item).toMatch(/<description>.*<\/description>/);
+      expect(item).toMatch(/<pubDate>.*<\/pubDate>/);
+      expect(item).toMatch(/<guid.*?>.*<\/guid>/);
+    }
+  }
+});
+
+test("RSS feed GUIDs are unique", async ({ page }) => {
+  const response = await page.request.get("/rss.xml");
+  const content = await response.text();
+
+  const guidMatches = content.match(/<guid.*?>(.*?)<\/guid>/g);
+
+  if (guidMatches && guidMatches.length > 1) {
+    const guids = guidMatches.map((match) =>
+      match.replace(/<\/?guid[^>]*>/g, ""),
+    );
+
+    const uniqueGuids = new Set(guids);
+    expect(uniqueGuids.size).toBe(guids.length);
   }
 });
 
