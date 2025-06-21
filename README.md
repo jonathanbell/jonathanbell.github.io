@@ -39,7 +39,7 @@ All commands are run from the root of the project:
 | `npm run astro --help`           | Get help using the Astro CLI                                                                                           |
 | `npm run prettier:fix`           | Run Prettier and fix any ugliness                                                                                      |
 | `npm run lint:fix`               | Run ESLint and fix any atrocities                                                                                      |
-| `npm run version:bump`           | Increment the semantic version of the project via the CLI and a series of prompts                                      |
+| `npm run release`                | Interactive release workflow with version increment, changelog generation, and automated Git operations                |
 | `npm run commit`                 | Using the already staged files, create [a conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) |
 | `npm run commit:stage`           | Interactively stage files and then commit them using a conventional commit style message                               |
 | `npm run commit:stage:all`       | Stage all the files that can be staged and commit them using a conventional style commit message (created via prompts) |

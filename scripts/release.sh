@@ -6,7 +6,7 @@ if [[ "$response" != "y" ]]; then
   exit 1
 fi
 
-npm run version:bump
+npm run release
 rm -f CHANGELOG.md
 npm run changelog
 # Remove and <small> and </small> tags from the CHANGELOG.md file

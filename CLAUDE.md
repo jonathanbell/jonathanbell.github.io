@@ -24,7 +24,7 @@ This is Jonathan Bell's personal website built with Astro, deployed at jonathanb
 
 ### Versioning
 
-- `npm run version:bump` - Interactive semantic version increment via CLI prompts
+- `npm run release` - Interactive semantic version increment, changelog generation, and automated release
 
 ## Architecture & Structure
 

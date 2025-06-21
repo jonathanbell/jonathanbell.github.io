@@ -15,7 +15,7 @@
     "prettier:fix:file": "prettier --log-level silent $1 --write",
     "lint": "eslint",
     "lint:fix": "eslint --fix --quiet",
-    "version:bump": "npx --yes tsx ./scripts/update-version.ts",
+    "release": "npx --yes tsx ./scripts/update-version.ts",
     "commit": "git-cz",
     "commit:stage": "git add --interactive && git-cz",
     "commit:stage:all": "git add . && git-cz",
