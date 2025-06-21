@@ -1,7 +1,20 @@
+## 2.10.0 (2025-06-21)
+
+* feat: enhance version bump script with automated changelog and git operations ([2f418a6](https://github.com/jonathanbell/jonathanbell.github.io/commit/2f418a6))
+
+
+
+## <small>2.9.1 (2025-06-21)</small>
+
+* chore(release): v2.9.1 ([ef24e34](https://github.com/jonathanbell/jonathanbell.github.io/commit/ef24e34))
+
+
+
 ## 2.9.0 (2025-06-21)
 
 * chore: ensure claude code is not mentioned in commit messages ([1f4be74](https://github.com/jonathanbell/jonathanbell.github.io/commit/1f4be74))
 * chore: implement lint-staged for optimized pre-commit hooks ([008844a](https://github.com/jonathanbell/jonathanbell.github.io/commit/008844a))
+* chore: release v2.9.0 ([227921d](https://github.com/jonathanbell/jonathanbell.github.io/commit/227921d))
 * chore(.gitignore): add ide config ([ab670e3](https://github.com/jonathanbell/jonathanbell.github.io/commit/ab670e3))
 * chore(changelog): update changelog list ([2006d95](https://github.com/jonathanbell/jonathanbell.github.io/commit/2006d95))
 * chore(deps): update deps after rebase ([7fe9ae5](https://github.com/jonathanbell/jonathanbell.github.io/commit/7fe9ae5))
