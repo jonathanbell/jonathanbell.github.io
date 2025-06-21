@@ -48,6 +48,21 @@ const gitAdd = async (): Promise<void> => {
   });
 };
 
+const gitCommit = async (version: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(`git commit -m "chore(release): v${version}"`, (error) => {
+      if (error) {
+        console.error(`Error committing version ${version}: ${error}`);
+        reject(new Error(`Failed to commit version ${version}`));
+        return;
+      }
+
+      console.log(`Committed version: v${version}`);
+      resolve();
+    });
+  });
+};
+
 const gitTag = async (version: string): Promise<void> => {
   return new Promise((resolve, reject) => {
     exec(`git tag -a v${version} -m "v${version}"`, (error) => {
@@ -58,6 +73,54 @@ const gitTag = async (version: string): Promise<void> => {
       }
 
       console.log(`Tagged version: v${version}`);
+      resolve();
+    });
+  });
+};
+
+const generateChangelog = async (): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(
+      `git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0`,
+      (error) => {
+        if (error) {
+          console.error(`Error generating changelog: ${error}`);
+          reject(new Error(`Failed to generate changelog`));
+          return;
+        }
+
+        console.log(`Generated changelog`);
+        resolve();
+      },
+    );
+  });
+};
+
+const gitAddChangelog = async (): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(`git add CHANGELOG.md`, (error) => {
+      if (error) {
+        console.error(`Error adding CHANGELOG.md to Git: ${error}`);
+        reject(new Error(`Failed to add CHANGELOG.md to git`));
+        return;
+      }
+
+      console.log(`Staged CHANGELOG.md to Git`);
+      resolve();
+    });
+  });
+};
+
+const gitPush = async (version: string): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    exec(`git push origin main && git push origin v${version}`, (error) => {
+      if (error) {
+        console.error(`Error pushing version ${version}: ${error}`);
+        reject(new Error(`Failed to push version ${version}`));
+        return;
+      }
+
+      console.log(`Pushed commit and tag v${version} to GitHub`);
       resolve();
     });
   });
@@ -111,13 +174,15 @@ const main = async () => {
     writePackageJson(packageJson);
 
     try {
-      await gitTag(newVersion);
       await gitAdd();
-      console.info(
-        `🫵  You must manually push tags to Github! Use: git push origin v${newVersion}`,
-      );
+      await generateChangelog();
+      await gitAddChangelog();
+      await gitCommit(newVersion);
+      await gitTag(newVersion);
+      await gitPush(newVersion);
+      console.info(`✅ Successfully released version v${newVersion}`);
     } catch (error) {
-      console.error(`Failed to tag or stage ${PACKAGE_JSON_PATH}: ${error}`);
+      console.error(`Failed to complete release process: ${error}`);
       process.exit(1);
     }
   } else {
