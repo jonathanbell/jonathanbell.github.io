@@ -52,3 +52,9 @@ test("github link takes user to correct page", async ({ page }) => {
     .getAttribute("href");
   expect(href).toBe("https://github.com/jonathanbell/jonathanbell.github.io");
 });
+
+test("the footer is on the homepage", async ({ page }) => {
+  await page.goto("/");
+  const siteFooter = await page.$('[data-testid="site-footer"]');
+  expect(siteFooter).toBeTruthy();
+});

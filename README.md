@@ -1,6 +1,6 @@
 # Jonathan Bell's personal website 👨‍💻
 
-Source code for [jonathanbell.ca](https://www.jonathanbell.ca)
+Source code for [jonathanbell.github.io](https://jonathanbell.github.io)
 
 ---
 
@@ -13,12 +13,12 @@ This website holds:
 
 Please feel free to use this repo as a template for your own résumé but please also remember to change the content, thank you!
 
-[jonathanbell.ca](https://www.jonathanbell.ca) is built with [Astro](https://docs.astro.build). 🚀
+[jonathanbell.github.io](https://jonathanbell.github.io) is built with [Astro](https://docs.astro.build). 🚀
 
 ## Installation
 
-1. Clone this repository: `git clone git@github.com:jonathanbell/jonathanbell.github.io.git jonathanbell.ca`
-1. `cd jonathanbell.ca`
+1. Clone this repository: `git clone git@github.com:jonathanbell/jonathanbell.github.io.git jonathanbell.github.io`
+1. `cd jonathanbell.github.io`
 1. `npm i`
 1. `npm run dev` will run the site locally with the [Vite](https://vitejs.dev/) server
 

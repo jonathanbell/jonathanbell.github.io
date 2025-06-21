@@ -7,8 +7,8 @@ description: The personal online curriculum vitea of Jonathan Bell
 ## Contact
 
 - LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
-- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
-- Website: [jonathanbell.ca/links](https://www.jonathanbell.ca/links/)
+- Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.github.io@gmail.com)
+- Website: [jonathanbell.github.io/links](https://jonathanbell.github.io/links/)
 
 ## Summary
 
@@ -20,7 +20,7 @@ Fluent in both written and spoken English and Italian.
 
 ## Employment
 
-### Software Development Engineer
+### Software Engineer
 
 _September 2024 to present, Workday Inc., Victoria BC_
 
@@ -72,7 +72,7 @@ _March 2015 to April 2018, Ministry of Education, BC Public Service, Victoria BC
 
 ## Personal Software Projects
 
-_Professional projects not listed; see [www.jonathanbell.ca](https://www.jonathanbell.ca/#projects)_
+_Professional projects not listed; see [jonathanbell.github.io](https://jonathanbell.github.io/#projects)_
 
 ### Blizzard Judge ([github.com/jonathanbell/blizzard-judge](https://github.com/jonathanbell/blizzard-judge))
 
@@ -82,7 +82,7 @@ _Professional projects not listed; see [www.jonathanbell.ca](https://www.jonatha
 
 **Utilized:** Node, CSS, JavaScript (vanilla), MongoDB, Mongoose, 3rd party APIs (Cloudinary, S3)
 
-### Personal Website ([jonathanbell.ca](https://jonathanbell.ca))
+### Personal Website ([jonathanbell.github.io](https://jonathanbell.github.io))
 
 - Developed a [personal website/blog](https://github.com/jonathanbell/jonathanbell.github.io) site using [Astro](https://astro.build/) that allows users to learn a little bit more about me
 - Added integration tests and GitHub Actions for CICD

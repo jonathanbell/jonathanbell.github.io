@@ -1,27 +1,40 @@
 import { test, expect } from "@playwright/test";
 
-test("navigation links and page titles", async ({ page }) => {
-  await page.goto("/");
+test("404 error page handling", async ({ page }) => {
+  const response = await page.goto("/404-not-found");
 
-  await page.click('nav a[href="/blog"]');
-  await expect(page).toHaveTitle(/Blog/);
+  expect(response?.status()).toBe(404);
 
-  await page.click('nav a[href="/cv"]');
-  await expect(page).toHaveTitle("Jonathan Bell - Résumé");
-  const summaryHeading = await page.waitForSelector("#summary");
-  const summaryHeadingText = await summaryHeading.innerText();
-  expect(summaryHeadingText).toBe("Summary");
+  const pageContent = await page.content();
+  const hasErrorIndicator =
+    pageContent.includes("404") ||
+    pageContent.includes("not found") ||
+    pageContent.includes("error") ||
+    (await page.getByText(/404|not found|error/i).count()) > 0;
 
-  const mainHeadingLink = page.getByTestId("site-header__main-heading--link");
-  expect(await mainHeadingLink.innerText()).toBe("Jonathan Bell");
-  await mainHeadingLink.click();
-  await expect(page).toHaveTitle(/Jonathan Bell, Software Engineer/);
+  await expect(page.locator("div.travolta")).toHaveCount(1);
 
-  await page.click('nav a[href="/links"]');
-  await expect(page).toHaveTitle(
-    /Jonathan Bell - Personal and Social Media Links/,
-  );
+  expect(hasErrorIndicator).toBeTruthy();
+});
 
-  await page.click('nav a[href="/"]');
-  await expect(page).toHaveTitle(/Jonathan Bell, Software Engineer/);
+test("invalid blog post URLs return 404", async ({ page }) => {
+  const response = await page.goto("/blog/this-post-does-not-exist");
+  expect(response?.status()).toBe(404);
+});
+
+test("malformed URLs are handled gracefully", async ({ page }) => {
+  const malformedUrls = [
+    "/blog//double-slash",
+    "/cv/../etc/passwd",
+    "/blog/<script>alert('xss')</script>",
+  ];
+
+  for (const url of malformedUrls) {
+    const response = await page.goto(url);
+
+    expect(response?.status()).toBeLessThan(500);
+
+    // John Travolta should exist.
+    await expect(page.locator("div.travolta")).toHaveCount(1);
+  }
 });

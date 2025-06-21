@@ -22,7 +22,7 @@ This is Jonathan Bell's personal website built with Astro, deployed at jonathanb
 - `npm run prettier:fix` - Format code with Prettier
 - `npm run astro check` - Run Astro's built-in type checking
 
-### Versioning
+### Release/Versioning
 
 - `npm run release` - Interactive semantic version increment, changelog generation, and automated release
 

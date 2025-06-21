@@ -36,10 +36,7 @@ if (frontmatter?.title && frontmatter?.description) {
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"
     />
 
-    <meta
-      property="og:site_name"
-      content="Jonathan Bell - Full-stack developer"
-    />
+    <meta property="og:site_name" content="Jonathan Bell - Software Engineer" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={pageDescription} />
     <meta property="og:type" content="article" />
@@ -50,12 +47,15 @@ if (frontmatter?.title && frontmatter?.description) {
     />
     <meta property="og:image:width" content="506" />
     <meta property="og:image:height" content="506" />
-    <meta property="article:publisher" content="https://www.jonathanbell.ca" />
+    <meta
+      property="article:publisher"
+      content="https://jonathanbell.github.io"
+    />
 
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="RSS Feed for jonathanbell.ca"
+      title="RSS Feed for jonathanbell.github.io"
       href="/rss.xml"
     />
 
@@ -69,7 +69,7 @@ if (frontmatter?.title && frontmatter?.description) {
     <SiteFooter />
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        if (window.location.href === "https://www.jonathanbell.ca/") {
+        if (window.location.href === "https://jonathanbell.github.io/") {
           // https://www.samanthaming.com/tidbits/40-colorful-console-message/
 
           console.log(

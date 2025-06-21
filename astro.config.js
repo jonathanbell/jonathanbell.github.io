@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://www.jonathanbell.ca",
+  site: "https://jonathanbell.github.io",
 
   // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
   markdown: {

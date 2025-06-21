@@ -4,19 +4,22 @@ import "@fontsource/libre-franklin/latin-400.css";
 import "@fontsource/libre-franklin/latin-800.css";
 const { frontmatter } = Astro.props;
 
-const date = new Date(frontmatter.publishDate);
-const readableDate: string = date.toLocaleDateString("en-US", {
+const publishDate = new Date(frontmatter.publishDate);
+
+const readableDate = publishDate.toLocaleDateString("en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
+
+const dateDateTime = publishDate.toISOString().slice(0, 10);
 ---
 
 <BaseLayout
   title={`${frontmatter.title} | Jonathan Bell`}
   description={frontmatter.description}
 >
-  <time datetime="`${year}-${numericMonth}-${numericDay}`">{readableDate}</time>
+  <time datetime={dateDateTime}>{readableDate}</time>
   <slot />
 </BaseLayout>
 
