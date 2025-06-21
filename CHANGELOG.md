@@ -1,5 +1,18 @@
+## 2.12.0 (2025-06-21)
+
+* refactor(package-json): move build imports out of dev deps ([19ac535](https://github.com/jonathanbell/jonathanbell.github.io/commit/19ac535))
+* test: add missing tests and tidy up (a lot) ([ad02b4d](https://github.com/jonathanbell/jonathanbell.github.io/commit/ad02b4d))
+* test: fix mobile safari test ([8f41281](https://github.com/jonathanbell/jonathanbell.github.io/commit/8f41281))
+* test(rss): create a better rss feed in order to statisy tests ([e3efd42](https://github.com/jonathanbell/jonathanbell.github.io/commit/e3efd42))
+* chore: clean up package.json scripts and remove unused CSS ([18b50bb](https://github.com/jonathanbell/jonathanbell.github.io/commit/18b50bb))
+* perf: optimize font loading with targeted imports and font-display swap ([7442ac6](https://github.com/jonathanbell/jonathanbell.github.io/commit/7442ac6))
+* fix(ci): resolve webkit browser dependency issues in github actions ([aa55c8b](https://github.com/jonathanbell/jonathanbell.github.io/commit/aa55c8b))
+
+
+
 ## 2.11.0 (2025-06-21)
 
+* chore(release): v2.11.0 ([2289fe0](https://github.com/jonathanbell/jonathanbell.github.io/commit/2289fe0))
 * fix(scripts): resolve infinite loop in release script and consolidate release tooling ([1348a4c](https://github.com/jonathanbell/jonathanbell.github.io/commit/1348a4c))
 * refactor: rename version:bump script to release ([80c07b7](https://github.com/jonathanbell/jonathanbell.github.io/commit/80c07b7))
 * refactor(scripts): optimize release script with reusable helper and improved types ([4292b20](https://github.com/jonathanbell/jonathanbell.github.io/commit/4292b20))
