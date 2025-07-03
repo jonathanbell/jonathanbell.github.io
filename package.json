@@ -32,11 +32,8 @@
     "globals": "^16.0.0"
   },
   "engines": {
-    "node": "23.x",
+    "node": "24.x",
     "npm": "11.x"
-  },
-  "volta": {
-    "node": "23.x"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.0",

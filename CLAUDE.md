@@ -63,7 +63,7 @@ Projects use schema validation requiring:
 
 ## Development Notes
 
-- **Node version**: 23.x (managed via Volta)
+- **Node version**: 24.x
 - **Deployment**: GitHub Actions on push/merge to main branch
 - **Site URL**: jonathanbell.github.io
 - **RSS feed**: Available at /rss.xml
