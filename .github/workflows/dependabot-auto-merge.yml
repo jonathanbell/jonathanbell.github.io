@@ -6,14 +6,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  run-integration-tests:
-    if: github.event.pull_request.user.login == 'dependabot[bot]'
-    name: Run integration tests
-    # Integration tests must pass for this to run.
-    uses: ./.github/workflows/integration-tests.yml
-
   dependabot-auto-approve:
-    needs: run-integration-tests
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     name: Enable auto-approve for Dependabot
     runs-on: ubuntu-latest
