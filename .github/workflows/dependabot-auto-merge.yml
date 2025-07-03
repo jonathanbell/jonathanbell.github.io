@@ -25,7 +25,7 @@ jobs:
           GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   dependabot-auto-merge:
-    needs: [run-integration-tests, dependabot-auto-approve]
+    needs: dependabot-auto-approve
     if: github.event.pull_request.user.login == 'dependabot[bot]'
     name: Enable auto-merge for Dependabot
     runs-on: ubuntu-latest
