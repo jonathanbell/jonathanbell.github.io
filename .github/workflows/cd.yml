@@ -67,6 +67,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deploy.outputs.page-url }}
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
       - name: Deploy to GitHub Pages
         id: deploy
         uses: ./.github/actions/deploy-pages
