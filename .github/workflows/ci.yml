@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   commitlint:
-    name: Lint Commits
+    name: Conventional Commit lint check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -30,7 +30,7 @@ jobs:
         uses: ./.github/actions/lint-commits
 
   test:
-    name: Integration Tests
+    name: Run integration tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
