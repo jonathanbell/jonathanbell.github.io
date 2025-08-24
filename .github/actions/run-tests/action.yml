@@ -1,0 +1,45 @@
+name: 'Run Integration Tests'
+description: 'Builds the site and runs Playwright integration tests'
+inputs:
+  working-directory:
+    description: 'Working directory for the action'
+    required: false
+    default: '.'
+  timeout-minutes:
+    description: 'Timeout for test execution'
+    required: false
+    default: '10'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build site
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm run build
+
+    - name: Cache Playwright browsers
+      uses: actions/cache@v4
+      id: playwright-cache
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ hashFiles(format('{0}/**/package-lock.json', inputs.working-directory)) }}
+        restore-keys: |
+          ${{ runner.os }}-playwright-
+
+    - name: Install Playwright browsers
+      if: steps.playwright-cache.outputs.cache-hit != 'true'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npx playwright install --with-deps
+
+    - name: Install system dependencies for Playwright
+      if: steps.playwright-cache.outputs.cache-hit == 'true'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npx playwright install-deps
+
+    - name: Run Playwright tests
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npx playwright test

@@ -1,0 +1,53 @@
+name: 'Build Astro Site'
+description: 'Builds the Astro site for deployment'
+inputs:
+  working-directory:
+    description: 'Working directory for the action'
+    required: false
+    default: '.'
+  site-url:
+    description: 'Site URL for Astro build'
+    required: false
+    default: ''
+  base-path:
+    description: 'Base path for Astro build'
+    required: false
+    default: ''
+
+outputs:
+  artifact-path:
+    description: 'Path to the built artifact'
+    value: ${{ inputs.working-directory }}/dist
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup GitHub Pages
+      id: pages
+      uses: actions/configure-pages@v4
+      if: inputs.site-url == '' || inputs.base-path == ''
+
+    - name: Determine build parameters
+      id: build-params
+      shell: bash
+      run: |
+        if [[ -n "${{ inputs.site-url }}" && -n "${{ inputs.base-path }}" ]]; then
+          echo "site=${{ inputs.site-url }}" >> $GITHUB_OUTPUT
+          echo "base=${{ inputs.base-path }}" >> $GITHUB_OUTPUT
+        else
+          echo "site=${{ steps.pages.outputs.origin }}" >> $GITHUB_OUTPUT
+          echo "base=${{ steps.pages.outputs.base_path }}" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Build with Astro
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        npx astro build \
+          --site "${{ steps.build-params.outputs.site }}" \
+          --base "${{ steps.build-params.outputs.base }}"
+
+    - name: Upload pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ${{ inputs.working-directory }}/dist

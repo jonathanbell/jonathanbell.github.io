@@ -1,0 +1,41 @@
+name: 'Lint Commit Messages'
+description: 'Validates commit messages using commitlint'
+inputs:
+  working-directory:
+    description: 'Working directory for the action'
+    required: false
+    default: '.'
+  skip-for-dependabot:
+    description: 'Skip commitlint for Dependabot PRs'
+    required: false
+    default: 'true'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Check if should skip
+      id: should-skip
+      shell: bash
+      run: |
+        if [[ "${{ inputs.skip-for-dependabot }}" == "true" && "${{ github.actor }}" == "dependabot[bot]" ]]; then
+          echo "skip=true" >> $GITHUB_OUTPUT
+        else
+          echo "skip=false" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Lint commit messages for PR
+      if: steps.should-skip.outputs.skip != 'true' && github.event_name == 'pull_request'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        npx commitlint \
+          --from ${{ github.event.pull_request.base.sha }} \
+          --to ${{ github.event.pull_request.head.sha }} \
+          --verbose
+
+    - name: Lint commit message for push
+      if: steps.should-skip.outputs.skip != 'true' && github.event_name == 'push'
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: |
+        npx commitlint --from HEAD~1 --to HEAD --verbose
