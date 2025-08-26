@@ -22,6 +22,7 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          skip-commit-verification: true
 
       - name: Auto-approve Dependabot PR
         run: gh pr review --approve "$PR_URL"
@@ -40,6 +41,7 @@ jobs:
         uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+          skip-commit-verification: true
 
       - name: Enable auto-merge for Dependabot PR
         run: gh pr merge --auto --squash --delete-branch "$PR_URL"
