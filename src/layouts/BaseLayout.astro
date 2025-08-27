@@ -31,10 +31,7 @@ if (frontmatter?.title && frontmatter?.description) {
     <meta charset="UTF-8" />
     <meta name="description" content={pageDescription} />
     <meta name="viewport" content="width=device-width" />
-    <meta
-      name="google-site-verification"
-      content="ON4CqDIR6DC7dP-xqobzUt_xEFllq_a8OrQ25vPHbK4"
-    />
+    <meta name="google-site-verification" content="ON4CqDIR6DC7dP-xqobzUt_xEFllq_a8OrQ25vPHbK4" />
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👋</text></svg>"
@@ -100,8 +97,29 @@ if (frontmatter?.title && frontmatter?.description) {
 
   @use "../styles/breakpoints" as *;
 
-  @import url("@fontsource/libre-franklin/latin-400.css");
-  @import url("@fontsource/libre-franklin/latin-900.css");
+  @font-face {
+    font-family: "Libre Franklin";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: local("Libre Franklin");
+  }
+
+  @font-face {
+    font-family: "Libre Franklin";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 800;
+    src: local("Libre Franklin");
+  }
+
+  @font-face {
+    font-family: "Libre Franklin";
+    font-style: normal;
+    font-display: swap;
+    font-weight: 900;
+    src: local("Libre Franklin");
+  }
 
   :root {
     --colors-bg-base: #f9f8f8;
