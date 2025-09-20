@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
   site: "https://jonathanbell.github.io",
+  integrations: [sitemap()],
 
   // https://docs.astro.build/en/guides/markdown-content/#syntax-highlighting
   markdown: {
