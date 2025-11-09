@@ -23,16 +23,19 @@ runs:
           echo "command=install" >> $GITHUB_OUTPUT
           echo "runner=yarn" >> $GITHUB_OUTPUT
           echo "cache-folder=.yarn/cache" >> $GITHUB_OUTPUT
+          echo "lockfile=yarn.lock" >> $GITHUB_OUTPUT
         elif [ -f "package-lock.json" ]; then
           echo "manager=npm" >> $GITHUB_OUTPUT
           echo "command=ci" >> $GITHUB_OUTPUT
           echo "runner=npx --no-install" >> $GITHUB_OUTPUT
           echo "cache-folder=~/.npm" >> $GITHUB_OUTPUT
+          echo "lockfile=package-lock.json" >> $GITHUB_OUTPUT
         elif [ -f "pnpm-lock.yaml" ]; then
           echo "manager=pnpm" >> $GITHUB_OUTPUT
           echo "command=install --frozen-lockfile" >> $GITHUB_OUTPUT
           echo "runner=pnpm" >> $GITHUB_OUTPUT
           echo "cache-folder=~/.pnpm-store" >> $GITHUB_OUTPUT
+          echo "lockfile=pnpm-lock.yaml" >> $GITHUB_OUTPUT
         else
           echo "Unable to determine package manager"
           exit 1
@@ -43,13 +46,13 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
         cache: ${{ steps.detect-package-manager.outputs.manager }}
-        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json
+        cache-dependency-path: ${{ inputs.working-directory }}/${{ steps.detect-package-manager.outputs.lockfile }}
 
     - name: Cache dependencies
       uses: actions/cache@v4
       with:
         path: ${{ steps.detect-package-manager.outputs.cache-folder }}
-        key: ${{ runner.os }}-${{ steps.detect-package-manager.outputs.manager }}-${{ hashFiles(format('{0}/**/package-lock.json', inputs.working-directory)) }}
+        key: ${{ runner.os }}-${{ steps.detect-package-manager.outputs.manager }}-${{ hashFiles(format('{0}/**/{1}', inputs.working-directory, steps.detect-package-manager.outputs.lockfile)) }}
         restore-keys: |
           ${{ runner.os }}-${{ steps.detect-package-manager.outputs.manager }}-
 

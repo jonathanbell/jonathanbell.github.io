@@ -5,10 +5,6 @@ inputs:
     description: 'Working directory for the action'
     required: false
     default: '.'
-  timeout-minutes:
-    description: 'Timeout for test execution'
-    required: false
-    default: '10'
 
 runs:
   using: 'composite'

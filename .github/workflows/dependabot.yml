@@ -43,6 +43,14 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
           skip-commit-verification: true
 
+      - name: Wait for CI checks to complete
+        run: |
+          echo "Waiting for CI checks to complete..."
+          gh pr checks "$PR_URL" --watch --interval 30
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Enable auto-merge for Dependabot PR
         run: gh pr merge --auto --squash --delete-branch "$PR_URL"
         env:
