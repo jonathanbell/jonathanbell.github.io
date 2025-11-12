@@ -23,5 +23,12 @@ export default [
   ...tsConfig.configs.strict,
   ...eslintPluginAstro.configs["flat/recommended"],
   ...eslintPluginAstro.configs["jsx-a11y-recommended"],
+  {
+    files: ["**/*.astro"],
+    rules: {
+      // Disable unified-signatures for Astro files due to parser compatibility issues
+      "@typescript-eslint/unified-signatures": "off",
+    },
+  },
   eslintConfigPrettier,
 ];
