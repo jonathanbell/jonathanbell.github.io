@@ -6,7 +6,9 @@
     "typescript",
     "typescriptreact"
   ],
-  "prettier.documentSelectors": ["**/*.astro"],
+  "prettier.documentSelectors": [
+    "**/*.astro"
+  ],
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -31,6 +33,7 @@
     "describedby",
     "di",
     "elif",
+    "Europeo",
     "Febuary",
     "fontsource",
     "frontmatter",
@@ -38,6 +41,7 @@
     "Guids",
     "Gumbies",
     "Heroku",
+    "Istituto",
     "JIRA",
     "jonathanbell",
     "Jorgeson",
