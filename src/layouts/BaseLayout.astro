@@ -389,6 +389,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
       page-break-inside: avoid;
     }
 
+    h2#software-skills,
+    h2#personal-software-projects {
+      page-break-before: always;
+    }
+
     h1,
     h1 a {
       font-weight: bold !important;
@@ -412,6 +417,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
       & > footer {
         display: none !important;
+      }
+
+      li {
+        margin-bottom: 0.25rem;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
 
       li {
