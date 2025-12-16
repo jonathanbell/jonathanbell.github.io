@@ -90,7 +90,20 @@ async function generateCvPdf() {
     await browser.close();
 
     // Stop Astro preview server
-    astroPreviewServer.kill();
+    astroPreviewServer.kill("SIGTERM");
+
+    // Wait for server to fully terminate
+    await new Promise<void>((resolve) => {
+      astroPreviewServer.on("exit", () => {
+        resolve();
+      });
+      // Force kill after 2 seconds if still running
+      setTimeout(() => {
+        astroPreviewServer.kill("SIGKILL");
+        resolve();
+      }, 2000);
+    });
+
     console.log("Preview server stopped");
 
     // Verify PDF was created and get file size
@@ -107,16 +120,18 @@ async function generateCvPdf() {
       } else {
         console.log(`Size: ${fileSizeMB} MB`);
       }
+
+      process.exit(0);
     } else {
       console.error("❌ Error: PDF was not created");
-      astroPreviewServer.kill();
+      astroPreviewServer.kill("SIGKILL");
       process.exit(1);
     }
   } catch (error) {
     if (browser) {
       await browser.close();
     }
-    astroPreviewServer.kill();
+    astroPreviewServer.kill("SIGKILL");
     console.error("❌ Error generating PDF:", error);
     process.exit(1);
   }
