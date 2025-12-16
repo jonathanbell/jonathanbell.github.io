@@ -45,7 +45,7 @@ _July 2023 to September 2024, Klue Labs, Victoria BC (remote)_
 - Improve developer experience and efficiency by maintaining and accelerating continuous integration and deployment tools
 - Make front-end and back-end (Python) code changes and improvements following Agile best practices
 
-**Leveraging knowledge in:** Front-end web development; React, RTK, TypeScript, Grommet, CSS, Vitest, React Testing Library, Storybook, Git, GitHub Actions (CICD), Playwright, Heroku, Back-end web development; Docker & Python with FastAPI
+**Leveraged knowledge in:** Front-end web development; React, RTK, TypeScript, Grommet, CSS, Vitest, React Testing Library, Storybook, Git, GitHub Actions (CICD), Playwright, Heroku, Back-end web development; Docker & Python with FastAPI
 
 ### Software Developer 2
 
