@@ -365,6 +365,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
       line-height: initial !important;
     }
 
+    details > summary::before,
+    #copy-wallet-addr-button,
+    footer > div > p,
+    header > nav {
+      display: none !important;
+    }
+
     html {
       background-color: transparent !important;
     }
@@ -386,22 +393,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     .content {
       h2 {
         font-size: 120% !important;
+        margin-top: 4rem;
       }
 
       h3 {
         font-size: 105% !important;
+        margin-top: 1.5rem;
       }
 
       & > footer {
         display: none !important;
       }
-    }
-
-    details > summary::before,
-    #copy-wallet-addr-button,
-    footer > div > p,
-    header > nav {
-      display: none !important;
     }
 
     .content p,

@@ -1,6 +1,9 @@
 # build
 dist/
 
+# pdf cv
+public/cv.pdf
+
 # test output
 coverage/
 /test-results/

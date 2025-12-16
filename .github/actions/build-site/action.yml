@@ -47,6 +47,16 @@ runs:
           --site "${{ steps.build-params.outputs.site }}" \
           --base "${{ steps.build-params.outputs.base }}"
 
+    - name: Install Playwright browsers
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npx playwright install chromium --with-deps
+
+    - name: Generate CV PDF
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: npm run cv:pdf
+
     - name: Upload pages artifact
       uses: actions/upload-pages-artifact@v3
       with:

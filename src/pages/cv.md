@@ -9,6 +9,7 @@ description: The personal online curriculum vitea of Jonathan Bell
 - LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
 - Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
 - Website: [jonathanbell.github.io/links](https://jonathanbell.github.io/links/)
+- [Download résumé as PDF](/cv.pdf)
 
 ## Summary
 
