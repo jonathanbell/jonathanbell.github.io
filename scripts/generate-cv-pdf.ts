@@ -39,7 +39,7 @@ async function generateCvPdf() {
   // Wait for server to be ready
   await new Promise<void>((resolve, reject) => {
     const timeout = setTimeout(() => {
-      reject(new Error("Preview server failed to start"));
+      reject(new Error("Astro preview server failed to start"));
     }, 30000);
 
     astroPreviewServer.stdout?.on("data", (data) => {
@@ -54,11 +54,11 @@ async function generateCvPdf() {
     });
 
     astroPreviewServer.stderr?.on("data", (data) => {
-      console.error("Preview server error:", data.toString());
+      console.error("Astro preview server error:", data.toString());
     });
   });
 
-  console.log("Preview server started");
+  console.log("Astro preview server started");
 
   let browser;
 
@@ -104,7 +104,7 @@ async function generateCvPdf() {
       }, 2000);
     });
 
-    console.log("Preview server stopped");
+    console.log("Astro preview server stopped");
 
     // Verify PDF was created and get file size
     if (fs.existsSync(pdfOutputPath)) {

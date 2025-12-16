@@ -9,7 +9,7 @@ description: The personal online curriculum vitea of Jonathan Bell
 - LinkedIn: [linkedin.com/in/i-can-has-job](https://www.linkedin.com/in/jonathan-bell-331578176/)
 - Email: [jonathanbell.ca@gmail.com](mailto:jonathanbell.ca@gmail.com)
 - Website: [jonathanbell.github.io/links](https://jonathanbell.github.io/links/)
-- [Download résumé as PDF](/cv.pdf)
+- [Download résumé (as PDF)](/cv.pdf)
 
 ## Summary
 
@@ -62,7 +62,7 @@ _January 2019 to June 2023, Benevity, Victoria BC_
 
 ## Personal Software Projects
 
-_Professional projects not listed; see [jonathanbell.github.io](https://jonathanbell.github.io/#projects)_
+_Professional projects are not listed here; please see [jonathanbell.github.io](https://jonathanbell.github.io/#projects)_
 
 ### Spotify 2 YT Music Migration Script ([github.com/jonathanbell/spotify2ytmusic-migration-script](https://github.com/jonathanbell/spotify2ytmusic-migration-script))
 

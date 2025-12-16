@@ -368,7 +368,8 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     details > summary::before,
     #copy-wallet-addr-button,
     footer > div > p,
-    header > nav {
+    header > nav,
+    h2#contact + ul > li:last-of-type {
       display: none !important;
     }
 
@@ -378,6 +379,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
     body {
       padding-bottom: 1rem !important;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      page-break-after: avoid;
+      page-break-inside: avoid;
     }
 
     h1,
@@ -403,6 +412,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
       & > footer {
         display: none !important;
+      }
+
+      li {
+        margin-bottom: 0.25rem;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
       }
     }
 
@@ -448,13 +465,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
     @page {
       margin: 1cm;
-
-      h2,
-      h3,
-      h4,
-      h5 {
-        page-break-after: avoid;
-      }
     }
   }
 </style>
