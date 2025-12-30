@@ -27,7 +27,7 @@
     "@astrojs/check": "^0.9.2",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.6.0",
-    "@fontsource/libre-franklin": "^5.0.17",
+    "@fontsource/ubuntu-sans": "^5.2.10",
     "astro": "^5.0.2",
     "globals": "^16.0.0",
     "markdown-it": "^14.1.0",
