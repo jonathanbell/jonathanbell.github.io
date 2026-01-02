@@ -29,7 +29,7 @@
     "@astrojs/sitemap": "^3.6.0",
     "@fontsource/ubuntu-sans": "^5.2.10",
     "astro": "^5.0.2",
-    "globals": "^16.0.0",
+    "globals": "^17.0.0",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.13.0",
     "sass": "^1.77.4"
