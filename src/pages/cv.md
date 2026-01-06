@@ -15,7 +15,7 @@ description: The personal online curriculum vitea of Jonathan Bell
 
 Software developer residing in Victoria BC, Canada with over nine years of experience developing and building performant, accessible, and extensible high-volume web applications; most proficient in JavaScript (Node, TypeScript, React/Vue) and the LAMP stack (PHP/Laravel, Apache, MySQL).
 
-Seeking a position with a medium-sized to enterprise-sized company as a Sr. full-stack or front-end engineer. Pursuing companies with collaborative, welcoming cultures and opportunities for long-term growth in engineering and management positions. Ready to work inside an agile development team with an affinity for iterative workflows.
+Seeking a position with a medium-sized to enterprise-sized company as a full-stack or front-end engineer. Pursuing companies with collaborative, welcoming cultures and opportunities for long-term growth in engineering and management positions. Ready to work inside an agile development team with an affinity for iterative workflows.
 
 Fluent in both written and spoken English and Italian.
 
@@ -100,7 +100,7 @@ Proficient:
 
 - JavaScript: Node, TypeScript, React/Vue, Vanilla JS, Vite
 - Unit testing: React Testing Library, Vitest, Jest, PHPUnit
-- E2E testing: Playwright/Cypress
+- E2E testing: Playwright
 - Design Systems
 - Amazon Web Services (specifically Lambda, EC2, S3 & SES)
 - PHP: Laravel, modern OOPHP
