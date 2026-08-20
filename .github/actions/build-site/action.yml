@@ -24,7 +24,7 @@ runs:
   steps:
     - name: Setup GitHub Pages
       id: pages
-      uses: actions/configure-pages@v4
+      uses: actions/configure-pages@v6
       if: inputs.site-url == '' || inputs.base-path == ''
 
     - name: Determine build parameters
@@ -58,6 +58,6 @@ runs:
       run: npm run cv:pdf
 
     - name: Upload pages artifact
-      uses: actions/upload-pages-artifact@v3
+      uses: actions/upload-pages-artifact@v5
       with:
         path: ${{ inputs.working-directory }}/dist

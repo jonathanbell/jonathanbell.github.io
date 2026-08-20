@@ -42,14 +42,14 @@ runs:
         fi
 
     - name: Setup Node.js
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v7
       with:
         node-version: ${{ inputs.node-version }}
         cache: ${{ steps.detect-package-manager.outputs.manager }}
         cache-dependency-path: ${{ inputs.working-directory }}/${{ steps.detect-package-manager.outputs.lockfile }}
 
     - name: Cache dependencies
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: ${{ steps.detect-package-manager.outputs.cache-folder }}
         key: ${{ runner.os }}-${{ steps.detect-package-manager.outputs.manager }}-${{ hashFiles(format('{0}/**/{1}', inputs.working-directory, steps.detect-package-manager.outputs.lockfile)) }}
