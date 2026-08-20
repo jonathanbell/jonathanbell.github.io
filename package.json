@@ -25,10 +25,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.6.0",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ubuntu-sans": "^5.2.10",
-    "astro": "^5.0.2",
+    "astro": "^6.2.2",
     "globals": "^17.0.0",
     "markdown-it": "^14.1.0",
     "sanitize-html": "^2.13.0",

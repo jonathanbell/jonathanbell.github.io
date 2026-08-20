@@ -11,7 +11,7 @@ const projectsCollection = await getCollection("projects");
 const projects = projectsCollection.map((project) => {
   return {
     heading: project.data.name.trim(),
-    body: project.body.trim(),
+    body: (project.body ?? "").trim(),
     link: project.data.link || "",
     emoji: project.data.emoji,
   };
