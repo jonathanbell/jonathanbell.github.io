@@ -73,7 +73,9 @@ export default defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: "npm run preview",
+    // Astro backgrounds `preview` when run by an AI agent, which Playwright
+    // reads as an early exit. `--ignore-lock` keeps it in the foreground.
+    command: "npm run preview -- --ignore-lock",
     url: "http://localhost:4321/",
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
