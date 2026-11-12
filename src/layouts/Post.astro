@@ -23,24 +23,22 @@ const dateDateTime = publishDate.toISOString().slice(0, 10);
   <slot />
 </BaseLayout>
 
-<style scoped lang="scss">
+<style>
   time {
     color: var(--colors-base-midtone);
   }
 </style>
 
-<style is:global lang="scss">
-  // You can only scope styles to a component element if the element is *in use*
-  // in the component. Otherwise, you'll have to use global styles for content
-  // that is brought into the DOM via a slot (like in the case of Markdown).
-
-  @use "../styles/breakpoints" as *;
-
+<style is:global>
+  /*
+   * Global because the Markdown content arrives through a slot, and scoped
+   * styles only reach elements rendered by this component.
+   */
   article.content {
     h2 {
       font-size: 2.5rem;
 
-      @media (min-width: $breakpoints-small) {
+      @media (min-width: 480px) {
         font-size: 3rem;
       }
     }

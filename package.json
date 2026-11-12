@@ -28,8 +28,7 @@
     "@fontsource/ubuntu-sans": "^5.2.10",
     "astro": "^7.2.4",
     "markdown-it": "^15.0.0",
-    "sanitize-html": "^2.13.0",
-    "sass": "^1.77.4"
+    "sanitize-html": "^2.13.0"
   },
   "engines": {
     "node": "24.x",
@@ -61,10 +60,9 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro,json,md,css,scss}": "prettier --write"
+    "*.{js,jsx,ts,tsx,astro,json,md,css}": "prettier --write"
   },
   "allowScripts": {
-    "@parcel/watcher": false,
     "fsevents": false
   }
 }

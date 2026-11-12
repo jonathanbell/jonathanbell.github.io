@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is Jonathan Bell's personal website built with Astro, deployed at jonathanbell.github.io. It's a static site containing a résumé, blog, projects portfolio, and links. The site uses Astro as the main framework with TypeScript, SCSS, and Playwright for testing.
+This is Jonathan Bell's personal website built with Astro, deployed at jonathanbell.github.io. It's a static site containing a résumé, blog, projects portfolio, and links. The site uses Astro as the main framework with TypeScript, native CSS, and Playwright for testing.
 
 ## Key Commands
 
@@ -41,7 +41,9 @@ This is Jonathan Bell's personal website built with Astro, deployed at jonathanb
 ### Styling
 
 - **Global styles**: Defined in BaseLayout.astro with CSS custom properties
-- **SCSS utilities**: `/src/styles/` contains breakpoints and utility mixins
+  (tokens) and shared classes (`.section-header`, `.screenreader-only`)
+- **Native CSS nesting**: No preprocessor. Breakpoints are inline px values:
+  480px, 768px, 1024px
 - **Dark mode**: Automatic via `prefers-color-scheme` media query
 - **Print styles**: Optimized for CV printing
 

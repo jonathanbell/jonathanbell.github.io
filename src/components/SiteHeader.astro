@@ -5,9 +5,12 @@ import "@fontsource/ubuntu-sans/800.css";
 
 <header>
   <h1>
-    <a href={import.meta.env.SITE} data-testid="site-header__main-heading--link"
-      >Jonathan Bell</a
+    <a
+      href={import.meta.env.SITE}
+      data-testid="site-header__main-heading--link"
     >
+      Jonathan Bell
+    </a>
   </h1>
   <nav>
     <a href="/">Home</a>
@@ -17,13 +20,7 @@ import "@fontsource/ubuntu-sans/800.css";
   </nav>
 </header>
 
-<style lang="scss">
-  @use "../styles/breakpoints" as *;
-
-  header {
-    display: grid;
-  }
-
+<style>
   @keyframes gradient {
     0% {
       background-position: 0% 50%;
@@ -32,6 +29,10 @@ import "@fontsource/ubuntu-sans/800.css";
     100% {
       background-position: 100% 50%;
     }
+  }
+
+  header {
+    display: grid;
   }
 
   h1 {
@@ -45,25 +46,13 @@ import "@fontsource/ubuntu-sans/800.css";
     }
 
     a {
-      background-position: 0%;
-      background: linear-gradient(
-        345deg,
-        #e14725 -1.13%,
-        var(--colors-accent-light-secondary) 15.22%,
-        var(--colors-accent-light) 32.09%,
-        var(--colors-brand-base-secondary) 53.97%,
-        var(--colors-accent-deep) 67.94%,
-        var(--colors-accent-deep-secondary) 85.34%,
-        var(--colors-brand-base) 99.57%
-      );
+      background: linear-gradient(345deg, var(--gradient-rainbow));
       background-size: 400%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
       &:hover {
-        animation: gradient 6s ease;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
+        animation: gradient 6s ease 1 forwards;
       }
     }
   }
@@ -77,15 +66,15 @@ import "@fontsource/ubuntu-sans/800.css";
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
 
-    @media (min-width: $breakpoints-small) {
-      grid-template-columns: 1fr auto auto auto auto auto;
-      gap: 0;
-    }
-
     a {
       font-weight: 500;
+    }
 
-      @media (min-width: $breakpoints-small) {
+    @media (min-width: 480px) {
+      grid-template-columns: 1fr auto auto auto auto auto;
+      gap: 0;
+
+      a {
         margin-left: 0.5rem;
       }
     }

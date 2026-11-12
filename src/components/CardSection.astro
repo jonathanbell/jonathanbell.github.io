@@ -16,48 +16,35 @@ const sectionId = (): string => {
 ---
 
 <section id={sectionId()} data-testid={`card-section--${sectionId()}`}>
-  {
-    sectionTitle !== "" ? (
-      <h2 class="section-header">{sectionTitle}</h2>
-    ) : (
-      <h2 class="screenreader-only">Links</h2>
-    )
-  }
+  {sectionTitle !== "" ? (
+    <h2 class="section-header">{sectionTitle}</h2>
+  ) : (
+    <h2 class="screenreader-only">Links</h2>
+  )}
   <ul
-    class={sectionTitle !== ""
-      ? "card-container"
-      : "card-container--without-heading"}
+    class={
+      sectionTitle !== "" ? "card-container" : "card-container--without-heading"
+    }
   >
     <slot />
   </ul>
 </section>
 
-<style lang="scss">
-  @use "../styles/breakpoints" as *;
-  @use "../styles/utils" as *;
-
+<style>
   section {
-    border-top: 1px solid var(--colors-accent-deep-secondary);
+    border-top: var(--section-rule);
     margin: 4rem 0 2rem 0;
-
-    @media (min-width: $breakpoints-medium) {
-      margin: 6rem 0 2rem 0;
-    }
 
     &:first-of-type {
       border-top: none;
-
-      @media (min-width: $breakpoints-medium) {
-        border-top: 1px solid var(--colors-accent-deep-secondary);
-      }
     }
 
-    h2 {
-      text-transform: uppercase;
-      font-size: 1.1rem;
-      color: var(--colors-brand-base-secondary);
-      font-family: system-ui, sans-serif;
-      margin-top: 1rem;
+    @media (min-width: 768px) {
+      margin-top: 6rem;
+
+      &:first-of-type {
+        border-top: var(--section-rule);
+      }
     }
   }
 
@@ -68,26 +55,22 @@ const sectionId = (): string => {
     display: grid;
     gap: 1rem;
 
-    @media (min-width: $breakpoints-medium) {
+    @media (min-width: 768px) {
       grid-template-columns: 1fr 1fr;
     }
 
-    @media (min-width: $breakpoints-large) {
+    @media (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
-  .card-container {
-    &--without-heading {
-      margin-top: 4rem;
-    }
+  .card-container--without-heading {
+    margin-top: 4rem;
   }
 </style>
 
-<style is:global lang="scss">
-  @use "../styles/breakpoints" as *;
-
-  // Target ID in URL and change background color when selected.
+<style is:global>
+  /* Highlight the section targeted by the URL hash. */
   section:target ul li.link-card {
     background-color: var(--colors-brand-base);
     box-shadow: 1px 1px 4px 1px #393939;
@@ -97,23 +80,20 @@ const sectionId = (): string => {
       background-color: var(--colors-accent-deep-secondary);
     }
 
-    a {
+    a,
+    a:hover {
       color: white !important;
-
-      &:hover {
-        color: white !important;
-      }
     }
   }
 
   #projects .link-card {
-    @media (min-width: $breakpoints-large) {
+    @media (min-width: 1024px) {
       aspect-ratio: 1;
     }
   }
 
   #writing .link-card h3 {
-    @media (min-width: $breakpoints-medium) {
+    @media (min-width: 768px) {
       min-height: 4rem;
     }
   }

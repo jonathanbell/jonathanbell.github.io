@@ -98,11 +98,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
   </body>
 </html>
 
-<style is:global lang="scss">
-  @charset "UTF-8";
-
-  @use "../styles/breakpoints" as *;
-
+<style is:global>
   @font-face {
     font-family: "Ubuntu Sans";
     font-style: normal;
@@ -122,35 +118,45 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
   :root {
     --colors-bg-base: #f9f8f8;
     --colors-fg-base: #151717;
+    --colors-surface: white;
 
     --colors-base-midtone: #586069;
 
     --colors-brand-base: #9b0ac3;
     --colors-brand-base-secondary: #2d8218;
 
-    // --colors-accent-light: #fbff0e;
     --colors-accent-light: #0bc786;
-    // --colors-accent-light-secondary: #eea508;
     --colors-accent-light-secondary: #2265de;
-    // --colors-accent-deep: #2f1eed;
     --colors-accent-deep: #2f1eed;
-    // --colors-accent-deep-secondary: #db2272;
     --colors-accent-deep-secondary: #7d51df;
+
+    --colors-hover-bg: var(--colors-accent-light);
+
+    --gradient-rainbow:
+      #e14725 -1.13%, var(--colors-accent-light-secondary) 15.22%,
+      var(--colors-accent-light) 32.09%,
+      var(--colors-brand-base-secondary) 53.97%,
+      var(--colors-accent-deep) 67.94%,
+      var(--colors-accent-deep-secondary) 85.34%,
+      var(--colors-brand-base) 99.57%;
+
+    --section-rule: 1px solid var(--colors-accent-deep-secondary);
+    --ease-snappy: cubic-bezier(0.08, 0.59, 0.29, 0.99);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
       --colors-bg-base: #151717;
       --colors-fg-base: #f3f0f0;
+      --colors-surface: black;
 
       --colors-base-midtone: #b9c7d6;
 
-      // --colors-brand-base: #c466de;
       --colors-brand-base: #ff507a;
-      // --colors-brand-base-secondary: #5ed041;
       --colors-brand-base-secondary: #5ed041;
-      // --colors-accent-deep: #1e5ced;
       --colors-accent-deep: #f07631;
+
+      --colors-hover-bg: var(--colors-accent-deep-secondary);
     }
   }
 
@@ -159,13 +165,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     font-size: 100%;
     box-sizing: border-box;
 
-    // https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust */
     -moz-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
 
-    // Make text look good. Note: This could be processor intensive on smaller
-    // machines.
+    /* Make text look good. Could be processor intensive on small machines. */
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -203,7 +208,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     margin: 0 auto;
   }
 
-  // Don't let these elements break out of their parents.
+  /* Don't let these elements break out of their parents. */
   audio,
   video,
   img,
@@ -211,8 +216,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     max-width: 100%;
   }
 
-  // Don't display empty p tags. *Certain* (Wordpress* cough.. cough) CMS's these,
-  // sometimes.
+  /* Hide empty p tags, which some CMSs (cough, WordPress) emit. */
   p:empty {
     display: none;
   }
@@ -250,6 +254,27 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     }
   }
 
+  /* https://css-tricks.com/inclusively-hidden/ */
+  .screenreader-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  /* Must outrank `.content h2`. */
+  :is(.content, footer) .section-header {
+    text-transform: uppercase;
+    font-family: system-ui, sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--colors-brand-base-secondary);
+    margin-top: 1rem;
+  }
+
   .content {
     font-size: 1.188rem;
 
@@ -259,25 +284,14 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     h3,
     h4,
     h5 {
-      // Attempt to fix long URLs and words breaking out of their containers.
+      /* Keep long URLs and words inside their containers. */
       overflow-wrap: break-word;
-      word-wrap: break-word;
       word-break: break-word;
-
-      // Adds a hyphen where the word breaks, if supported.
-      // -ms-hyphens: auto;
-      // -moz-hyphens: auto;
-      // -webkit-hyphens: auto;
-      // hyphens: auto;
     }
 
     .card-container,
     .link-container {
       font-size: 1rem;
-    }
-
-    .section-header {
-      font-weight: 700;
     }
 
     *:last-child {
@@ -292,7 +306,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     em {
       font-size: 1rem;
 
-      @media (min-width: $breakpoints-small) {
+      @media (min-width: 480px) {
         font-size: 1.1rem;
       }
     }
@@ -313,6 +327,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     ul {
       line-height: 1.5;
       font-weight: 300;
+
       &:has(> img) {
         margin: 0;
         line-height: 1;
@@ -325,17 +340,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     h5,
     h6 {
       font-family: "Ubuntu Sans", system-ui, sans-serif;
-    }
-
-    h2 + p {
-      margin-top: 0;
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
       font-weight: 800;
       font-size: 1.5rem;
       margin-top: 2rem;
@@ -345,9 +349,12 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
     h2 {
       font-size: 2rem;
     }
+
+    h2 + p {
+      margin-top: 0;
+    }
   }
 
-  // Print styles! 🖨️
   @media print {
     * {
       color: #000 !important;
@@ -411,14 +418,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 
       & > footer {
         display: none !important;
-      }
-
-      li {
-        margin-bottom: 0.25rem;
-
-        &:last-of-type {
-          margin-bottom: 0;
-        }
       }
 
       li {

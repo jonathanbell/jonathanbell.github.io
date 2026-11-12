@@ -89,43 +89,30 @@ const links = [
 ---
 
 <section class="link-container" data-testid="blogroll-section">
-  <h2>Blogroll</h2>
+  <h2 class="section-header">Blogroll</h2>
   <!-- <p>Do you remember the "old days"?</p> -->
   <ul class="blogroll">
-    {
-      links.map((link) => {
-        return (
-          <li>
-            <a
-              title={link.description ? link.description : undefined}
-              href={link.link}
-              target="_blank"
-            >
-              {link.text}
-            </a>
-          </li>
-        );
-      })
-    }
+    {links.map((link) => {
+      return (
+        <li>
+          <a
+            title={link.description ? link.description : undefined}
+            href={link.link}
+            target="_blank"
+          >
+            {link.text}
+          </a>
+        </li>
+      );
+    })}
   </ul>
 </section>
 
-<style scoped lang="scss">
-  @use "../styles/breakpoints" as *;
-
+<style>
   .link-container {
-    border-top: 1px solid var(--colors-accent-deep-secondary);
+    border-top: var(--section-rule);
     margin-top: 4rem;
     margin-bottom: -4rem;
-
-    & > h2 {
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      color: var(--colors-brand-base-secondary);
-      font-family: system-ui, sans-serif;
-      font-weight: 700;
-      margin-top: 1rem;
-    }
   }
 
   ul {
@@ -134,28 +121,22 @@ const links = [
     margin: 0;
     line-height: inherit;
 
-    @media (min-width: $breakpoints-medium) {
+    @media (min-width: 768px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.5rem;
       padding-bottom: 4rem;
     }
 
-    @media (min-width: $breakpoints-large) {
+    @media (min-width: 1024px) {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
 
-  li {
-    &:before {
-      content: "🔗";
-      display: inline-block;
-      font-size: 0.9rem;
-      margin-right: 0.5rem;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  li::before {
+    content: "🔗";
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
   }
 </style>

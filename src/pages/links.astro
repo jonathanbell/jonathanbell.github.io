@@ -9,8 +9,8 @@ type Link = {
 
 const links: Link[] = [
   {
-    link: "https://the.fotoapp.co/jonathanbell", 
-    title: "Foto app 📷"
+    link: "https://the.fotoapp.co/jonathanbell",
+    title: "Foto app 📷",
   },
   {
     link: "http://instagram.com/jonathanbell.photo",
@@ -51,23 +51,20 @@ const links: Link[] = [
       <p style="text-align: center;">
         Bad @ social media. Pretty good at photography and sometimes climbing.
       </p>
-      <h2>Links</h2>
+      <h2 class="section-header">Links</h2>
       <nav>
-        {
-          links.map((link) => (
-            <BigOlButton text={link.title} link={link.link} />
-          ))
-        }
+        {links.map((link) => (
+          <BigOlButton text={link.title} link={link.link} />
+        ))}
       </nav>
 
-      <h2>ETH Wallet Address</h2>
+      <h2 class="section-header">ETH Wallet Address</h2>
       <div class="textarea-copy">
         <textarea
           readonly="true"
           title="Jonathan Bell's ETH wallet address"
           aria-label="Jonathan Bell's ETH wallet address"
-          >0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3</textarea
-        >
+        >0xe67d3a1ebad4974b51C788CA565b23Cc26984dA3</textarea>
         <!-- 👆
           `<textarea>`s content should be all on one line to avoid extra
           whitespace inside the textarea (when selected).
@@ -85,18 +82,24 @@ const links: Link[] = [
         <a
           title="Email"
           aria-label="Are you on email?"
-          href="mailto:jonathanbell.ca+site@gmail.com">📬</a
+          href="mailto:jonathanbell.ca+site@gmail.com"
         >
+          📬
+        </a>
         <a
           title="Instagram"
           href="http://instagram.com/jonathanbell.photo"
-          aria-label="Jonathan Bell's Instagram">📷</a
+          aria-label="Jonathan Bell's Instagram"
         >
+          📷
+        </a>
         <a
           title="Unsplash"
           href="https://unsplash.com/@jonathanbell"
-          aria-label="Jonathan Bell's Unsplash profile">🎨</a
+          aria-label="Jonathan Bell's Unsplash profile"
         >
+          🎨
+        </a>
       </footer>
     </div>
 
@@ -123,11 +126,9 @@ const links: Link[] = [
     </script>
   </div>
 
-  <style scoped lang="scss">
-    @use "../styles/breakpoints" as *;
-
+  <style>
     #links {
-      border-top: 1px solid var(--colors-accent-deep-secondary);
+      border-top: var(--section-rule);
       margin-top: 1rem;
 
       .avatar {
@@ -141,16 +142,6 @@ const links: Link[] = [
         display: block;
         margin: 0 auto;
         max-width: 40rem;
-      }
-
-      h2 {
-        text-transform: uppercase;
-        font-size: 1.1rem;
-        color: var(--colors-brand-base-secondary);
-        font-family: system-ui, sans-serif;
-        font-weight: 700;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
       }
 
       .textarea-copy {
@@ -183,11 +174,10 @@ const links: Link[] = [
           }
 
           @media (prefers-color-scheme: dark) {
-            border: 2px dashed var(--colors-fg-base);
             color: var(--colors-fg-base);
           }
 
-          @media (min-width: $breakpoints-small) {
+          @media (min-width: 480px) {
             font-size: 1rem;
           }
         }
@@ -200,8 +190,8 @@ const links: Link[] = [
           color: var(--colors-bg-base);
           border: 2px solid var(--colors-fg-base);
           transition:
-            border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
-            background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+            border-color 0.25s var(--ease-snappy),
+            background-color 0.25s var(--ease-snappy);
           border-radius: 2px;
           font-family: system-ui, sans-serif;
           width: 100%;
@@ -217,22 +207,18 @@ const links: Link[] = [
           margin: 0.25rem 0 1rem 0;
 
           &:hover {
-            background: var(--colors-accent-light);
+            background: var(--colors-hover-bg);
             color: var(--colors-fg-base);
-
-            @media (prefers-color-scheme: dark) {
-              background: var(--colors-accent-deep-secondary);
-            }
           }
 
-          @media (min-width: $breakpoints-medium) {
+          @media (min-width: 768px) {
             width: auto;
             position: absolute;
             margin: 0;
           }
         }
 
-        &:before {
+        &::before {
           content: "";
           background: url(/icons/ethereum.svg) -0.5rem center no-repeat;
           position: absolute;
@@ -262,14 +248,13 @@ const links: Link[] = [
           margin: 0 0.25rem;
           height: 3rem;
           width: 3rem;
-          transition: background-color 0.25s
-            cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+          transition: background-color 0.25s var(--ease-snappy);
 
           &:hover {
-            background-color: var(--colors-accent-light);
+            background-color: var(--colors-brand-base);
 
-            @media (prefers-color-scheme: light) {
-              background-color: var(--colors-brand-base);
+            @media (prefers-color-scheme: dark) {
+              background-color: var(--colors-accent-light);
             }
           }
         }

@@ -7,9 +7,11 @@ interface Props {
 const { link, text } = Astro.props;
 ---
 
-<a class="button--big-ol" href={link}>{text}</a>
+<a class="button--big-ol" href={link}>
+  {text}
+</a>
 
-<style lang="scss">
+<style>
   a {
     font-family: system-ui, sans-serif;
     text-align: center;
@@ -22,17 +24,13 @@ const { link, text } = Astro.props;
     margin-bottom: 1rem;
     border: 2px solid var(--colors-fg-base);
     transition:
-      border-color 0.1s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
-      background-color 0.1s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+      border-color 0.1s var(--ease-snappy),
+      background-color 0.1s var(--ease-snappy);
     max-width: 40rem;
 
     &:hover {
-      background: var(--colors-accent-light); // 🤔
+      background: var(--colors-hover-bg);
       color: var(--colors-fg-base);
-
-      @media (prefers-color-scheme: dark) {
-        background: var(--colors-accent-deep-secondary);
-      }
     }
   }
 </style>

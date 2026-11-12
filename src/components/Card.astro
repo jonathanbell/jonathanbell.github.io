@@ -27,34 +27,28 @@ const dateDateTime = publishDate
   <a href={link} target={emoji ? "_blank" : "_self"}>
     <h3>
       <span>{heading}</span>
-      {
-        emoji ? (
-          <span class="emoji" aria-hidden="true">
-            {emoji}
-          </span>
-        ) : (
-          <span class="arrow" aria-hidden="true">
-            &rarr;
-          </span>
-        )
-      }
+      {emoji ? (
+        <span class="emoji" aria-hidden="true">
+          {emoji}
+        </span>
+      ) : (
+        <span class="arrow" aria-hidden="true">
+          &rarr;
+        </span>
+      )}
     </h3>
     <div class="card__meta">
-      {
-        publishDate ? (
-          <time datetime={dateDateTime}>{dateUsLong}</time>
-        ) : (
-          <div />
-        )
-      }
+      {publishDate ? (
+        <time datetime={dateDateTime}>{dateUsLong}</time>
+      ) : (
+        <div />
+      )}
       {body !== "" ? <p>{body}</p> : <div />}
     </div>
   </a>
 </li>
 
-<style lang="scss">
-  @use "../styles/breakpoints" as *;
-
+<style>
   @keyframes arrowhover {
     from {
       transform: translate3d(0, 0, 0);
@@ -69,17 +63,17 @@ const dateDateTime = publishDate
 
   .link-card {
     list-style: none;
-    background-color: white;
+    background-color: var(--colors-surface);
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
     min-height: 10rem;
 
-    @media (prefers-color-scheme: dark) {
-      background-color: black;
-    }
-
-    @media (min-width: $breakpoints-large) {
+    @media (min-width: 1024px) {
       aspect-ratio: 2;
       padding: 0.25rem;
+
+      & > a h3 {
+        min-height: 3.75rem;
+      }
     }
 
     & > a {
@@ -98,10 +92,6 @@ const dateDateTime = publishDate
         display: grid;
         grid-template-columns: 5fr 1fr;
 
-        @media (min-width: $breakpoints-large) {
-          min-height: 3.75rem;
-        }
-
         span {
           font-size: 1.188rem;
 
@@ -109,7 +99,7 @@ const dateDateTime = publishDate
           &.arrow {
             justify-self: end;
 
-            @media (min-width: $breakpoints-medium) {
+            @media (min-width: 768px) {
               top: -0.5rem;
               position: relative;
               font-size: 2rem;
@@ -117,17 +107,7 @@ const dateDateTime = publishDate
           }
 
           &.arrow {
-            background-position: 0%;
-            background: linear-gradient(
-              144deg,
-              #e14725 -1.13%,
-              var(--colors-accent-light-secondary) 15.22%,
-              var(--colors-accent-light) 32.09%,
-              var(--colors-brand-base-secondary) 53.97%,
-              var(--colors-accent-deep) 67.94%,
-              var(--colors-accent-deep-secondary) 85.34%,
-              var(--colors-brand-base) 99.57%
-            );
+            background: linear-gradient(144deg, var(--gradient-rainbow));
             background-size: 400%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -151,13 +131,8 @@ const dateDateTime = publishDate
       &:hover {
         color: var(--colors-brand-base);
 
-        h3 {
-          span.arrow {
-            animation: arrowhover 1s;
-            animation-direction: alternate;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;
-          }
+        h3 span.arrow {
+          animation: arrowhover 1s alternate 1 forwards;
         }
       }
     }

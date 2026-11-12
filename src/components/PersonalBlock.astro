@@ -6,17 +6,17 @@ const firstName = fullName.split(" ")[0];
 <details data-testid="personal-block__details">
   <summary data-testid="personal-block__details-summary">
     <span class="screenreader-only">{fullName}</span>is a software development
-    engineer<span class="hide-on-x-small-screen">
-      at <span class="highlight">Workday</span></span
-    >.
+    engineer
+    <span class="hide-on-x-small-screen">
+      at <span class="highlight">Workday</span>
+    </span>
+    .
   </summary>
   <article
     class="details-content"
     data-testid="personal-block__details-article"
   >
-    <h2 class="screenreader-only">
-      About {firstName}
-    </h2>
+    <h2 class="screenreader-only">About {firstName}</h2>
     <p>
       At <a href="https://www.workday.com/">Workday</a>, he collaborates with a
       talented team to build and optimize solutions that enhance the developer
@@ -24,31 +24,31 @@ const firstName = fullName.split(" ")[0];
       and accelerating development cycles, enabling faster innovation and the
       delivery of higher-quality software. Before joining Workday, Jonathan was
       a software engineer at <a href="https://klue.com/">Klue</a>, where he
-      helped create and enhance <a href="https://klue.com/win-loss"
-        >Klue Win-Loss</a
-      >&#x2014;a tool designed to capture and analyze win-loss data, empowering
-      revenue teams to close deals more effectively.
+      helped create and enhance{" "}
+      <a href="https://klue.com/win-loss">Klue Win-Loss</a>&#x2014;a tool
+      designed to capture and analyze win-loss data, empowering revenue teams to
+      close deals more effectively.
     </p>
     <p data-testid="personal-block__copy">
-      When not programming, Jonathan enjoys <a
-        href="/pictures/_MG_3954-Edit.jpg"
-        target="_blank">wrestling boulders</a
-      > in the forests of Vancouver Island, Canada &#127464;&#127462;. He also enjoys
-      <a target="_blank" href="https://www.strava.com/athletes/jonathanbell"
-        >trail running</a
-      >, skiing, hiking, <a
-        target="_blank"
-        href="https://www.instagram.com/jonathanbell.photo/"
-        >landscape photography</a
-      > and attempting be a minimalist.
+      When not programming, Jonathan enjoys{" "}
+      <a href="/pictures/_MG_3954-Edit.jpg" target="_blank">
+        wrestling boulders
+      </a>{" "}
+      in the forests of Vancouver Island, Canada &#127464;&#127462;. He also
+      enjoys
+      <a target="_blank" href="https://www.strava.com/athletes/jonathanbell">
+        trail running
+      </a>
+      , skiing, hiking,{" "}
+      <a target="_blank" href="https://www.instagram.com/jonathanbell.photo/">
+        landscape photography
+      </a>{" "}
+      and attempting be a minimalist.
     </p>
   </article>
 </details>
 
-<style lang="scss">
-  @use "../styles/breakpoints" as *;
-  @use "../styles/utils" as *;
-
+<style>
   details {
     overflow: hidden;
     max-width: 50rem;
@@ -64,12 +64,7 @@ const firstName = fullName.split(" ")[0];
       display: inline;
       width: auto;
 
-      @media (min-width: $breakpoints-small) {
-        font-size: 1.75rem;
-        padding-left: 1.25rem;
-        line-height: initial;
-      }
-
+      /* Disclosure triangle. */
       &::before {
         content: "";
         border-width: 0.4rem;
@@ -82,15 +77,9 @@ const firstName = fullName.split(" ")[0];
         transform: rotate(0);
         transform-origin: 0.25rem 50%;
         transition: 0.25s transform ease;
-
-        @media (min-width: $breakpoints-small) {
-          border-width: 0.5rem;
-          top: 0.625rem;
-          left: 0.25rem;
-        }
       }
 
-      // Animated underline thingy.
+      /* Animated underline. */
       &::after {
         content: "";
         position: absolute;
@@ -108,16 +97,9 @@ const firstName = fullName.split(" ")[0];
 
       &:hover {
         color: var(--colors-accent-deep-secondary);
-
-        &::after {
-          @media (min-width: $breakpoints-small) {
-            opacity: 1;
-            transform: translate3d(0, 0, 0);
-          }
-        }
       }
 
-      // Don't show the default triangle thingy (on the <details> element).
+      /* Hide the default details marker. */
       &::-webkit-details-marker {
         display: none;
       }
@@ -125,20 +107,34 @@ const firstName = fullName.split(" ")[0];
       .highlight {
         color: var(--colors-brand-base-secondary);
       }
+
+      @media (min-width: 480px) {
+        font-size: 1.75rem;
+        padding-left: 1.25rem;
+        line-height: initial;
+
+        &::before {
+          border-width: 0.5rem;
+          top: 0.625rem;
+          left: 0.25rem;
+        }
+
+        &:hover::after {
+          opacity: 1;
+          transform: translate3d(0, 0, 0);
+        }
+      }
     }
 
-    // The magic! 🧙‍♀️ - Rotate the triangle when the details are open.
-    &[open] > summary {
-      &::before {
-        transform: rotate(90deg);
-      }
+    &[open] > summary::before {
+      transform: rotate(90deg);
     }
 
     .details-content {
       margin-top: 1rem;
       font-size: 1rem;
 
-      @media (min-width: $breakpoints-medium) {
+      @media (min-width: 768px) {
         font-size: 1.188rem;
       }
     }
@@ -151,9 +147,16 @@ const firstName = fullName.split(" ")[0];
       }
     }
 
-    .hide-on-x-small-screen {
-      @media (max-width: 37.5rem) {
-        @include screenreader-only();
+    /* Same rules as the global `.screenreader-only`, on small screens only. */
+    @media (max-width: 37.5rem) {
+      .hide-on-x-small-screen:not(:focus):not(:active) {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
       }
     }
   }
