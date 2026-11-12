@@ -17,8 +17,6 @@ This is Jonathan Bell's personal website built with Astro, deployed at jonathanb
 
 ### Code Quality
 
-- `npm run lint` - Run ESLint on TypeScript and Astro files
-- `npm run lint:fix` - Run ESLint and auto-fix issues
 - `npm run prettier:fix` - Format code with Prettier
 - `npm run astro check` - Run Astro's built-in type checking
 
@@ -70,7 +68,6 @@ Projects use schema validation requiring:
 
 ## Code Quality Tools
 
-- **ESLint**: Configured with TypeScript, Astro, and JSX accessibility rules
 - **Prettier**: Code formatting with Astro plugin support
 - **Commitlint**: Enforces conventional commit messages
 - **Husky**: Git hooks for pre-commit quality checks

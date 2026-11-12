@@ -49,7 +49,6 @@ test("project links are external and functional", async ({ page }) => {
 
     // Test that the link is reachable (basic connectivity test)
     try {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const response = await page.request.head(href!);
       expect(response.status()).toBeLessThan(500);
     } catch {

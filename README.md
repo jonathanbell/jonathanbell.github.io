@@ -31,14 +31,11 @@ All commands are run from the root of the project:
 | `npm install`                    | Install dependencies                                                                                                   |
 | `npm run dev`<br>`npm run start` | Compile the project and start the local dev server at `localhost:3000`                                                 |
 | `npm run test`                   | Run tests                                                                                                              |
-| `npm run lint`                   | Run ESLint over: TS & Astro files                                                                                      |
-| `npm run lint:fix`               | Run ESLint over: TS & Astro files (and fix all fixable issues)                                                         |
 | `npm run build`                  | Build your production site to `./dist/`                                                                                |
 | `npm run preview`                | Preview your build locally (useful when checking a deploy)                                                             |
 | `npm run astro <command>`        | Run [Astro CLI commands](https://docs.astro.build/en/reference/cli-reference/) like `astro add`, `astro check`         |
 | `npm run astro --help`           | Get help using the Astro CLI                                                                                           |
 | `npm run prettier:fix`           | Run Prettier and fix any ugliness                                                                                      |
-| `npm run lint:fix`               | Run ESLint and fix any atrocities                                                                                      |
 | `npm run release`                | Interactive release workflow with version increment, changelog generation, and automated Git operations                |
 | `npm run commit`                 | Using the already staged files, create [a conventional commit](https://www.conventionalcommits.org/en/v1.0.0/#summary) |
 | `npm run commit:stage`           | Interactively stage files and then commit them using a conventional commit style message                               |

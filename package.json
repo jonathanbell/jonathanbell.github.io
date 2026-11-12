@@ -14,8 +14,6 @@
     "test": "astro build --silent && NODE_OPTIONS='--disable-warning=ExperimentalWarning' playwright test",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier --log-level silent . --write",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix --quiet",
     "commit": "git-cz",
     "commit:stage": "git add --interactive && git-cz",
     "commit:stage:all": "git add . && git-cz",
@@ -29,7 +27,6 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ubuntu-sans": "^5.2.10",
     "astro": "^7.2.4",
-    "globals": "^17.0.0",
     "markdown-it": "^15.0.0",
     "sanitize-html": "^2.13.0",
     "sass": "^1.77.4"
@@ -41,34 +38,22 @@
   "devDependencies": {
     "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^21.2.2",
-    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.42.1",
     "@types/node": "^26.2.0",
     "@types/prompts": "^2.4.9",
     "@types/semver": "^7.5.8",
     "conventional-changelog-cli": "^5.0.0",
     "cz-conventional-changelog": "^3.0.1",
-    "eslint": "^10.3.0",
-    "eslint-config-prettier": "^10.0.1",
-    "eslint-plugin-astro": "^3.1.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.2",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^1.0.0",
     "prompts": "^2.4.2",
     "semver": "^7.6.3",
-    "typescript": "^6.0.3",
-    "typescript-eslint": "^8.67.0"
+    "typescript": "^6.0.3"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.28.1"
-  },
-  "overrides": {
-    "eslint-plugin-jsx-a11y": {
-      "eslint": "$eslint"
-    },
-    "minimatch@^10": "^11.0.8"
   },
   "config": {
     "commitizen": {
@@ -76,12 +61,6 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro}": [
-      "eslint --fix --quiet",
-      "prettier --write"
-    ],
-    "*.{json,md,css,scss}": [
-      "prettier --write"
-    ]
+    "*.{js,jsx,ts,tsx,astro,json,md,css,scss}": "prettier --write"
   }
 }

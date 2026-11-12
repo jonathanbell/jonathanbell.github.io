@@ -17,9 +17,8 @@ updates:
         update-types: ["version-update:semver-patch"]
       # TypeScript 7 is the new native (Go) compiler, which does not yet
       # expose the programmatic API that `astro check` (via
-      # `@astrojs/language-server`) and `typescript-eslint` depend on. Stay on
-      # the 6.x line until that tooling supports the native compiler, then
-      # remove this ignore.
+      # `@astrojs/language-server`) depends on. Stay on the 6.x line until
+      # that tooling supports the native compiler, then remove this ignore.
       - dependency-name: "typescript"
         update-types: ["version-update:semver-major"]
 
