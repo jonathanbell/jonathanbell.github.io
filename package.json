@@ -62,5 +62,9 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro,json,md,css,scss}": "prettier --write"
+  },
+  "allowScripts": {
+    "@parcel/watcher": false,
+    "fsevents": false
   }
 }
