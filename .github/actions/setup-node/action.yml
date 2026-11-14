@@ -4,7 +4,7 @@ inputs:
   node-version:
     description: 'Node.js version to use'
     required: false
-    default: '24.x'
+    default: '26.x'
   working-directory:
     description: 'Working directory for the action'
     required: false
