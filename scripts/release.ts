@@ -1,9 +1,12 @@
-import semver from "semver";
-import prompts from "prompts";
 import fs from "fs";
 import { exec } from "node:child_process";
+import { createInterface } from "node:readline/promises";
 
 const PACKAGE_JSON_PATH = "./package.json";
+const BUMP_TYPES = ["major", "minor", "patch"] as const;
+const SEMVER_PATTERN = /^\d+\.\d+\.\d+$/;
+
+type BumpType = (typeof BUMP_TYPES)[number];
 
 interface PackageJson {
   version: string;
@@ -74,7 +77,7 @@ const gitTag = async (version: string): Promise<void> => {
 
 const generateChangelog = async (): Promise<void> => {
   return execAsync(
-    `git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0`,
+    `git fetch --tags --prune --prune-tags && node scripts/changelog.ts`,
     `generating changelog`,
   );
 };
@@ -90,44 +93,42 @@ const gitPush = async (version: string): Promise<void> => {
   );
 };
 
+// Increment a plain `x.y.z` version, e.g. bump("2.12.0", "minor") -> "2.13.0".
+const bump = (version: string, type: BumpType): string | undefined => {
+  if (!SEMVER_PATTERN.test(version)) return undefined;
+
+  const [major, minor, patch] = version.split(".").map(Number);
+  if (type === "major") return `${major + 1}.0.0`;
+  if (type === "minor") return `${major}.${minor + 1}.0`;
+  return `${major}.${minor}.${patch + 1}`;
+};
+
+const askBumpType = async (): Promise<string> => {
+  const rl = createInterface({ input: process.stdin, output: process.stdout });
+  const answer = await rl.question(
+    "Version bump (patch/minor/major, blank for none): ",
+  );
+  rl.close();
+  return answer;
+};
+
 const main = async () => {
   const packageJson = getPackageJson();
   const currentVersion = packageJson.version;
   console.info(`Current project version: ${currentVersion}`);
 
-  const args = process.argv.slice(2);
-  let bumpType: "major" | "minor" | "patch" | undefined;
+  const input = (process.argv[2] ?? (await askBumpType())).trim().toLowerCase();
+  const bumpType = BUMP_TYPES.find((type) => type === input);
 
-  if (args.length > 0) {
-    const arg = args[0].toLowerCase();
-    if (arg === "major" || arg === "minor" || arg === "patch") {
-      bumpType = arg;
-    } else {
-      console.error(
-        "Invalid argument provided. Please use 'major', 'minor', or 'patch'.",
-      );
-      process.exit(1);
-    }
-  }
-
-  if (!bumpType) {
-    const promptResponse = await prompts({
-      type: "select",
-      name: "bumpType",
-      message: "What type of version bump would you like to do?",
-      choices: [
-        { title: "None", value: undefined },
-        { title: "Patch", value: "patch" },
-        { title: "Minor", value: "minor" },
-        { title: "Major", value: "major" },
-      ],
-    });
-
-    bumpType = promptResponse.bumpType;
+  if (input && !bumpType) {
+    console.error(
+      "Invalid argument provided. Please use 'major', 'minor', or 'patch'.",
+    );
+    process.exit(1);
   }
 
   if (bumpType) {
-    const newVersion = semver.inc(currentVersion, bumpType);
+    const newVersion = bump(currentVersion, bumpType);
     if (!newVersion) {
       console.error("❌ Could not increment the version");
       process.exit(1);

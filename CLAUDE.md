@@ -72,7 +72,7 @@ Projects use schema validation requiring:
 
 - **Prettier**: Code formatting with Astro plugin support
 - **Commitlint**: Enforces conventional commit messages
-- **Husky**: Git hooks for pre-commit quality checks
+- **Git hooks**: `.githooks/` (via `core.hooksPath`) for pre-commit quality checks
 
 ## Git and Source Control
 

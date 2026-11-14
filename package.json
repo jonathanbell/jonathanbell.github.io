@@ -8,27 +8,22 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "cv:pdf": "npx --yes tsx scripts/generate-cv-pdf.ts",
-    "prepare": "husky",
+    "cv:pdf": "node scripts/generate-cv-pdf.ts",
+    "prepare": "git config core.hooksPath .githooks",
     "playwright:install": "npx playwright install",
     "test": "astro build --silent && NODE_OPTIONS='--disable-warning=ExperimentalWarning' playwright test",
     "prettier": "prettier . --check",
     "prettier:fix": "prettier --log-level silent . --write",
-    "commit": "git-cz",
-    "commit:stage": "git add --interactive && git-cz",
-    "commit:stage:all": "git add . && git-cz",
     "commit:lint": "commitlint --from=$(git rev-list --max-parents=0 HEAD) --to=HEAD",
-    "changelog:create": "git fetch --tags --prune --prune-tags && conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md && echo 'CHANGELOG.md staged in Git'",
-    "release": "npx --yes tsx ./scripts/release.ts"
+    "changelog:create": "git fetch --tags --prune --prune-tags && node scripts/changelog.ts && git add CHANGELOG.md && echo 'CHANGELOG.md staged in Git'",
+    "release": "node scripts/release.ts"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.10",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/ubuntu-sans": "^5.2.10",
-    "astro": "^7.2.4",
-    "markdown-it": "^15.0.0",
-    "sanitize-html": "^2.13.0"
+    "astro": "^7.2.4"
   },
   "engines": {
     "node": "26.x",
@@ -39,25 +34,10 @@
     "@commitlint/config-conventional": "^21.2.2",
     "@playwright/test": "^1.42.1",
     "@types/node": "^26.2.0",
-    "@types/prompts": "^2.4.9",
-    "@types/semver": "^7.5.8",
-    "conventional-changelog-cli": "^5.0.0",
-    "cz-conventional-changelog": "^3.0.1",
-    "husky": "^9.1.7",
     "lint-staged": "^17.0.2",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^1.0.0",
-    "prompts": "^2.4.2",
-    "semver": "^7.6.3",
     "typescript": "^6.0.3"
-  },
-  "optionalDependencies": {
-    "@rollup/rollup-linux-x64-gnu": "^4.28.1"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro,json,md,css}": "prettier --write"
