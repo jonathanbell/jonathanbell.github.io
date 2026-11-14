@@ -49,30 +49,26 @@ const posts = postsData
   <PersonalBlock fullName="Jonathan Bell" />
 
   <CardSection sectionTitle="Projects">
-    {
-      projects.map((project) => (
-        <Card
-          heading={project.heading}
-          body={project.body}
-          link={project.link}
-          emoji={project.emoji}
-          testId="card--project-item"
-        />
-      ))
-    }
+    {projects.map((project) => (
+      <Card
+        heading={project.heading}
+        body={project.body}
+        link={project.link}
+        emoji={project.emoji}
+        testId="card--project-item"
+      />
+    ))}
   </CardSection>
 
   <CardSection sectionTitle="Writing">
-    {
-      posts.map((post) => (
-        <Card
-          heading={post.heading}
-          body={post.body ?? ""}
-          publishDate={post.publishDate}
-          link={post.link}
-          testId="card--post-item"
-        />
-      ))
-    }
+    {posts.map((post) => (
+      <Card
+        heading={post.heading}
+        body={post.body ?? ""}
+        publishDate={post.publishDate}
+        link={post.link}
+        testId="card--post-item"
+      />
+    ))}
   </CardSection>
 </BaseLayout>

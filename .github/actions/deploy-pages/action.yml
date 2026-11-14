@@ -1,13 +1,13 @@
-name: 'Deploy to GitHub Pages'
-description: 'Deploys the built site to GitHub Pages'
+name: "Deploy to GitHub Pages"
+description: "Deploys the built site to GitHub Pages"
 
 outputs:
   page-url:
-    description: 'The URL of the deployed page'
+    description: "The URL of the deployed page"
     value: ${{ steps.deployment.outputs.page_url }}
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Deploy to GitHub Pages
       id: deployment

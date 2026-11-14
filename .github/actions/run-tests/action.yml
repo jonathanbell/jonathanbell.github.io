@@ -1,13 +1,13 @@
-name: 'Run Integration Tests'
-description: 'Builds the site and runs Playwright integration tests'
+name: "Run Integration Tests"
+description: "Builds the site and runs Playwright integration tests"
 inputs:
   working-directory:
-    description: 'Working directory for the action'
+    description: "Working directory for the action"
     required: false
-    default: '.'
+    default: "."
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Build site
       shell: bash

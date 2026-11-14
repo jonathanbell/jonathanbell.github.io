@@ -1,26 +1,26 @@
-name: 'Build Astro Site'
-description: 'Builds the Astro site for deployment'
+name: "Build Astro Site"
+description: "Builds the Astro site for deployment"
 inputs:
   working-directory:
-    description: 'Working directory for the action'
+    description: "Working directory for the action"
     required: false
-    default: '.'
+    default: "."
   site-url:
-    description: 'Site URL for Astro build'
+    description: "Site URL for Astro build"
     required: false
-    default: ''
+    default: ""
   base-path:
-    description: 'Base path for Astro build'
+    description: "Base path for Astro build"
     required: false
-    default: ''
+    default: ""
 
 outputs:
   artifact-path:
-    description: 'Path to the built artifact'
+    description: "Path to the built artifact"
     value: ${{ inputs.working-directory }}/dist
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Setup GitHub Pages
       id: pages

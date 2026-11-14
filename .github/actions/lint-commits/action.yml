@@ -1,17 +1,17 @@
-name: 'Lint Commit Messages'
-description: 'Validates commit messages using commitlint'
+name: "Lint Commit Messages"
+description: "Validates commit messages using commitlint"
 inputs:
   working-directory:
-    description: 'Working directory for the action'
+    description: "Working directory for the action"
     required: false
-    default: '.'
+    default: "."
   skip-for-dependabot:
-    description: 'Skip commitlint for Dependabot PRs'
+    description: "Skip commitlint for Dependabot PRs"
     required: false
-    default: 'true'
+    default: "true"
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Check if should skip
       id: should-skip

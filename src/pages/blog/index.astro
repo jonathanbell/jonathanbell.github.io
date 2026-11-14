@@ -25,16 +25,14 @@ const posts = postsData
   description="Jonathan Bell's thoughts and feelings"
 >
   <CardSection sectionTitle="Blog">
-    {
-      posts.map((post) => (
-        <Card
-          heading={post.frontmatter.title}
-          body={post.frontmatter.description ?? ""}
-          publishDate={post.frontmatter.publishDate}
-          link={post.url || ""}
-        />
-      ))
-    }
+    {posts.map((post) => (
+      <Card
+        heading={post.frontmatter.title}
+        body={post.frontmatter.description ?? ""}
+        publishDate={post.frontmatter.publishDate}
+        link={post.url || ""}
+      />
+    ))}
   </CardSection>
   <Blogroll />
 </BaseLayout>
